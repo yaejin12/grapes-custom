@@ -1,0 +1,112 @@
+:root {
+  --gjs-left-width: 16.5%;
+}
+
+.editor_section {
+  width: 1300px;
+  height: 600px;
+  font-size: 11px;
+
+  input {
+    font-size: 11px;
+  }
+
+  & :global(.gjs-editor) {
+    font-family: "S-CoreDream-3Light";
+  }
+  //   에디터 전체
+  & :global(.gjs-editor-cont) {
+    height: 100% !important;
+  }
+
+  //   상단 아이콘
+  & :global(.gjs-pn-buttons) {
+    justify-content: end;
+  }
+
+  // 블록 박스
+  & :global(.gjs-block) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3px 2% 3px;
+    padding: 5px;
+    min-height: 75px;
+    width: 46%;
+  }
+
+  //   블록 텍스트
+  & :global(.gjs-block-label) {
+    font-family: "S-CoreDream-3Light", sans-serif;
+    font-size: 11px;
+    color: #ffffff;
+  }
+
+  // 아이콘
+  & :global(.gjs-block__media) {
+    width: 30px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+
+  //   블록 텍스트
+  & :global(.gjs-blocks-c) {
+    padding: 7px;
+    justify-content: space-between;
+  }
+
+  // 모서리 스타일
+  & :global(.gjs-sm-field) {
+    background-color: transparent;
+    border: none;
+  }
+
+  & :global(.gjs-trt-trait) {
+    padding: 8px 0px 0px;
+  }
+
+  & :global(.gjs-label) {
+    font-size: 12px;
+  }
+  // setting title부분
+  & :global(.gjs-label-wrp) {
+    width: 45%;
+  }
+
+  // [s]이미지 모달
+  & :global(.gjs-mdl-title),
+  & :global(.gjs-am-assets-cont),
+  & :global(.gjs-am-file-uploader) {
+    font-family: "S-CoreDream-3Light", sans-serif;
+  }
+
+  & :global(.gjs-mdl-title) {
+    font-size: 0.9rem;
+  }
+  // 이미지 추가 버튼
+  & :global(.gjs-btn-prim) {
+    font-size: 11px;
+    width: 22%;
+  }
+  // 이미지 추가 인풋
+  & :global(.gjs-am-add-asset .gjs-am-add-field) {
+    width: 75%;
+  }
+  // [e]이미지 모달
+}
+
+// body {
+//   display: flex;
+// }
+
+// 블록 하단 셋팅
+.customTraitPanel {
+  color: #fff;
+  font-size: 13px;
+  max-height: 250px;
+  width: 100%;
+  overflow-y: auto;
+}

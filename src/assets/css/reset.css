@@ -1,0 +1,290 @@
+* {
+  -webkit-text-size-adjust: none;
+  box-sizing: border-box;
+}
+
+/* 모든 Device를 위한 공통 로드 */
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td,
+figure,
+figcaption,
+span {
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.5px;
+}
+
+body,
+html,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+dt,
+dd,
+p hr,
+button,
+input,
+form,
+fieldset,
+table,
+caption,
+th,
+td,
+header,
+nav,
+section,
+article,
+aside,
+footer,
+textarea {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: auto;
+  height: 100%;
+  /* font-family: "S-CoreDream", sans-serif; */
+  font-family: "S-CoreDream-3Light", sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+header,
+nav,
+section,
+article,
+aside,
+footer {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+legend,
+caption {
+  text-indent: -100%;
+  text-indent: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+  color: transparent;
+}
+
+img {
+  max-width: 100%;
+  border: 0;
+  vertical-align: top;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table,
+th,
+td {
+  border: none;
+  text-align: left;
+}
+
+th,
+label {
+  font-weight: normal;
+}
+
+address {
+  font-style: normal;
+}
+
+button,
+input {
+  border: none;
+  background: none;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
+button,
+a,
+input,
+label {
+  cursor: pointer;
+  text-decoration: none;
+  outline: 0;
+  font-family: inherit;
+  color: var(--color-bk);
+}
+*,
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="checkbox"]:disabled,
+input[type="radio"]:disabled,
+button:disabled {
+  cursor: no-drop;
+}
+
+input[type="checkbox"]:disabled + label,
+input[type="radio"]:disabled + label {
+  cursor: no-drop;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-dark);
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* input 자동완성 색상제거 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover,
+input:autofill:focus,
+input:autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/*  */
+
+textarea {
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #a2a2a2;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+/* select*/
+select {
+  border-radius: 0;
+  /* 아이폰 사파리 보더 없애기 */
+  -webkit-appearance: none;
+  /* 화살표 없애기 for chrome*/
+  -moz-appearance: none;
+  /* 화살표 없애기 for firefox*/
+  appearance: none;
+  /* 화살표 없애기 공통*/
+}
+
+.jodit-ui-group.jodit-ui-group_separated_true.jodit-ui-group_group_indent.jodit-ui-group_size_middle::after {
+  content: none !important; /* ::after 요소를 비활성화 */
+}
+
+/* Jodit 하단의 Powered by Jodit 문구 숨기기 */
+.jodit-status-bar {
+  display: none !important; /* 하단 상태바 전체 숨기기 */
+}
+.jodit-status-bar .jodit-editor__resize {
+  display: none !important; /* 크기 조정 핸들 제거 */
+}
+
+/* 공통 컨텐츠 font */
+@font-face {
+  font-family: "S-CoreDream-3Light";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
+    format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "S-CoreDream-4Regular";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-4Regular.woff")
+    format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "S-CoreDream-5Medium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "S-CoreDream-7ExtraBold";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-7ExtraBold.woff")
+    format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@import "https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.3.2/css/simple-line-icons.min.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css";
