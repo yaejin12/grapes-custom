@@ -372,7 +372,7 @@ export const customLinkAddBlockManager = {
   category: sharedCategory,
   content: {
     type: "link",
-    content: "여기를 눌러주세요",
+    content: "클릭 후 링크 삽입",
   },
 };
 // [e]링크 블록 커스텀
