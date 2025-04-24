@@ -33,6 +33,7 @@
     padding: 5px;
     min-height: 75px;
     width: 46%;
+    height: 80px;
   }
 
   //   블록 텍스트
@@ -73,7 +74,7 @@
   }
   // setting title부분
   & :global(.gjs-label-wrp) {
-    width: 45%;
+    width: 35%;
   }
 
   // [s]이미지 모달
