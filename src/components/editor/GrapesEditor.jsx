@@ -55,7 +55,7 @@ function GrapesEditor() {
     editor.on("component:add", (component) => {
       // 👉 tagName으로 제한 걸기
       const tagName = component.get("tagName")?.toLowerCase();
-      const allowed = ["button", "input", "tr", "img"];
+      const allowed = ["a", "button", "input", "tr", "img"];
 
       if (allowed.includes(tagName)) {
         applyResizable(component);
@@ -67,13 +67,6 @@ function GrapesEditor() {
       component.set("resizable", resizableOptions);
     }
 
-    // 3. 기본 블록 타입들에 resizable 기능 추가
-    // editor.DomComponents.getWrapper()
-    //   .components()
-    //   .forEach((comp) => {
-    //     comp.set("resizable", resizableOptions);
-    //   });
-
     editor.DomComponents.getWrapper()
       .components()
       .forEach((comp) => {
@@ -84,7 +77,7 @@ function GrapesEditor() {
           comp.set("resizable", resizableOptions);
         }
       });
-    // ========================
+
     // ========================
     // [s] 블록
     // 열 블록 trait 제거

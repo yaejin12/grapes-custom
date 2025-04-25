@@ -172,6 +172,10 @@ export const globalCSS = `
        vertical-align: top;
     }
 
+    .column2-cell{
+        width: 50%
+    }
+
     /* 버튼 초기값 */
     .editor_button_default {
        display: inline-block;
@@ -296,7 +300,7 @@ export const customColumn2AddBlockManager = {
           {
             tagName: "td",
             attributes: {
-              class: `custom-cell cell_${Date.now()}_${Math.floor(
+              class: `custom-cell column2-cell cell_${Date.now()}_${Math.floor(
                 Math.random() * 10
               )}`,
             },
@@ -305,7 +309,7 @@ export const customColumn2AddBlockManager = {
           {
             tagName: "td",
             attributes: {
-              class: `custom-cell cell_${Date.now()}_${Math.floor(
+              class: `custom-cell column2-cell cell_${Date.now()}_${Math.floor(
                 Math.random() * 10
               )}`,
             },
