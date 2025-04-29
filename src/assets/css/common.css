@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+  position: relative;
+  margin: 0 auto;
+}
+
+.no_scroll {
+  overflow: hidden; /* 스크롤 비활성화 */
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* 루트 */
+:root {
+  --color-bk: #060d15;
+  --color-gr: #606060;
+  --color-gr-stroke: #d7d7d7;
+  --color-point: #2f80ec;
+  --color-point-sb: #1b2232;
+  --color-point-sb: rgba(47, 128, 236, 0.15);
+  --color-point-tr: rgba(47, 128, 236, 0.15);
+
+  /* 폰트 */
+  --font-size-title: 19px;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
