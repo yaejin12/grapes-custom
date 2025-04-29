@@ -468,7 +468,7 @@ export const customUserNameAddBlockManager = {
   content: {
     tagName: "span",
     components: "{user_name}",
-    attributes: {},
+    attributes: { style: "font-family: 'Spoqa Han Sans Neo', sans-serif;" },
   },
 };
 // [e]대상자명 삽입 블록 커스텀

@@ -1,5 +1,5 @@
 :root {
-  --gjs-left-width: 16.5%;
+  --gjs-left-width: 17%;
 }
 
 .editor_section {
@@ -12,7 +12,8 @@
   }
 
   & :global(.gjs-editor) {
-    font-family: "S-CoreDream-3Light";
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-size: 13px;
   }
   //   에디터 전체
   & :global(.gjs-editor-cont) {
@@ -37,8 +38,13 @@
   }
 
   //   블록 텍스트
+  & :global(.gjs-title) {
+    font-weight: 500;
+  }
+  //   블록 텍스트
   & :global(.gjs-block-label) {
-    font-family: "S-CoreDream-3Light", sans-serif;
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
+
     font-size: 11px;
     color: #ffffff;
   }
@@ -50,7 +56,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5px;
+    margin-bottom: 7px;
   }
 
   //   블록 텍스트
@@ -81,11 +87,12 @@
   & :global(.gjs-mdl-title),
   & :global(.gjs-am-assets-cont),
   & :global(.gjs-am-file-uploader) {
-    font-family: "S-CoreDream-3Light", sans-serif;
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
   }
 
   & :global(.gjs-mdl-title) {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
+    font-weight: 500;
   }
   // 이미지 추가 버튼
   & :global(.gjs-btn-prim) {

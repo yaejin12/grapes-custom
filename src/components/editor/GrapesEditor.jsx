@@ -5,6 +5,7 @@ import React, { useEffect, useRef } from "react";
 import styles from "./GrapesEditor.module.scss";
 import { v4 as uuidV4 } from "uuid";
 import {
+  cssCode,
   customButtonAddBlockManager,
   customButtonAddType,
   customColumn2AddBlockManager,
@@ -16,6 +17,7 @@ import {
   customTextAddType,
   customUserNameAddBlockManager,
   globalCSS,
+  htmlCode,
   i18nImgCustom,
   resizableOptions,
   sharedCategory,
@@ -46,12 +48,7 @@ function GrapesEditor() {
 
     // ✅ 전역 CSS 설정: setStyle을 사용하여 에디터 캔버스에 적용할 CSS를 지정
     editor.setStyle(globalCSS);
-
     // ========================
-    // editor.on("component:add", (component) => {
-    //   applyResizable(component); // 1. 리사이징 적용 함수
-    // });
-
     editor.on("component:add", (component) => {
       // 👉 tagName으로 제한 걸기
       const tagName = component.get("tagName")?.toLowerCase();
@@ -240,7 +237,6 @@ function GrapesEditor() {
         "style",
         "margin: 30px auto; width: 100%; box-sizing: border-box; background-color: rgb(161, 161, 161);"
       );
-
       // ========================
       // [s]trait 패널 커스터마이징
       // 1.trait 패널 커스터마이징
