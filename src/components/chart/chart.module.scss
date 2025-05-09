@@ -2,31 +2,79 @@
 
 // [s]pie chart - 원형 차트
 .pie_wrapper {
-  width: 240px;
-  height: 240px;
+  // width: 300px;
+  // height: 300px;
+  width: 100%;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
+
 .tooltip_box {
   background-color: #fff;
-  border: 1px solid var(--color-gr-stroke);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 8px 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 12px 16px;
 
   .value {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--color-point);
+    width: 92px;
+    font-size: 14px;
+    color: var(--color-gr-front);
+
     span {
-      font-size: 13px;
-      color: var(--color-gr);
+      font-size: 20px;
+      @include global.spoqa_fonts;
+      color: var(--color-bk);
+      font-weight: 700;
+      margin-right: 2px;
     }
   }
 
   .bar_tooltip_label {
-    margin-bottom: 3px;
-    color: var(--color-gr);
+    margin-bottom: 4px;
+    color: var(--color-gr-front);
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+
+// --------------------------------
+.pie_chart_num_wrapper {
+  display: flex;
+
+  .pie_chart_num_item {
+    width: 110px;
+    .label {
+      font-size: 12px;
+      color: var(--color-gr-front);
+      margin-bottom: 6px;
+    }
+
+    .pie_chart_num {
+      display: flex;
+      align-items: center;
+
+      .circle {
+        background-color: var(--color-red-2);
+        width: 12px;
+        height: 12px;
+        margin-right: 12px;
+        border-radius: 9999px;
+      }
+
+      .num {
+        @include global.spoqa_fonts;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1px;
+      }
+    }
+
+    &.violation {
+      .circle {
+        background-color: var(--color-red);
+      }
+    }
   }
 }
 // [e]pie chart - 원형 차트

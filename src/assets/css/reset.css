@@ -34,7 +34,7 @@ figcaption,
 span {
   margin: 0;
   padding: 0;
-  letter-spacing: 0;
+  letter-spacing: -0.3px;
 }
 
 body,
@@ -75,9 +75,10 @@ html,
 body {
   width: auto;
   height: 100%;
-  font-family: "Spoqa Han Sans Neo", "sans-serif";
-  font-family: 'Pretendard-Regular,, "sans-serif"';
-  font-size: 15px;
+  font-family: "Pretendard", sans-serif;
+  letter-spacing: -0.3px;
+  font-weight: 500;
+  font-size: 14px;
   color: var(--color-bk);
 }
 
@@ -214,7 +215,6 @@ textarea:focus {
 
 /* select*/
 select {
-  border-radius: 0;
   /* 아이폰 사파리 보더 없애기 */
   -webkit-appearance: none;
   /* 화살표 없애기 for chrome*/
@@ -222,27 +222,32 @@ select {
   /* 화살표 없애기 for firefox*/
   appearance: none;
   /* 화살표 없애기 공통*/
+  position: relative;
+  /* 스타일 */
+  font-family: "Pretendard", sans-serif;
+  letter-spacing: -0.3px;
+  font-weight: 500;
+}
+select:focus {
+  outline: none;
+}
+
+option {
+  z-index: 99 !important;
+  font-family: "Pretendard", sans-serif;
+  letter-spacing: -0.3px;
+  font-weight: 500;
 }
 
 select::-ms-expand {
   display: none;
   /* 화살표 없애기 for IE10, 11*/
+  option {
+    z-index: 99 !important;
+  }
 }
 
 /* 공통 컨텐츠 font */
-@font-face {
-  font-family: "Spoqa Han Sans Neo";
-  src: url("../fonts/SpoqaHanSansNeo-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Spoqa Han Sans Neo";
-  src: url("../fonts/SpoqaHanSansNeo-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
 
 @font-face {
   font-family: "Spoqa Han Sans Neo";
@@ -277,4 +282,61 @@ select::-ms-expand {
   src: url("../fonts/GothamNarrow-Black.woff") format("woff");
   font-weight: 700;
   font-style: normal;
+}
+
+/*  */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-Thin.woff") format("woff");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-ExtraLight.woff") format("woff");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  src: url("../fonts/pretendard/Pretendard-ExtraLight.woff") format("woff");
+  font-weight: 800;
 }

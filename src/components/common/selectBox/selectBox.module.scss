@@ -1,0 +1,12 @@
+select {
+  padding: 12px 20px;
+  width: 100%;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  background: url("../../../../public/images/select_box_dash.svg") no-repeat
+    calc(100% - 20px);
+  background-color: #ffff;
+  font-size: 16px;
+  color: var(--color-gr-front-sub-title);
+}

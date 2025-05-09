@@ -1,0 +1,142 @@
+@use "../../../assets/css/global.module.scss" as global;
+
+// 전체 대시보드
+.dashboard_content_wrapper {
+  display: flex;
+  width: 100%;
+  gap: 20px;
+
+  //   왼쪽
+  .dashboard_left_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    flex: 1;
+
+    // 건수 전체 wrapper
+    .dashboard_num_wrapper {
+      display: flex;
+      gap: 20px;
+    } // 건수 전체 wrapper 끝
+
+    // 바 그래프
+    .dashboard_bar_chart_wrapper {
+      @include global.box;
+      height: 586px;
+      padding: 40px 40px 50px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .bar_chart_wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        height: 100%;
+        width: 96%;
+      }
+    }
+  } //   왼쪽 끝
+  // 오른쪽
+
+  .dashboard_right_wrapper {
+    width: 504px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    // 셀렉박스 전체 영역
+    .dashboard_select_wrapper {
+      width: 100%;
+      display: flex;
+      gap: 12px;
+    }
+
+    // 위반율 흰 영역
+    .dashboard_v_chart_wrapper {
+      width: 100%;
+      height: 100%;
+      @include global.box;
+      padding: 40px 40px 50px 40px;
+
+      // 위반율 내용 그래프+순위
+      .dashboard_v_chart_contents_wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-top: 32px;
+        justify-content: space-between;
+        height: calc(100% - 40px);
+
+        // pie차트 전체
+        .dashboard_v_pie_chart_wrapper {
+          // pie chart
+          .pie_chart_wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 12px;
+          }
+        } // pie차트 전체 끝
+
+        // 순위
+        .risk_ranking_wrapper {
+          width: 100%;
+
+          .risk_ranking_item {
+            padding: 0 16px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e3e3e3;
+            margin-bottom: 8px;
+            .ranking {
+              // 1위
+              .grade {
+                display: inline-block;
+                padding: 5px 8px;
+                margin-right: 12px;
+                color: #fff;
+                font-size: 13px;
+                font-weight: 700;
+                width: 48px;
+                text-align: center;
+                background-color: var(--color-red);
+                border-radius: 999px;
+              }
+              span {
+                &:nth-child(2) {
+                  font-size: 18px;
+                  font-weight: 600;
+                  color: var(--color-gr-front-sub-title);
+                }
+              }
+            }
+            .num {
+              @include global.spoqa_fonts;
+              font-size: 24px;
+              font-weight: 700;
+            }
+
+            &:nth-child(2) {
+              .grade {
+                background-color: var(--color-yellow);
+              }
+            }
+
+            &:nth-child(3) {
+              .grade {
+                background-color: var(--color-point);
+              }
+            }
+          }
+        }
+      }
+    }
+  } //오른쪽 끝
+}
+
+.box_title {
+  @include global.box_title;
+}

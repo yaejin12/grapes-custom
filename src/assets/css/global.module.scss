@@ -3,3 +3,51 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin spoqa_fonts {
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+}
+
+@mixin inner {
+  padding: 0 56px;
+}
+
+@mixin box {
+  border-radius: 16px;
+  background-color: #fff;
+}
+
+@mixin box_title {
+  font-size: 22px;
+  color: var(--color-gr-front-sub-title);
+  font-weight: 600;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #acacac;
+  width: 100%;
+}
+
+@mixin scrollbar($max-height: calc((44px * 2) + 8px), $width: 6.5px) {
+  overflow-y: auto;
+  max-height: $max-height;
+
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #dfdfdf;
+    border-radius: 22px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #afafaf;
+    border-radius: 22px;
+  }
+}
+
+@mixin ellipsis {
+  // display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

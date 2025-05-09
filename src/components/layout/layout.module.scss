@@ -1,0 +1,227 @@
+@use "../../assets/css/global.module.scss" as global;
+
+// [s] 상단 페이지 타이틀
+.pg_title_wrapper {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+.dashboard_content_wrapper {
+  display: flex;
+  width: 100%;
+}
+// [e] 상단 페이지 타이틀
+// -------------------------------------
+// [e] StatNumItem 대시보드 상단 수치
+.dashboard_num_item {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 16px;
+  height: 196px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .num_item_icon {
+    width: 48px;
+    height: 48px;
+    background-color: #2f80ec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+
+    // 훈련참가인원
+    &.p_count {
+      background-color: #712ee2;
+    }
+    // 위반자 현황
+    &.v_count {
+      background-color: #f2be04;
+    }
+
+    // 총 위반 건수
+    &.v_total_count {
+      background-color: #ed4747;
+    }
+  }
+
+  // 숫자 item
+  .dashboard_stat_box {
+    .label {
+      font-weight: 600;
+
+      color: var(--color-gr-front);
+      margin-bottom: 8px;
+    }
+
+    .num {
+      color: var(--color-gr-front);
+      span {
+        color: var(--color-bk);
+        font-size: 32px;
+        @include global.spoqa_fonts;
+        font-weight: 700;
+        margin-right: 6px;
+        letter-spacing: -1.1px;
+      }
+    }
+  }
+}
+// --------------------------------------------------
+// [s] TrainingInfo
+.info_content_wrapper {
+  padding-top: 24px;
+}
+.info_content {
+  width: 100%;
+  font-size: 15px;
+  flex-direction: column;
+  @include global.scrollbar(578px, 0);
+
+  i {
+    margin-right: 8px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  // item
+  .info_item {
+    color: var(--color-gr-front-sub-title);
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .label {
+      display: inline-block;
+      font-weight: 600;
+      min-width: 60px;
+      margin-right: 20px;
+    }
+
+    .label_wrapper {
+      display: flex;
+      width: 100%;
+    }
+
+    .value {
+      font-weight: 400;
+      max-width: calc(100% - 60px - 16px - 20px);
+      @include global.ellipsis;
+
+      .tag {
+        font-size: 13px;
+        line-height: 1;
+        display: inline-block;
+        padding: 7px 12px;
+        font-weight: 700;
+        border-radius: 999px;
+        color: var(--color-point);
+        background-color: var(--color-point-sub);
+        margin-right: 6px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    // select_box
+    &.select_box {
+      flex-direction: column;
+
+      .info_item_title_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .label_wrapper {
+          width: calc(100% - 100px);
+        }
+
+        .label_tag {
+          @include global.flex_center;
+
+          padding: 5px 8px;
+          background-color: var(--color-point);
+          color: #fff;
+          font-size: 13px;
+          line-height: 1;
+
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+// ----------------------------------------------------
+// [s] selectedItemBox
+.selected_item_box {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  border-radius: 8px;
+  background-color: var(--color-gr-box);
+
+  .selected_list {
+    width: 100%;
+    padding-right: 8px;
+    @include global.scrollbar;
+  }
+
+  .selected_item {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .item_content {
+      display: flex;
+      align-items: center;
+      width: calc(100% - 20px);
+
+      .item_icon {
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-gr-box);
+        border-radius: 4px;
+        @include global.flex_center;
+      }
+
+      .item_text {
+        margin-left: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        width: calc(100% - 100px);
+        @include global.ellipsis;
+      }
+    }
+
+    .right_icon {
+      width: 20px;
+      height: auto;
+      @include global.flex_center;
+    }
+  }
+}
+// ----------------------------------------------

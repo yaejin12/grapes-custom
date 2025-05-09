@@ -16,18 +16,26 @@ body {
 
 /* 루트 */
 :root {
-  --color-bk: #060d15;
-  --color-gr: #606060;
-  --color-gr-stroke: #d7d7d7;
+  --color-bk: #0d0d0d;
+  --color-side: #1b2232;
+  --color-border: #d7d7d7;
   --color-point: #2f80ec;
+  --color-point-sub: #e0ecfc;
+  --color-gr-front: #606060;
+  --color-gr-box: #f3f3f3;
+  --color-gr-front-sub-title: #3a3a3a;
+  --color-red: #ed4747;
+  --color-red-2: #ffebeb;
+  --color-gr-stroke: #d7d7d7;
+  --color-point-2: #e0ecfc93;
+  --color-yellow: #f2be04;
   --color-point-sb: #1b2232;
-  --color-point-sb: rgba(47, 128, 236, 0.15);
-  --color-point-tr: rgba(47, 128, 236, 0.15);
 
   /* 폰트 */
   --font-size-title: 19px;
 }
 
+/* 스크롤 */
 *::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
 }
