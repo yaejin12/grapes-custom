@@ -133,3 +133,27 @@
     }
   }
 }
+
+// 대상자
+.participant_table {
+  .cell {
+    &:nth-child(1) {
+      width: 88px;
+    }
+    &:nth-child(2) {
+      width: 200px;
+    }
+    &:nth-child(3) {
+      flex: 1;
+    }
+    &:nth-child(4) {
+      width: 250px;
+    }
+    &:nth-child(5) {
+      width: 270px;
+    }
+    &:nth-child(6) {
+      width: 270px;
+    }
+  }
+}

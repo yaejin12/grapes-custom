@@ -33,9 +33,7 @@ function RootLayout() {
         <Header styles={styles} />
         <main>
           <div className={styles.main_content_wrapper}>
-            <PgTitle h3={pgTitle}>
-              <Outlet />
-            </PgTitle>
+            <Outlet />
           </div>
         </main>
       </div>

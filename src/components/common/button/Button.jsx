@@ -1,58 +1,77 @@
 import React from "react";
 import styles from "./button.module.scss";
+import { useLocation } from "react-router-dom";
 
 function Button({ label, handlerClick, type, ...props }) {
-  let btn;
-  switch (label) {
-    case "엑셀다운":
-      btn = {
+  const location = useLocation();
+  const pathname = location.pathname;
+  const btn = (() => {
+    if (label === "엑셀다운") {
+      return {
         img: "/images/table_download.svg",
         btnStyle: "",
       };
-      break;
-    case "출력하기":
-      btn = {
+    } else if (label === "출력하기") {
+      return {
         img: "/images/table_printer.svg",
         btnStyle: styles.printer,
       };
-      break;
-
-    case "대상자 신규등록":
-      btn = {
+    } else if (label === "대상자 신규등록") {
+      return {
         img: "/images/participant_group_add.svg",
         btnStyle: styles.point_color,
       };
-      break;
-
-    case "부서별 랜덤등록":
-      btn = {
+    } else if (label === "부서별 랜덤등록") {
+      return {
         img: "/images/participant_group_random_add.svg",
         btnStyle: styles.dark_point_color,
       };
-      break;
-
-    case "엑셀파일 업로드":
-      btn = {
+    } else if (label === "신규등록") {
+      return {
+        img: "/images/templates_add.svg",
+        btnStyle: styles.point_color,
+      };
+    } else if (label === "엑셀파일 업로드" || label === "파일 업로드") {
+      return {
         img: "/images/file_upload.svg",
         btnStyle: styles.gr_color,
       };
-      break;
-
-    case "수정":
-      btn = {
-        btnStyle: styles.modify,
+    } else if (label === "수정하기") {
+      return {
+        img: "/images/participant_modify.svg",
+        btnStyle: styles.point_color,
       };
-      break;
-
-    case "삭제":
-      btn = {
-        btnStyle: styles.delete,
+    } else if (label === "수정") {
+      if (pathname === "/mail-templates") {
+        return {
+          img: "/images/participant_modify.svg",
+          btnStyle: styles.point_color,
+        };
+      } else {
+        return {
+          btnStyle: styles.modify,
+        };
+      }
+    } else if (label === "복사") {
+      return {
+        img: "/images/template_copy.svg",
+        btnStyle: styles.gr_color,
       };
-      break;
+    } else if (label === "삭제") {
+      if (pathname === "/mail-templates") {
+        return {
+          img: "/images/templates_X.svg",
+          btnStyle: styles.delete,
+        };
+      } else {
+        return {
+          btnStyle: styles.delete,
+        };
+      }
+    }
 
-    default:
-      break;
-  }
+    return {};
+  })();
 
   let typeStyle;
   switch (type) {
@@ -62,6 +81,10 @@ function Button({ label, handlerClick, type, ...props }) {
 
     case "add":
       typeStyle = styles.add;
+      break;
+
+    case "template":
+      typeStyle = styles.template;
       break;
 
     default:

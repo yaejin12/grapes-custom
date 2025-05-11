@@ -1,16 +1,19 @@
 import React from "react";
 import styles from "../layout.module.scss";
 import Button from "../../common/button/Button";
+import { type } from "@testing-library/user-event/dist/type";
+import { useLocation } from "react-router-dom";
 
-function PgTitle({ h3, children }) {
+function PgTitle({ h3, children, btn }) {
   return (
     <>
       <div className={styles.pg_title_wrapper}>
         <h3>{h3}</h3>
         <div className={styles.pg_btn_wrapper}>
-          <Button label={"대상자 신규등록"} type={"add"} />
-          <Button label={"부서별 랜덤등록"} type={"add"} />
-          <Button label={"엑셀파일 업로드"} type={"add"} />
+          {btn &&
+            btn?.map((btnItem) => (
+              <Button label={btnItem?.label} type={"add"} />
+            ))}
         </div>
       </div>
       {children}

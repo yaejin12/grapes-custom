@@ -1,50 +1,46 @@
 import React from "react";
 import styles from "./table.module.scss";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Button from "../../common/button/Button";
 
-function Table({ data, header }) {
+function Table({ data, header, onClick }) {
   const location = useLocation();
   const pathname = location.pathname;
 
-  let custom;
-  switch (pathname) {
-    case "/participant-group":
-      custom = styles.participant_group_table;
-      break;
+  const customTableStyle = () => {
+    if (pathname === "/participant-group") {
+      return styles.participant_group_table;
+    }
+    if (pathname.startsWith("/participant-group/")) {
+      return styles.participant_table;
+    }
+    return "";
+  };
 
-    default:
-      custom = "";
-      break;
-  }
   return (
     <div className={styles.table_wrapper}>
-      <ul className={`${styles.table_header} ${custom}`}>
+      <ul className={`${styles.table_header} ${customTableStyle()}`}>
         {header?.map((text) => (
-          <li className={styles.cell}>{text}</li>
+          <li className={styles.cell}>{text?.text}</li>
         ))}
       </ul>
-      <ul className={`${styles.table_body} ${custom}`}>
+      <ul className={`${styles.table_body} ${customTableStyle()}`}>
         {data?.map((item, i) => (
-          <li>
-            <div className={styles.cell}>
-              <span>{i + 1}</span>
-            </div>
-            <div className={styles.cell}>
-              <span>{item?.name}</span>
-            </div>
-            <div className={styles.cell}>
-              <span>{item?.count}</span>
-            </div>
-            <div className={styles.cell}>
-              <span>{item?.createdAt}</span>
-            </div>
-            <div className={styles.cell}>
-              <div className={styles.item_btn_wrapper}>
-                <Button label={"수정"} type={"table"} />
-                <Button label={"삭제"} type={"table"} />
+          <li key={item?.id} onClick={() => onClick?.(item?.id)}>
+            {header?.map((col, j) => (
+              <div className={styles.cell}>
+                {col?.key === "index" && <span>{i + 1}</span>}
+                {col?.key === "actions" && (
+                  <div className={styles.item_btn_wrapper}>
+                    <Button label={"수정"} type={"table"} />
+                    <Button label={"삭제"} type={"table"} />
+                  </div>
+                )}
+                {col.key !== "index" && col.key !== "actions" && (
+                  <span>{item?.[col.key]}</span>
+                )}
               </div>
-            </div>
+            ))}
           </li>
         ))}
       </ul>

@@ -2,9 +2,40 @@ import React from "react";
 import styles from "./ParticipantGroup.module.scss";
 import TableToolbar from "../../components/layout/table/components/TableToolbar";
 import Table from "../../components/layout/table/Table";
+import PgTitle from "../../components/layout/pgTitle/PgTitle";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 
 function ParticipantGroup() {
-  const tableHeader = ["No", "그룹명", "인원", "생성일", ""];
+  const location = useLocation();
+  const pathname = location.pathname;
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const participantPg = pathname.startsWith("/participant-group/");
+  const pGroupPg = pathname === "/participant-group";
+
+  const tableHeader = () => {
+    if (pGroupPg) {
+      return [
+        { text: "No", key: "index" },
+        { text: "그룹명", key: "name" },
+        { text: "인원", key: "count" },
+        { text: "생성일", key: "createdAt" },
+        { text: "", key: "actions" },
+      ];
+    }
+    if (participantPg) {
+      return [
+        { text: "No", key: "index" },
+        { text: "이름", key: "name" },
+        { text: "부서", key: "department" },
+        { text: "직위", key: "position" },
+        { text: "이메일", key: "email" },
+        { text: "연락처", key: "phone" },
+      ];
+    }
+    return [];
+  };
+
   const data = [
     {
       id: 1,
@@ -68,13 +99,49 @@ function ParticipantGroup() {
     },
   ];
 
+  const pgBtn = () => {
+    if (pGroupPg) {
+      return [
+        {
+          label: "대상자 신규등록",
+          handler: "",
+        },
+        {
+          label: "부서별 랜덤등록",
+          handler: "",
+        },
+        {
+          label: "엑셀파일 업로드",
+          handler: "",
+        },
+      ];
+    }
+    return [
+      {
+        label: "수정하기",
+        handler: "",
+      },
+    ];
+  };
+
+  //
+  const handlerTableItemClick = (id) => {
+    if (pGroupPg) navigate(`/participant-group/${id}`);
+  };
+
   return (
-    <section className={styles.section_box}>
-      <TableToolbar />
-      <div className={styles.table_wrapper}>
-        <Table header={tableHeader} data={data} />
-      </div>
-    </section>
+    <PgTitle h3={pGroupPg ? "대상자 그룹" : "대상자"} btn={pgBtn()}>
+      <section className={styles.section_box}>
+        <TableToolbar />
+        <div className={styles.table_wrapper}>
+          <Table
+            header={tableHeader()}
+            data={data}
+            onClick={handlerTableItemClick}
+          />
+        </div>
+      </section>
+    </PgTitle>
   );
 }
 

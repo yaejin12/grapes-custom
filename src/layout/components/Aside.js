@@ -72,7 +72,10 @@ function Aside({ styles }) {
               >
                 <li>대상자 그룹</li>
               </NavLink>
-              <NavLink>
+              <NavLink
+                to={"/mail-templates"}
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
                 <li>메일 템플릿</li>
               </NavLink>
               <NavLink>
