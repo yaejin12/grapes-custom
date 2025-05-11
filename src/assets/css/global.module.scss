@@ -1,7 +1,7 @@
-@mixin flex_center {
+@mixin flex_center($justify: center, $align: center) {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: $justify;
+  align-items: $align;
 }
 
 @mixin spoqa_fonts {
@@ -46,7 +46,6 @@
 }
 
 @mixin ellipsis {
-  // display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

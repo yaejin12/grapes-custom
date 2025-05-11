@@ -66,7 +66,10 @@ function Aside({ styles }) {
               <p>훈련설정</p>
             </button>
             <ul className={styles.lnb_sub_wrapper}>
-              <NavLink className={styles.action}>
+              <NavLink
+                to={"/participant-group"}
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
                 <li>대상자 그룹</li>
               </NavLink>
               <NavLink>

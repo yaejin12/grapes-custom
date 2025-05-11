@@ -12,7 +12,6 @@ import TrainingInfo from "../../../components/layout/trainingInfo/TrainingInfo";
 function LiveStatusPg() {
   return (
     <>
-      <PgTitle h3={"실시간현황"} />
       <div className={styles.dashboard_content_wrapper}>
         <div className={styles.dashboard_left_wrapper}>
           <section className={styles.dashboard_num_wrapper}>

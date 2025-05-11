@@ -14,7 +14,6 @@ function TotalStatusPg() {
   return (
     isTotalStatusPs && (
       <>
-        <PgTitle h3={"종합현황"} />
         <div className={styles.dashboard_content_wrapper}>
           <div className={styles.dashboard_left_wrapper}>
             <div className={styles.dashboard_num_wrapper}>

@@ -12,6 +12,11 @@
     font-size: 32px;
     font-weight: 600;
   }
+
+  .pg_btn_wrapper {
+    display: flex;
+    gap: 8px;
+  }
 }
 .dashboard_content_wrapper {
   display: flex;

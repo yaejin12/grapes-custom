@@ -1,0 +1,135 @@
+@use "../../../assets/css/global.module.scss" as global;
+
+.toolbar_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .toolbar_right_wrapper {
+    height: 100%;
+    @include global.flex_center(start, center);
+
+    .btn_wrapper {
+      margin-right: 40px;
+      @include global.flex_center(start, center);
+      position: relative;
+      gap: 8px;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 1px;
+        height: 24px;
+        right: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--color-gr-stroke);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+    .select_box {
+      width: 117px;
+    }
+  }
+}
+
+.table_wrapper {
+  width: 100%;
+
+  .table_header {
+    width: 100%;
+    padding: 14px 0;
+    background-color: var(--color-gr-box);
+    border-radius: 4px;
+    display: flex;
+
+    .cell {
+      position: relative;
+      @include global.flex_center;
+      font-size: 14px;
+      color: var(--color-gr-front);
+      font-weight: 600;
+      user-select: none;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 1px;
+        height: 16px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: var(--color-gr-stroke);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &:last-child::after {
+        display: none;
+      }
+    }
+  }
+
+  .table_body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    li {
+      display: flex;
+      height: 56px;
+      cursor: pointer;
+      user-select: none;
+
+      &:hover {
+        background-color: var(--color-point-sub-2);
+      }
+    }
+
+    .cell {
+      @include global.flex_center;
+      height: 100%;
+      font-size: 14px;
+      font-weight: 400;
+      border-bottom: 1px solid var(--color-gr-box);
+      min-width: 0;
+
+      span {
+        @include global.ellipsis; // ✅ 드디어 적용됨
+        padding: 0 5px;
+      }
+
+      .item_btn_wrapper {
+        display: flex;
+        gap: 6px;
+      }
+    }
+  }
+}
+//-----------
+// 대상자 그룹 테이블
+.participant_group_table {
+  .cell {
+    &:nth-child(1) {
+      width: 88px;
+    }
+    &:nth-child(2) {
+      flex: 1;
+    }
+    &:nth-child(3) {
+      width: 160px;
+    }
+    &:nth-child(4) {
+      width: 240px;
+    }
+    &:nth-child(5) {
+      width: 200px;
+    }
+  }
+}

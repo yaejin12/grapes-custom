@@ -1,0 +1,70 @@
+.btn {
+  border: 1px solid var(--color-point);
+  color: var(--color-point);
+  padding: 8px 16px;
+  border-radius: 999px;
+  line-height: 20px;
+
+  img {
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+
+  // 신규 등록
+  &.add {
+    color: #fff;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 14px 20px;
+    border: none;
+
+    &.point_color {
+      background-color: var(--color-point);
+    }
+
+    &.dark_point_color {
+      background-color: #164e97;
+      color: #fff;
+    }
+
+    &.gr_color {
+      background-color: #4b5159;
+    }
+  }
+
+  // 테이블 인쇄 버튼
+  &.printer {
+    color: var(--color-gr-1);
+    border: 1px solid var(--color-gr-1);
+  }
+
+  // 테이블 수정 삭제 버튼
+  &.table {
+    &.modify {
+      padding: 3px 12px;
+      font-size: 12px;
+
+      border: 1px solid var(--color-point-sub);
+      color: var(--color-point-sub);
+
+      &:hover {
+        background-color: #fff;
+        border: 1px solid var(--color-point);
+        color: var(--color-point);
+      }
+    }
+
+    &.delete {
+      padding: 3px 12px;
+      font-size: 12px;
+
+      color: var(--color-gr-box);
+      border: 1px solid var(--color-gr-box);
+      &:hover {
+        background-color: #fff;
+        color: var(--color-gr-1);
+        border: 1px solid var(--color-gr-1);
+      }
+    }
+  }
+}

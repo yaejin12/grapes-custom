@@ -10,7 +10,7 @@
   .dashboard_left_wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 504px);
     height: 100%;
     gap: 20px;
     flex: 1;
