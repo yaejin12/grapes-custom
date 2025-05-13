@@ -63,7 +63,7 @@ function CustomPieChart({ size }) {
           dominantBaseline="middle"
           fontSize={isSmSize ? "13px" : "14px"}
           fontWeight={600}
-          fill="var(--color-gr-front)"
+          fill="var(--color-gr-font)"
           style={{ letterSpacing: "-0.3px" }}
         >
           위반율

@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./templateList.module.scss";
 import TemplateItem from "./components/TemplateItem";
 
-function TemplateList() {
+function TemplateList({ data }) {
   return (
     <ul className={styles.templates_list_wrapper}>
-      <TemplateItem styles={styles} />
+      {data?.map((itemData) => (
+        <TemplateItem styles={styles} data={itemData} />
+      ))}
     </ul>
   );
 }

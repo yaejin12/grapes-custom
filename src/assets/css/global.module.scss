@@ -19,7 +19,7 @@
 
 @mixin box_title {
   font-size: 22px;
-  color: var(--color-gr-front-sub-title);
+  color: var(--color-gr-font-sub-title);
   font-weight: 600;
   padding-bottom: 12px;
   border-bottom: 1px solid #acacac;
@@ -49,4 +49,20 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: -0.3px;
+}
+
+@mixin caption_font {
+  font-size: 13px;
+  color: var(--color-gr-font);
+}
+
+@mixin tag {
+  background-color: var(--color-point-sub-2);
+  color: var(--color-point);
+  padding: 3px 9px;
+  margin-left: 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
 }

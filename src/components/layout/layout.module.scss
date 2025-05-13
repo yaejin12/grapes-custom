@@ -64,12 +64,12 @@
     .label {
       font-weight: 600;
 
-      color: var(--color-gr-front);
+      color: var(--color-gr-font);
       margin-bottom: 8px;
     }
 
     .num {
-      color: var(--color-gr-front);
+      color: var(--color-gr-font);
       span {
         color: var(--color-bk);
         font-size: 32px;
@@ -101,7 +101,7 @@
 
   // item
   .info_item {
-    color: var(--color-gr-front-sub-title);
+    color: var(--color-gr-font-sub-title);
     display: flex;
     align-items: center;
     margin-bottom: 20px;

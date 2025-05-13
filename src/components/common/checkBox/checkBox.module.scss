@@ -1,0 +1,26 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + label {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #acacac;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+input[type="checkbox"]:checked + label {
+  background-color: var(--color-point);
+  border: 1px solid var(--color-point);
+  background-image: url("../../../../public/images/check_on.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+

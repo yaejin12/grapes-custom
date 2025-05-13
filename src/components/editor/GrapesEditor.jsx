@@ -54,7 +54,7 @@ function GrapesEditor() {
       const tagName = component.get("tagName")?.toLowerCase();
       const allowed = ["a", "button", "input", "tr", "img"];
 
-      if (allowed.includes(tagName)) {
+      if (allowed?.includes(tagName)) {
         applyResizable(component);
       }
     });
@@ -70,7 +70,7 @@ function GrapesEditor() {
         const tagName = comp.get("tagName")?.toLowerCase();
         const allowed = ["a", "input", "tr", "img"];
 
-        if (allowed.includes(tagName)) {
+        if (allowed?.includes(tagName)) {
           comp.set("resizable", resizableOptions);
         }
       });
@@ -269,7 +269,7 @@ function GrapesEditor() {
         // ✅ "a 태그"일 때만 URL 삽입 버튼 추가
         if (
           component.get("tagName") === "a" &&
-          !component.getClasses().includes("editor_button_default")
+          !component.getClasses()?.includes("editor_button_default")
         ) {
           const insertBtn = document.createElement("button");
           insertBtn.innerText = "위험 링크 삽입";

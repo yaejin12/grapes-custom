@@ -78,13 +78,22 @@ function Aside({ styles }) {
               >
                 <li>메일 템플릿</li>
               </NavLink>
-              <NavLink>
+              <NavLink
+                to={"/phishing-templates"}
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
                 <li>피싱 템플릿</li>
               </NavLink>
-              <NavLink>
+              <NavLink
+                to={"/warning-templates"}
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
                 <li>경고 템플릿</li>
               </NavLink>
-              <NavLink>
+              <NavLink
+                to={"/education-templates"}
+                className={({ isActive }) => (isActive ? styles.active : "")}
+              >
                 <li>교육</li>
               </NavLink>
             </ul>
@@ -93,21 +102,23 @@ function Aside({ styles }) {
           {/* [s] lnb item */}
           <div
             className={`${styles.lnb_item} ${
-              actionLnbItem === "reg" ? styles.btn_accordion_action : ""
+              actionLnbItem === "reg" ? styles.btn_direct_action : ""
             }`}
           >
-            <button onClick={() => toggleAccordionItem("reg")}>
-              <i>
-                <img src="/images/menu_add.svg" alt=""></img>
-              </i>
-              <p>훈련등록</p>
-            </button>
+            <NavLink to={"/create-training"}>
+              <button onClick={() => toggleAccordionItem("reg")}>
+                <i>
+                  <img src="/images/menu_add.svg" alt=""></img>
+                </i>
+                <p>훈련등록</p>
+              </button>
+            </NavLink>
           </div>
           {/* [e] lnb item */}
           {/* [s] lnb item */}
           <div
             className={`${styles.lnb_item} ${
-              actionLnbItem === "run" ? styles.btn_accordion_action : ""
+              actionLnbItem === "run" ? styles.btn_direct_action : ""
             }`}
           >
             <button onClick={() => toggleAccordionItem("run")}>
@@ -121,7 +132,7 @@ function Aside({ styles }) {
           {/* [s] lnb item */}
           <div
             className={`${styles.lnb_item} ${
-              actionLnbItem === "res" ? styles.btn_accordion_action : ""
+              actionLnbItem === "res" ? styles.btn_direct_action : ""
             }`}
           >
             <button onClick={() => toggleAccordionItem("res")}>
@@ -135,7 +146,7 @@ function Aside({ styles }) {
           {/* [s] lnb item */}
           <div
             className={`${styles.lnb_item} ${
-              actionLnbItem === "rpt" ? styles.btn_accordion_action : ""
+              actionLnbItem === "rpt" ? styles.btn_direct_action : ""
             }`}
           >
             <button onClick={() => toggleAccordionItem("rpt")}>
@@ -149,7 +160,7 @@ function Aside({ styles }) {
           {/* [s] lnb item */}
           <div
             className={`${styles.lnb_item} ${
-              actionLnbItem === "setting" ? styles.btn_accordion_action : ""
+              actionLnbItem === "setting" ? styles.btn_direct_action : ""
             }`}
           >
             <button onClick={() => toggleAccordionItem("setting")}>
@@ -158,26 +169,6 @@ function Aside({ styles }) {
               </i>
               <p>환경설정</p>
             </button>
-            <ul className={styles.lnb_sub_wrapper}>
-              <NavLink className={styles.action}>
-                <li>기본정보</li>
-              </NavLink>
-              <NavLink>
-                <li>직원관리</li>
-              </NavLink>
-              <NavLink>
-                <li>권한관리</li>
-              </NavLink>
-              <NavLink>
-                <li>기본설정</li>
-              </NavLink>
-              <NavLink>
-                <li>훈련로그</li>
-              </NavLink>
-              <NavLink>
-                <li>오류로그</li>
-              </NavLink>
-            </ul>
           </div>
           {/* [e] lnb item */}
         </div>

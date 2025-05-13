@@ -37,6 +37,7 @@ aside {
   top: 0;
   left: 0;
   height: 100vh;
+  z-index: 9999999999999999;
 
   //   mcts 로고
   .logo_wrapper {
@@ -187,6 +188,18 @@ aside {
           max-height: calc(56px * 7);
         }
       }
+
+      &.btn_direct_action {
+        button {
+          background-color: rgba(47, 128, 236, 0.2);
+
+          &::after {
+            background-image: url("../../public/images/menu_action.svg");
+            width: 20px;
+            background-size: auto;
+          }
+        }
+      }
     }
   }
 }
@@ -200,7 +213,7 @@ header {
   height: 72px;
   border-bottom: 1px solid var(--color-border);
   background-color: #fff;
-
+  z-index: 999999999999;
   .inner {
     @include global.inner;
     height: 100%;
@@ -246,7 +259,7 @@ header {
   }
   //   이메일 훈련 솔루션 MCTS v3.1
   h2 {
-    color: var(--color-gr-front);
+    color: var(--color-gr-font);
     font-size: 16px;
   }
 }

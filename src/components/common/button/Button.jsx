@@ -5,6 +5,11 @@ import { useLocation } from "react-router-dom";
 function Button({ label, handlerClick, type, ...props }) {
   const location = useLocation();
   const pathname = location.pathname;
+  const isTemplatePgs =
+    pathname === "/phishing-templates" ||
+    pathname === "/mail-templates" ||
+    pathname === "/warning-templates" ||
+    pathname === "/education-templates";
   const btn = (() => {
     if (label === "엑셀다운") {
       return {
@@ -42,7 +47,7 @@ function Button({ label, handlerClick, type, ...props }) {
         btnStyle: styles.point_color,
       };
     } else if (label === "수정") {
-      if (pathname === "/mail-templates") {
+      if (isTemplatePgs) {
         return {
           img: "/images/participant_modify.svg",
           btnStyle: styles.point_color,
@@ -58,7 +63,7 @@ function Button({ label, handlerClick, type, ...props }) {
         btnStyle: styles.gr_color,
       };
     } else if (label === "삭제") {
-      if (pathname === "/mail-templates") {
+      if (isTemplatePgs) {
         return {
           img: "/images/templates_X.svg",
           btnStyle: styles.delete,
@@ -68,6 +73,15 @@ function Button({ label, handlerClick, type, ...props }) {
           btnStyle: styles.delete,
         };
       }
+    } else if (label?.includes("선택하기")) {
+      return {
+        img: "/images/btn_select.svg",
+        btnStyle: "",
+      };
+    } else if (label === "취소") {
+      return {
+        btnStyle: styles.gr_color,
+      };
     }
 
     return {};
@@ -85,6 +99,14 @@ function Button({ label, handlerClick, type, ...props }) {
 
     case "template":
       typeStyle = styles.template;
+      break;
+
+    case "select":
+      typeStyle = styles.select;
+      break;
+
+    case "submit":
+      typeStyle = styles.submit;
       break;
 
     default:

@@ -1,0 +1,282 @@
+@use "../../assets/css/global.module.scss" as global;
+
+.section_box {
+  @include global.box;
+  width: 100%;
+  padding: 8px 40px 48px;
+}
+
+// 상단 저브 타이틀
+.sub_title_wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-border);
+
+  i {
+    width: 24px;
+    margin-right: 10px;
+  }
+  .sub_title {
+    font-weight: 600;
+    font-size: 20px;
+  }
+}
+
+// ---------------------------------------------------
+.content_wrapper {
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+.content {
+  margin-top: 32px;
+  display: flex;
+  width: 100%;
+  gap: 56px;
+
+  &.group_content {
+    width: calc(50% - 28px);
+    // width: 100%; //5개 이상이면
+
+    .select_box {
+      gap: 10px;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  .content_left {
+    width: calc(100% / 2);
+  }
+  .content_right {
+    width: calc(100% / 2);
+  }
+}
+
+.content_item {
+  width: 100%;
+  display: flex;
+}
+
+.input,
+.date_input_wrapper {
+  width: calc(100% - 81px);
+}
+
+.select_wrapper {
+  width: 100%;
+}
+
+// 미실행 실행
+.check_box_wrapper {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 81px);
+
+  .check_box_item {
+    display: flex;
+    span {
+      margin: 0 24px 0 10px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+// ----------------------------------------------------
+// 훈련명 메일템플릿 등
+
+.label {
+  font-size: 16px;
+  display: flex;
+  width: 81px;
+  height: 44px;
+  align-items: center;
+  margin-right: 24px;
+
+  // 필수
+  .required_mark {
+    position: relative;
+    &::after {
+      content: "*";
+      display: inline-block;
+      position: absolute;
+      color: var(--color-red);
+      width: 10px;
+      height: 10px;
+      top: -3px;
+      right: -12px;
+      font-weight: 600;
+      font-size: 16px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+  }
+}
+
+.caption {
+  @include global.caption_font;
+  @include global.flex_center(end, center);
+}
+
+// -----------
+.template_section_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+// 타이틀
+.label_group {
+  display: flex;
+}
+
+// -------------
+// select 박스 회색 영역
+.select_box_wrapper {
+  width: 100%;
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+  background-color: var(--color-gr-box);
+
+  // data 없을 경우
+  .empty {
+    width: 100%;
+    @include global.flex_center;
+    color: var(--color-gr-font);
+    padding-bottom: 20px;
+  }
+
+  // 랜덤발송
+  .option {
+    margin-bottom: 12px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+
+    i {
+      margin-left: 4px;
+    }
+
+    span {
+      margin-left: 10px;
+    }
+  }
+
+  // ul 리스트 틀
+  .select_box {
+    gap: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+// ===========================
+
+// li
+.selected_item {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid var(--color-border);
+
+  .item_content {
+    gap: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .thumb {
+      width: 56px;
+      height: 56px;
+      background-color: var(--color-gr-box);
+      border-radius: 4px;
+    }
+
+    .thumb_info {
+      width: calc(100% - 56px - 20px);
+
+      .thumb_title {
+        font-weight: 600;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+
+        .tag {
+          @include global.tag;
+        }
+      }
+
+      .prev_btn {
+        margin-top: 3px;
+        font-size: 13px;
+        color: var(--color-gr-font);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-color: var(--color-border);
+        margin-bottom: 7px;
+      }
+    }
+  }
+  .right_icon {
+    width: 20px;
+    height: 20px;
+    background-color: #979797;
+    border-radius: 999px;
+    @include global.flex_center;
+  }
+
+  &.participant {
+    // width: calc(50% - 5px); //5개 이상이면
+    padding: 8px 16px;
+
+    .item_content {
+      width: calc(100% - 30px);
+      justify-content: start;
+      gap: 0;
+
+      .item_icon {
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-gr-box);
+        border-radius: 4px;
+        @include global.flex_center;
+      }
+
+      .item_text {
+        margin-left: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        max-width: calc(100% - 150px);
+        @include global.ellipsis;
+      }
+
+      .tag {
+        @include global.tag;
+        @include global.flex_center;
+      }
+    }
+  }
+}
+
+// 제출 버튼
+.submit_btn_wrapper {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 0;
+  border-top: 1px solid var(--color-border);
+  margin-top: 20px;
+}

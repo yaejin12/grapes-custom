@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "../table.module.scss";
-import SearchInput from "../../../input/SearchInput";
+
 import SelectBox from "../../../common/selectBox/SelectBox";
 import Button from "../../../common/button/Button";
+import SearchInput from "../../../common/input/SearchInput";
 export default function TableToolbar({}) {
   return (
     <div className={styles.toolbar_wrapper}>

@@ -1,0 +1,24 @@
+@use "../../assets/css/global.module.scss" as global;
+
+.filter_wrapper {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+
+  li {
+    padding: 9px 24px;
+    min-width: 87px;
+    font-size: 15px;
+    @include global.flex_center;
+    border-radius: 999px;
+    background-color: var(--color-point-sub-2);
+    color: var(--color-point);
+    cursor: pointer;
+
+    &.action {
+      color: #fff;
+      background-color: var(--color-point);
+    }
+  }
+}

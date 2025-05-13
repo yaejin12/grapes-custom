@@ -1,0 +1,70 @@
+.search_input_wrapper {
+  height: 44px;
+  padding: 8px 20px;
+  border: 1.4px solid var(--color-gr-1);
+  border-radius: 999px;
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  input {
+    flex: 1;
+    color: var(--color-gr-font);
+  }
+
+  button {
+    width: 20px;
+    height: auto;
+  }
+}
+
+.common_input {
+  background-color: var(--color-gr-box);
+  padding: 8px 16px;
+  font-size: 14px;
+  width: 100%;
+  height: 44px;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: var(--color-gr-font);
+  }
+
+  &.date {
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    background: url("../../../../public/images/input_date.svg") no-repeat
+      calc(100% - 16px) 10px;
+
+    // ✅ 크롬/엣지 등에서 기본 아이콘 제거
+    &::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+  }
+}
+
+.error {
+  font-size: 13px;
+  color: var(--color-red);
+  margin-top: 6px;
+  padding-left: 5px;
+}
+
+//훈련기간
+.input_date_wrapper {
+  width: 100%;
+  display: flex;
+  gap: 8px;
+
+  .input_date {
+    width: 100%;
+  }
+
+  span {
+    &:nth-child(2) {
+      display: inline-block;
+      margin-top: 13px;
+    }
+  }
+}

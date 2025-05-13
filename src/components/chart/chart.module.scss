@@ -19,7 +19,7 @@
   .value {
     width: 92px;
     font-size: 14px;
-    color: var(--color-gr-front);
+    color: var(--color-gr-font);
 
     span {
       font-size: 20px;
@@ -32,7 +32,7 @@
 
   .bar_tooltip_label {
     margin-bottom: 4px;
-    color: var(--color-gr-front);
+    color: var(--color-gr-font);
     font-size: 13px;
     font-weight: 600;
   }
@@ -46,7 +46,7 @@
     width: 110px;
     .label {
       font-size: 12px;
-      color: var(--color-gr-front);
+      color: var(--color-gr-font);
       margin-bottom: 6px;
     }
 
