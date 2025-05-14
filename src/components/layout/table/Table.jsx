@@ -34,8 +34,17 @@ function Table({ data, header, onClick, tStyle }) {
                 {col?.key === "index" && <span>{i + 1}</span>}
                 {col?.key === "actions" && (
                   <div className={styles.item_btn_wrapper}>
-                    <Button label={"수정"} type={"table"} />
-                    <Button label={"삭제"} type={"table"} />
+                    <Button
+                      btn={{
+                        label: "수정",
+                        style: "modify",
+                      }}
+                      type={"table"}
+                    />
+                    <Button
+                      btn={{ label: "삭제", style: "delete" }}
+                      type={"table"}
+                    />
                   </div>
                 )}
                 {col.key !== "index" && col.key !== "actions" && (

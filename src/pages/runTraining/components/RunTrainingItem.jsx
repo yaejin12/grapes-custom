@@ -49,10 +49,18 @@ function RunTrainingItem({ styles, data }) {
           </ul>
         </NavLink>
         <div className={styles.item_btn_wrapper}>
-          <Button label={"즉시발송"} type={"run"} />
-          <Button label={"수정"} type={"template"} />
-          {/* <Button label={"일시정지"} type={"run"} disabled={true} />
-          <Button label={"다시발송"} type={"run"} disabled={true} /> */}
+          <Button
+            btn={{ label: "즉시발송", style: "point_color" }}
+            type={"run"}
+          />
+          <Button
+            btn={{
+              label: "수정",
+              img: "/images/participant_modify.svg",
+              style: "point_color",
+            }}
+            type={"template"}
+          />
         </div>
       </li>
       {/* [e] item */}

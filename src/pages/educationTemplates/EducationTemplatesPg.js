@@ -10,10 +10,14 @@ function EducationTemplatesPg({}) {
     return [
       {
         label: "신규등록",
+        img: "/images/templates_add.svg",
+        style: "point_color",
         handler: "",
       },
       {
         label: "파일 업로드",
+        img: "/images/file_upload.svg",
+        style: "gr_color",
         handler: "",
       },
     ];

@@ -8,7 +8,7 @@ function StatusBar({ data, style }) {
 
   useEffect(() => {
     const timeout = setTimeout(() => {
-      setPercent(60);
+      setPercent(50);
     }, 100);
 
     return () => clearTimeout(timeout); // 클린업
@@ -21,7 +21,7 @@ function StatusBar({ data, style }) {
         </p>
         <div className={styles.tag_wrapper}>
           <span className={`${styles.tag} ${styles.ing}`}>{"훈련중"}</span>
-          <span className={styles.percent}>50%</span>
+          {style === "detail" && <span className={styles.percent}>50%</span>}
         </div>
       </div>
       {/* status bor */}

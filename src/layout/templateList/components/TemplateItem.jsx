@@ -84,9 +84,30 @@ function TemplateItem({ styles, data }) {
           </ul>
         )}
         <div className={styles.item_btn_wrapper}>
-          <Button label={"수정"} type={"template"} />
-          <Button label={"복사"} type={"template"} />
-          <Button label={"삭제"} type={"template"} />
+          <Button
+            btn={{
+              label: "수정",
+              img: "/images/participant_modify.svg",
+              style: "point_color",
+            }}
+            type={"template"}
+          />
+          <Button
+            btn={{
+              label: "복사",
+              img: "/images/template_copy.svg",
+              style: "gr_color",
+            }}
+            type={"template"}
+          />
+          <Button
+            btn={{
+              label: "삭제",
+              img: "/images/templates_X.svg",
+              style: "delete",
+            }}
+            type={"template"}
+          />
         </div>
       </li>
       {/* [e] item */}

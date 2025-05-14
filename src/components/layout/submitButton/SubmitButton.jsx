@@ -4,9 +4,9 @@ import Button from "../../common/button/Button";
 function SubmitButton() {
   return (
     <div className={styles.submit_btn}>
-      <Button label={"취소"} type={"submit"} />
+      <Button btn={{ label: "취소", style: "gr_color" }} type={"submit"} />
 
-      <Button label={"제출"} type={"submit"} />
+      <Button btn={{ label: "제출" }} type={"submit"} />
     </div>
   );
 }

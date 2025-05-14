@@ -2,103 +2,9 @@ import React from "react";
 import styles from "./button.module.scss";
 import { useLocation } from "react-router-dom";
 
-function Button({ label, handlerClick, type, disabled, ...props }) {
+function Button({ btn, handlerClick, type, disabled, ...props }) {
   const location = useLocation();
   const pathname = location.pathname;
-  const isTemplatePgs =
-    pathname === "/phishing-templates" ||
-    pathname === "/mail-templates" ||
-    pathname === "/warning-templates" ||
-    pathname === "/education-templates";
-
-  const btn = (() => {
-    if (label === "엑셀다운") {
-      return {
-        img: "/images/table_download.svg",
-        btnStyle: "",
-      };
-    } else if (label === "출력하기") {
-      return {
-        img: "/images/table_printer.svg",
-        btnStyle: styles.printer,
-      };
-    } else if (label === "대상자 신규등록") {
-      return {
-        img: "/images/participant_group_add.svg",
-        btnStyle: styles.point_color,
-      };
-    } else if (label === "부서별 랜덤등록") {
-      return {
-        img: "/images/participant_group_random_add.svg",
-        btnStyle: styles.dark_point_color,
-      };
-    } else if (label === "신규등록") {
-      return {
-        img: "/images/templates_add.svg",
-        btnStyle: styles.point_color,
-      };
-    } else if (label === "엑셀파일 업로드" || label === "파일 업로드") {
-      return {
-        img: "/images/file_upload.svg",
-        btnStyle: styles.gr_color,
-      };
-    } else if (label === "수정하기") {
-      return {
-        img: "/images/participant_modify.svg",
-        btnStyle: styles.point_color,
-      };
-    } else if (label === "수정") {
-      if (isTemplatePgs) {
-        return {
-          img: "/images/participant_modify.svg",
-          btnStyle: styles.point_color,
-        };
-      } else {
-        return {
-          btnStyle: styles.modify,
-        };
-      }
-    } else if (label === "복사") {
-      return {
-        img: "/images/template_copy.svg",
-        btnStyle: styles.gr_color,
-      };
-    } else if (label === "삭제") {
-      if (isTemplatePgs) {
-        return {
-          img: "/images/templates_X.svg",
-          btnStyle: styles.delete,
-        };
-      } else {
-        return {
-          btnStyle: styles.delete,
-        };
-      }
-    } else if (label?.includes("선택하기")) {
-      return {
-        img: "/images/btn_select.svg",
-        btnStyle: "",
-      };
-    } else if (label === "취소") {
-      return {
-        btnStyle: styles.gr_color,
-      };
-    } else if (label === "즉시발송") {
-      return {
-        btnStyle: styles.point_color,
-      };
-    } else if (label === "일시정지") {
-      return {
-        btnStyle: styles.gr_color,
-      };
-    } else if (label === "다시발송") {
-      return {
-        btnStyle: styles.replay,
-      };
-    }
-
-    return {};
-  })();
 
   let typeStyle;
   switch (type) {
@@ -130,17 +36,18 @@ function Button({ label, handlerClick, type, disabled, ...props }) {
       typeStyle = "";
       break;
   }
+
   return (
     <button
-      className={`${styles.btn} ${typeStyle} ${btn?.btnStyle} ${
+      className={`${styles.btn} ${typeStyle} ${styles[btn?.style] || ""} ${
         disabled ? styles.disabled : ""
       } `}
       onClick={handlerClick}
       disabled={disabled}
       {...props}
     >
-      {label}
-      {btn?.img && <img src={btn?.img} alt={label}></img>}
+      {btn?.label}
+      {btn?.img && <img src={btn?.img} alt={btn?.label}></img>}
     </button>
   );
 }

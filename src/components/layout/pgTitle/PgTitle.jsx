@@ -10,10 +10,7 @@ function PgTitle({ h3, children, btn }) {
       <div className={styles.pg_title_wrapper}>
         <h3>{h3}</h3>
         <div className={styles.pg_btn_wrapper}>
-          {btn &&
-            btn?.map((btnItem) => (
-              <Button label={btnItem?.label} type={"add"} />
-            ))}
+          {btn && btn?.map((btnItem) => <Button btn={btnItem} type={"add"} />)}
         </div>
       </div>
       {children}

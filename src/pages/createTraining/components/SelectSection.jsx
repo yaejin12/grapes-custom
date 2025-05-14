@@ -28,7 +28,7 @@ function SelectSection({
           {/* 템플릿 선택 */}
           <Button
             type={"select"}
-            label={`${label} 선택하기`}
+            btn={{ label: `${label} 선택하기`, img: "/images/btn_select.svg" }}
             onClick={onClickBtn}
           />
         </div>

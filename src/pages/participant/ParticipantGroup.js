@@ -104,14 +104,20 @@ function ParticipantGroup() {
       return [
         {
           label: "대상자 신규등록",
+          img: "/images/participant_group_add.svg",
+          style: "point_color",
           handler: "",
         },
         {
           label: "부서별 랜덤등록",
+          img: "/images/participant_group_random_add.svg",
+          style: "dark_point_color",
           handler: "",
         },
         {
           label: "엑셀파일 업로드",
+          img: "/images/file_upload.svg",
+          style: "gr_color",
           handler: "",
         },
       ];
@@ -119,6 +125,8 @@ function ParticipantGroup() {
     return [
       {
         label: "수정하기",
+        img: "/images/participant_modify.svg",
+        style: "point_color",
         handler: "",
       },
     ];
