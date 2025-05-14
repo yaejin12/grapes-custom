@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../layout.module.scss";
+import styles from "./trainingInfo.module.scss";
 import SelectedItemBox from "../selectedItemBox/SelectedItemBox";
 
 function TrainingInfo({}) {

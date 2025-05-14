@@ -121,12 +121,14 @@ function Aside({ styles }) {
               actionLnbItem === "run" ? styles.btn_direct_action : ""
             }`}
           >
-            <button onClick={() => toggleAccordionItem("run")}>
-              <i>
-                <img src="/images/menu_start.svg" alt=""></img>
-              </i>
-              <p>훈련실행</p>
-            </button>
+            <NavLink to={"/run-training"}>
+              <button onClick={() => toggleAccordionItem("run")}>
+                <i>
+                  <img src="/images/menu_start.svg" alt=""></img>
+                </i>
+                <p>훈련실행</p>
+              </button>
+            </NavLink>
           </div>
           {/* [e] lnb item */}
           {/* [s] lnb item */}

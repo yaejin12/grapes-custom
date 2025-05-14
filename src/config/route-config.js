@@ -8,6 +8,7 @@ import PhishingTemplatesPg from "../pages/phishingTemplates/PhishingTemplatesPg"
 import WarningTemplatesPg from "../pages/warningTemplates/WarningTemplatesPg";
 import EducationTemplatesPg from "../pages/educationTemplates/EducationTemplatesPg";
 import CreateTrainingPg from "../pages/createTraining/CreateTrainingPg";
+import RunTrainingPg from "../pages/runTraining/RunTrainingPg";
 
 export const router = createBrowserRouter([
   {
@@ -57,6 +58,12 @@ export const router = createBrowserRouter([
       {
         path: "create-training",
         element: <CreateTrainingPg />,
+        children: [],
+      },
+      // 훈련실행
+      {
+        path: "run-training",
+        element: <RunTrainingPg />,
         children: [],
       },
     ],

@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./button.module.scss";
 import { useLocation } from "react-router-dom";
 
-function Button({ label, handlerClick, type, ...props }) {
+function Button({ label, handlerClick, type, disabled, ...props }) {
   const location = useLocation();
   const pathname = location.pathname;
   const isTemplatePgs =
@@ -10,6 +10,7 @@ function Button({ label, handlerClick, type, ...props }) {
     pathname === "/mail-templates" ||
     pathname === "/warning-templates" ||
     pathname === "/education-templates";
+
   const btn = (() => {
     if (label === "엑셀다운") {
       return {
@@ -82,6 +83,18 @@ function Button({ label, handlerClick, type, ...props }) {
       return {
         btnStyle: styles.gr_color,
       };
+    } else if (label === "즉시발송") {
+      return {
+        btnStyle: styles.point_color,
+      };
+    } else if (label === "일시정지") {
+      return {
+        btnStyle: styles.gr_color,
+      };
+    } else if (label === "다시발송") {
+      return {
+        btnStyle: styles.replay,
+      };
     }
 
     return {};
@@ -101,6 +114,10 @@ function Button({ label, handlerClick, type, ...props }) {
       typeStyle = styles.template;
       break;
 
+    case "run":
+      typeStyle = styles.run;
+      break;
+
     case "select":
       typeStyle = styles.select;
       break;
@@ -115,8 +132,11 @@ function Button({ label, handlerClick, type, ...props }) {
   }
   return (
     <button
-      className={`${styles.btn} ${typeStyle} ${btn?.btnStyle} `}
+      className={`${styles.btn} ${typeStyle} ${btn?.btnStyle} ${
+        disabled ? styles.disabled : ""
+      } `}
       onClick={handlerClick}
+      disabled={disabled}
       {...props}
     >
       {label}
