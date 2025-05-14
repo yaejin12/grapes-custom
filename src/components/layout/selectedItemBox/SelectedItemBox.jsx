@@ -27,7 +27,10 @@ function SelectedItemBox({ title }) {
             <div className={styles.item_icon}>
               <img src={icon?.item_icon} alt="" />
             </div>
-            <div className={styles.item_text}>광주시청 전직원</div>
+            <div className={styles.item_text}>
+              광주시청 전직원광주시청 전직원 광주시청 전직원 광주시청 전직원
+              광주시청 전직원 광주시청 전직원
+            </div>
           </div>
           <button className={styles.right_icon}>
             <img src={icon?.right_icon} alt="" />

@@ -137,12 +137,14 @@ function Aside({ styles }) {
               actionLnbItem === "res" ? styles.btn_direct_action : ""
             }`}
           >
-            <button onClick={() => toggleAccordionItem("res")}>
-              <i>
-                <img src="/images/menu_result.svg" alt=""></img>
-              </i>
-              <p>훈련결과</p>
-            </button>
+            <NavLink to={"/result-training"}>
+              <button onClick={() => toggleAccordionItem("res")}>
+                <i>
+                  <img src="/images/menu_result.svg" alt=""></img>
+                </i>
+                <p>훈련결과</p>
+              </button>
+            </NavLink>
           </div>
           {/* [e] lnb item */}
           {/* [s] lnb item */}

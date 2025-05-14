@@ -9,6 +9,8 @@ import WarningTemplatesPg from "../pages/warningTemplates/WarningTemplatesPg";
 import EducationTemplatesPg from "../pages/educationTemplates/EducationTemplatesPg";
 import CreateTrainingPg from "../pages/createTraining/CreateTrainingPg";
 import RunTrainingPg from "../pages/runTraining/RunTrainingPg";
+import RunTrainingDetailPg from "../pages/runTraining/RunTrainingDetailPg";
+import ResultTrainingPg from "./../pages/resultTraining/ResultTrainingPg";
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +66,18 @@ export const router = createBrowserRouter([
       {
         path: "run-training",
         element: <RunTrainingPg />,
+        children: [
+          // 상세보기
+          {
+            path: ":id",
+            element: <RunTrainingDetailPg />,
+          },
+        ],
+      },
+      // 훈련결과
+      {
+        path: "result-training",
+        element: <ResultTrainingPg />,
         children: [],
       },
     ],

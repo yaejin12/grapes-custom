@@ -1,0 +1,36 @@
+@use "../../../assets/css/global.module.scss" as global;
+
+.tab_wrapper {
+  width: 100%;
+  display: flex;
+
+  .tab_item {
+    flex: 1;
+    @include global.flex_center;
+
+    border-bottom: 2px solid var(--color-point);
+    background-color: var(--color-gr-box);
+    font-size: 12px;
+
+    .tab_btn {
+      padding: 12px;
+      color: var(--color-gr-font-sub-title);
+      font-weight: 400;
+      width: 100%;
+      height: 100%;
+    }
+
+    &.action {
+      background-color: #fff;
+      border: 2px solid var(--color-point);
+      border-bottom: none;
+
+      .tab_btn {
+        font-weight: 700;
+        width: 100%;
+        height: 100%;
+        color: var(--color-point);
+      }
+    }
+  }
+}

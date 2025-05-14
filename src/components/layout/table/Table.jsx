@@ -3,18 +3,20 @@ import styles from "./table.module.scss";
 import { useLocation, useParams } from "react-router-dom";
 import Button from "../../common/button/Button";
 
-function Table({ data, header, onClick }) {
+function Table({ data, header, onClick, tStyle }) {
   const location = useLocation();
   const pathname = location.pathname;
 
   const customTableStyle = () => {
-    if (pathname === "/participant-group") {
+    if (pathname === "/participant-group")
       return styles.participant_group_table;
-    }
-    if (pathname.startsWith("/participant-group/")) {
+
+    if (pathname.startsWith("/participant-group/"))
       return styles.participant_table;
-    }
-    return "";
+
+    if (tStyle === "run_training") return styles.run_training;
+
+    if (tStyle === "run_education") return styles.run_education;
   };
 
   return (
