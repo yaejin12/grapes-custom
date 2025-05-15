@@ -6,7 +6,6 @@ import CustomBarChart from "../../../components/chart/barChart/CustomBarChart";
 import PieChartNum from "../../../components/chart/pieChart/PieChartNum";
 import CustomPieChart from "../../../components/chart/pieChart/CustomPieChart";
 import DashboardSelectBox from "../../../components/common/selectBox/DashboardSelectBox";
-import SelectedItemBox from "../../../components/layout/selectedItemBox/SelectedItemBox";
 import TrainingInfo from "../../../components/layout/trainingInfo/TrainingInfo";
 
 function LiveStatusPg() {

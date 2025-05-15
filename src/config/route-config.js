@@ -11,6 +11,7 @@ import CreateTrainingPg from "../pages/createTraining/CreateTrainingPg";
 import RunTrainingPg from "../pages/runTraining/RunTrainingPg";
 import RunTrainingDetailPg from "../pages/runTraining/RunTrainingDetailPg";
 import ResultTrainingPg from "./../pages/resultTraining/ResultTrainingPg";
+import ResultDetailPg from "../pages/resultTraining/ResultDetailPg";
 
 export const router = createBrowserRouter([
   {
@@ -78,7 +79,13 @@ export const router = createBrowserRouter([
       {
         path: "result-training",
         element: <ResultTrainingPg />,
-        children: [],
+        children: [
+          // 상세보기
+          {
+            path: ":id",
+            element: <ResultDetailPg />,
+          },
+        ],
       },
     ],
   },

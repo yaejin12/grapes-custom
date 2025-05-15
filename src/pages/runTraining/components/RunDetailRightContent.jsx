@@ -3,7 +3,7 @@ import TableToolbar from "../../../components/layout/table/components/TableToolb
 import Tab from "../../../components/common/tab/Tab";
 import Table from "../../../components/layout/table/Table";
 import { useLocation } from "react-router-dom";
-import { dummyData, dummyEData } from "../data";
+import { dummyData, dummyEData, runTableBtn } from "../data";
 
 function RunDetailRightContent({ styles }) {
   const pathname = useLocation().pathname;
@@ -59,7 +59,7 @@ function RunDetailRightContent({ styles }) {
   }, [activeTab]);
   return (
     <div className={styles.right_inner}>
-      <TableToolbar />
+      <TableToolbar btn={runTableBtn} />
       <div className={styles.tab_wrapper}>
         <Tab tabs={label} onClick={handlerTabClick} isActive={activeTab} />
       </div>

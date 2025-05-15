@@ -4,6 +4,7 @@ import styles from "../layout.module.scss";
 function StatNumItem({ label, num }) {
   let status;
   switch (label) {
+    case "신고서 제출 건수":
     case "훈련실시횟수":
       status = {
         icon: "/images/num_t.svg",

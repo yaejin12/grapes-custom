@@ -15,8 +15,8 @@ function Table({ data, header, onClick, tStyle }) {
       return styles.participant_table;
 
     if (tStyle === "run_training") return styles.run_training;
-
     if (tStyle === "run_education") return styles.run_education;
+    if (tStyle === "result") return styles.result;
   };
 
   return (

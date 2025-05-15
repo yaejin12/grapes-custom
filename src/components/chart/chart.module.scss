@@ -71,6 +71,8 @@
     }
 
     &.violation {
+      width: auto;
+
       .circle {
         background-color: var(--color-red);
       }

@@ -4,37 +4,20 @@
 .info_content_wrapper {
   padding-top: 24px;
 }
+
+// 스크롤 영역
 .info_content {
   width: 100%;
-  font-size: 15px;
+  font-size: 14.4px;
   flex-direction: column;
   @include global.scrollbar(589px, 0);
-
-  i {
-    margin-right: 8px;
-    width: 16px;
-    display: flex;
-    align-items: center;
-  }
 
   // item
   .info_item {
     color: var(--color-gr-font-sub-title);
     display: flex;
     align-items: center;
-    margin-bottom: 14px;
-
-    .label {
-      display: inline-block;
-      font-weight: 600;
-      min-width: 60px;
-      margin-right: 20px;
-    }
-
-    .label_wrapper {
-      display: flex;
-      width: 100%;
-    }
+    margin-bottom: 16px;
 
     .value {
       font-weight: 400;
@@ -42,7 +25,7 @@
       @include global.ellipsis;
 
       .tag {
-        font-size: 13px;
+        font-size: 12px;
         line-height: 1;
         display: inline-block;
         padding: 7px 12px;
@@ -78,12 +61,91 @@
           padding: 5px 8px;
           background-color: var(--color-point);
           color: #fff;
-          font-size: 13px;
+          font-size: 12px;
           line-height: 1;
 
           border-radius: 4px;
         }
       }
+    }
+  }
+}
+
+.label_wrapper {
+  display: flex;
+
+  i {
+    margin-right: 8px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    display: inline-block;
+    font-weight: 600;
+    min-width: 60px;
+    margin-right: 20px;
+  }
+}
+
+// ----------------------------------------------------
+// [s] selectedItemBox
+.selected_item_box {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+
+  border-radius: 8px;
+  background-color: var(--color-gr-box);
+
+  .selected_list {
+    width: 100%;
+    padding-right: 8px;
+    @include global.scrollbar;
+  }
+
+  .selected_item {
+    width: 100%;
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 8px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .item_content {
+      display: flex;
+      align-items: center;
+      width: calc(100% - 20px);
+
+      .item_icon {
+        width: 20px;
+        height: 20px;
+        background-color: var(--color-gr-box);
+        border-radius: 4px;
+        @include global.flex_center;
+      }
+
+      .item_text {
+        margin-left: 10px;
+        font-weight: 600;
+        font-size: 14px;
+        width: calc(100% - 100px);
+        @include global.ellipsis;
+      }
+    }
+
+    .right_icon {
+      width: 20px;
+      height: auto;
+      @include global.flex_center;
     }
   }
 }

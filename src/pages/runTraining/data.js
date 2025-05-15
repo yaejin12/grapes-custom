@@ -223,3 +223,15 @@ export const dummyEData = [
     status: "완료",
   },
 ];
+
+export const runTableBtn = [
+  {
+    label: "대상자 그룹 필터링",
+    img: "/images/tool_filter.svg",
+  },
+  {
+    label: "미발송자 재발송",
+    img: "/images/tool_ccw.svg",
+    style: "printer",
+  },
+];

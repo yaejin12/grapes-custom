@@ -1,8 +1,5 @@
 import React from "react";
 import styles from "./runTraining.module.scss";
-import TrainingInfo from "./../../components/layout/trainingInfo/TrainingInfo";
-import StatusBar from "./components/StatusBar";
-import TableToolbar from "../../components/layout/table/components/TableToolbar";
 import RunDetailLeftContent from "./components/RunDetailLeftContent";
 import RunDetailRightContent from "./components/RunDetailRightContent";
 
@@ -13,7 +10,7 @@ function RunTrainingDetailPg({ data }) {
         <RunDetailLeftContent styles={styles} />
       </div>
       <div className={styles.right_wrapper}>
-    <RunDetailRightContent styles={styles}/>
+        <RunDetailRightContent styles={styles} />
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Bar,
   BarChart,
@@ -9,8 +9,11 @@ import {
   YAxis,
 } from "recharts";
 import ChartCustomTooltip from "./components/ChartCustomTooltip";
+import { useLocation } from "react-router-dom";
 
 function CustomBarChart({}) {
+  const pathname = useLocation().pathname;
+  const isResultDetailPg = pathname.startsWith("/result-training");
   const data = [
     {
       name: "메일열람",
@@ -51,13 +54,13 @@ function CustomBarChart({}) {
   ];
 
   return (
-    <ResponsiveContainer width="100%" height={393}>
+    <ResponsiveContainer width="100%" height={isResultDetailPg ? 300 : 393}>
       {/* BarChart - 차트 전체를 감싸는 */}
       <BarChart
         data={data}
         barCategoryGap={10}
         barGap={0}
-        barSize={56}
+        barSize={isResultDetailPg ? 43 : 56}
         height={361}
       >
         {/*  격자선 (가로선만, 세로선 제거) */}

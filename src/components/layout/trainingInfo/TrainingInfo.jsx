@@ -1,21 +1,20 @@
 import React from "react";
 import styles from "./trainingInfo.module.scss";
-import SelectedItemBox from "../selectedItemBox/SelectedItemBox";
+
+import Label from "./components/Label";
+import SelectedItemBox from "./components/SelectedItemBox";
 
 function TrainingInfo({}) {
   const trainingInfoText = [
     {
-      img: "/images/info_t_name.svg",
       label: "훈련명",
       key: "name",
     },
     {
-      img: "/images/info_calendar.svg",
       label: "훈련기간",
       key: "tDate",
     },
     {
-      img: "/images/info_calendar.svg",
       label: "교육기간",
       key: "name",
     },
@@ -32,19 +31,13 @@ function TrainingInfo({}) {
         {/* [s] item */}
         {trainingInfoText?.map((item) => (
           <li className={styles.info_item}>
-            <i>
-              <img src={item?.img} loading="lazy" />
-            </i>
-            <div className={styles.label}>{item?.label}</div>
+            <Label label={item?.label} />
             <div className={styles.value}>{data[item?.key]}</div>
           </li>
         ))}
         {/* [s] item */}
         <li className={styles.info_item}>
-          <i>
-            <img src="/images/info_v.svg" loading="lazy" />
-          </i>
-          <div className={styles.label}>위반기준</div>
+          <Label label={"위반기준"} />
           <div className={styles.value}>
             {data?.v?.map((v) => (
               <span className={styles.tag}>{v}</span>
@@ -55,12 +48,7 @@ function TrainingInfo({}) {
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <div className={styles.info_item_title_wrapper}>
-            <div className={styles.label_wrapper}>
-              <i>
-                <img src="/images/info_user.svg" loading="lazy" />
-              </i>
-              <div className={styles.label}>대상자</div>
-            </div>
+            <Label label={"대상자"} />
           </div>
           <SelectedItemBox title={"대상자"} />
         </li>
@@ -68,12 +56,7 @@ function TrainingInfo({}) {
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <div className={styles.info_item_title_wrapper}>
-            <div className={styles.label_wrapper}>
-              <i>
-                <img src="/images/info_template.svg" loading="lazy" />
-              </i>
-              <div className={styles.label}>메일 템플릿</div>
-            </div>
+            <Label label={"메일 템플릿"} />
           </div>
           <SelectedItemBox title={"메일 템플릿"} />
         </li>
@@ -81,12 +64,7 @@ function TrainingInfo({}) {
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <div className={styles.info_item_title_wrapper}>
-            <div className={styles.label_wrapper}>
-              <i>
-                <img src="/images/info_template.svg" loading="lazy" />
-              </i>
-              <div className={styles.label}>경고 템플릿</div>
-            </div>
+            <Label label={"경고 템플릿"} />
             {<div className={styles.label_tag}>사고신고서</div>}
           </div>
           <SelectedItemBox title={"경고 템플릿"} />
@@ -95,13 +73,8 @@ function TrainingInfo({}) {
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <div className={styles.info_item_title_wrapper}>
-            <div className={styles.label_wrapper}>
-              <i>
-                <img src="/images/info_template.svg" loading="lazy" />
-              </i>
-              <div className={styles.label}>교육 템플릿</div>
-            </div>
-            {<div className={styles.label_tag}>사고신고서</div>}
+            <Label label={"교육"} />
+            {<div className={styles.label_tag}>교안</div>}
           </div>
           <SelectedItemBox title={"교육"} />
         </li>

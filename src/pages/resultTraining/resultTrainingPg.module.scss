@@ -1,0 +1,249 @@
+@use "../../assets/css/global.module.scss" as global;
+
+.section_box {
+  @include global.box;
+  width: 100%;
+  padding: 32px;
+
+  .content {
+    min-height: 738px;
+  }
+}
+
+.tool_bar_wrapper {
+  margin-bottom: 24px;
+}
+
+// --------------------------------------------
+// result_detail_section
+.result_detail_section {
+  .top_section {
+    display: flex;
+    gap: 20px;
+  }
+
+  .bottom_section {
+    margin-top: 20px;
+  }
+}
+
+.result_box_title {
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0;
+}
+
+// chart_wrapper
+.chart_wrapper {
+  width: 100%;
+  margin-top: 32px;
+}
+
+.chart_container_wrapper {
+  width: 100%;
+  display: flex;
+  gap: 64px;
+
+  //   왼쪽 바 그래프
+  .left_wrapper {
+    width: 50%;
+
+    .chart_box {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      padding: 35px 35px 25px;
+      margin-top: 20px;
+    }
+  }
+  //   오른쪽 바 그래프
+  .right_wrapper {
+    width: 50%;
+
+    .chart_box {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid var(--color-border);
+      padding: 23px 35px 23px;
+      margin-top: 20px;
+      display: flex;
+
+      .chart {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        padding-bottom: 13px;
+        // padding-right: 7px;
+      }
+      .info_box {
+        @include global.flex_center;
+        padding-right: 30px;
+
+        .chart_info {
+          width: 300px;
+          margin-left: 48px;
+          display: flex;
+          flex-direction: column;
+          gap: 13px;
+          padding-right: 20px;
+
+          .chart_info_sub_title {
+            font-size: 24px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+
+            span {
+              font-size: 29px;
+              color: var(--color-red);
+              margin-left: 12px;
+            }
+          }
+
+          .chart_info_table {
+            .chart_info_item {
+              width: 100%;
+              display: flex;
+              padding: 13px 8px;
+              border-bottom: 1px solid var(--color-border);
+              justify-content: space-between;
+              align-items: center;
+
+              .label {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                .icon {
+                  width: 28px;
+                  height: 28px;
+                  background-color: var(--color-gr-box);
+                  border-radius: 6px;
+                  @include global.flex_center;
+                }
+              }
+
+              .chart_num {
+                font-weight: 700;
+                font-size: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// 훈련정보
+.training_info_wrapper {
+  width: 100%;
+  margin: 48px 0 24px;
+
+  .training_info_title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    // 자세히 보기 버튼
+    .training_info_more_btn {
+      span {
+        margin-left: 4px;
+      }
+    }
+  }
+
+  // 더보기 시
+  .more_info_wrapper {
+    width: 100%;
+    margin-top: 12px;
+    background-color: var(--color-gr-box);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease;
+
+    .more_info_box {
+      width: 100%;
+      padding: 24px;
+      border-top: 1px solid var(--color-gr-1);
+      // border-bottom: 1px solid var(--color-gr-1);
+      .more_info_content {
+        background-color: #fff;
+        padding: 32px;
+
+        // more_info_top
+        .more_info_top {
+          ul {
+            display: flex;
+
+            width: 100%;
+            gap: 14px 40px;
+            flex-wrap: wrap;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--color-gr-box);
+
+            li.info_item {
+              @include global.flex_center(start, center);
+              width: calc((100% / 3) - 28px);
+
+              .label {
+                margin: 0 20px 0 8px;
+                width: 73px;
+              }
+
+              .value {
+                @include global.ellipsis;
+                display: flex;
+
+                .tag {
+                  font-size: 12px;
+                  line-height: 1;
+                  display: inline-block;
+                  padding: 7px 12px;
+                  font-weight: 700;
+                  border-radius: 999px;
+                  color: var(--color-point);
+                  background-color: var(--color-point-sub);
+                  margin-right: 6px;
+
+                  &:last-child {
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        // more_info_bottom
+        .more_info_bottom {
+          padding-top: 24px;
+          display: flex;
+          gap: 40px;
+          width: 100%;
+
+          .left_layout,
+          .right_layout {
+            width: calc((100% / 2) - 20px);
+
+            .layout_bottom {
+              margin-top: 24px;
+            }
+          }
+        }
+      }
+    }
+
+    &.action {
+      max-height: 700px;
+    }
+  }
+}
+
+// 훈련 테이블
+.table_list {
+  margin-top: 24px;
+}
