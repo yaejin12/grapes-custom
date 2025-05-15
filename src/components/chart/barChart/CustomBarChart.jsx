@@ -64,16 +64,12 @@ function CustomBarChart({}) {
         height={361}
       >
         {/*  격자선 (가로선만, 세로선 제거) */}
-        <CartesianGrid
-          // strokeDasharray="3 3" //점선
-          vertical={false}
-          stroke="#E4E4E4"
-        />
+        <CartesianGrid vertical={false} stroke="#E4E4E4" />
         {/* 막대 */}
         <Bar
           dataKey="pv"
           fill="var(--color-point)"
-          background={{ fill: "var(--color-point-2)" }}
+          background={{ fill: "var(--color-gr-5)" }}
           animationDuration={900}
           animationEasing="ease-out"
         />
@@ -86,7 +82,7 @@ function CustomBarChart({}) {
         <YAxis axisLine={false} tickLine={false} />
         {/* Tooltip - 호버 시 정보 표시 */}
         <Tooltip
-          content={<ChartCustomTooltip type={"bar"} />}
+          content={<ChartCustomTooltip />}
           cursor={{
             fill: "none",
           }}

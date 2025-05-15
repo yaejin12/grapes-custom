@@ -25,7 +25,7 @@
         right: -20px;
         top: 50%;
         transform: translateY(-50%);
-        background-color: var(--color-gr-stroke);
+        background-color: var(--color-border);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -51,7 +51,7 @@
       position: relative;
       @include global.flex_center;
       font-size: 15px;
-      color: var(--color-gr-font);
+      color: var(--color-gr-3);
       font-weight: 600;
       user-select: none;
 
@@ -64,7 +64,7 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-        background-color: var(--color-gr-stroke);
+        background-color: var(--color-border);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -159,7 +159,7 @@
 }
 
 // 훈련실행
-.run_training {
+.user_result {
   .cell {
     &:nth-child(1) {
       width: 8%;
@@ -194,7 +194,7 @@
   }
 }
 
-.run_education {
+.education_result {
   .cell {
     &:nth-child(1) {
       width: 13%;
@@ -213,6 +213,24 @@
     }
     &:nth-child(6) {
       width: 13%;
+    }
+  }
+}
+
+// 부서별 결과
+.dept_result {
+  .cell {
+    &:nth-child(1) {
+      flex: 1;
+    }
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8) {
+      width: 11.7%;
     }
   }
 }

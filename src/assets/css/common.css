@@ -16,23 +16,28 @@ body {
 
 /* 루트 */
 :root {
+  /* 기본색상 */
   --color-bk: #0d0d0d;
   --color-side: #1b2232;
   --color-border: #d7d7d7;
-  --color-point: #2f80ec;
-  --color-point-sub: #e0ecfc;
-  --color-point-sub-2: #eff5fe;
-  --color-gr-1: #4b5159;
-  --color-gr-font: #606060;
-  --color-gr-tag: #979797;
   --color-gr-box: #f3f3f3;
-  --color-gr-font-sub-title: #3a3a3a;
+
+  /* 포인트 색상 */
+  --color-point: #2f80ec;
+  --color-point-sub-1: #e0ecfc;
+  --color-point-sub-2: #eff5fe;
+  --color-purple: #712ee2;
+  --color-yellow: #f2be04;
+  --color-orange: #ff8800;
   --color-red: #ed4747;
   --color-red-2: #ffebeb;
-  --color-gr-stroke: #d7d7d7;
-  --color-point-2: #e0ecfc93;
-  --color-yellow: #f2be04;
-  --color-point-sb: #1b2232;
+
+  /* 회색 */
+  --color-gr-1: #3a3a3a;
+  --color-gr-2: #4b5159;
+  --color-gr-3: #606060;
+  --color-gr-4: #979797;
+  --color-gr-5: #e0ecfc93;
 
   /* 폰트 */
   --font-size-title: 19px;

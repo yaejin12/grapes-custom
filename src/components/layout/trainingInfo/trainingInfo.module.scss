@@ -10,11 +10,11 @@
   width: 100%;
   font-size: 14.4px;
   flex-direction: column;
-  @include global.scrollbar(589px, 0);
+  @include global.scrollbarY(589px, 0);
 
   // item
   .info_item {
-    color: var(--color-gr-font-sub-title);
+    color: var(--color-gr-1);
     display: flex;
     align-items: center;
     margin-bottom: 16px;
@@ -32,7 +32,7 @@
         font-weight: 700;
         border-radius: 999px;
         color: var(--color-point);
-        background-color: var(--color-point-sub);
+        background-color: var(--color-point-sub-1);
         margin-right: 6px;
 
         &:last-child {
@@ -102,7 +102,7 @@
   .selected_list {
     width: 100%;
     padding-right: 8px;
-    @include global.scrollbar;
+    @include global.scrollbarY;
   }
 
   .selected_item {
@@ -136,6 +136,7 @@
       .item_text {
         margin-left: 10px;
         font-weight: 600;
+        color: var(--color-gr-1);
         font-size: 14px;
         width: calc(100% - 100px);
         @include global.ellipsis;

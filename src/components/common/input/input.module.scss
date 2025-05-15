@@ -1,7 +1,7 @@
 .search_input_wrapper {
   height: 44px;
   padding: 8px 20px;
-  border: 1.4px solid var(--color-gr-1);
+  border: 1.4px solid var(--color-gr-2);
   border-radius: 999px;
   width: 400px;
   display: flex;
@@ -10,7 +10,7 @@
 
   input {
     flex: 1;
-    color: var(--color-gr-font);
+    color: var(--color-gr-3);
   }
 
   button {
@@ -28,7 +28,7 @@
   border-radius: 8px;
 
   &::placeholder {
-    color: var(--color-gr-font);
+    color: var(--color-gr-3);
   }
 
   &.date {

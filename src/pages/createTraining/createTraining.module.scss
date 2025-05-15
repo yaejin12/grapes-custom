@@ -146,7 +146,7 @@
   .empty {
     width: 100%;
     @include global.flex_center;
-    color: var(--color-gr-font);
+    color: var(--color-gr-3);
     padding-bottom: 20px;
   }
 
@@ -220,7 +220,7 @@
       .prev_btn {
         margin-top: 3px;
         font-size: 13px;
-        color: var(--color-gr-font);
+        color: var(--color-gr-3);
         text-decoration: underline;
         text-underline-offset: 3px;
         text-decoration-color: var(--color-border);

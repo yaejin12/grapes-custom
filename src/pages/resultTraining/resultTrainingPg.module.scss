@@ -27,10 +27,20 @@
   }
 }
 
+// 박스 타이틀
 .result_box_title {
   font-weight: 600;
   font-size: 20px;
   letter-spacing: 0;
+}
+
+// 박스 라인
+.chart_box {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  padding: 35px 35px 25px;
+  margin-top: 20px;
 }
 
 // chart_wrapper
@@ -47,14 +57,6 @@
   //   왼쪽 바 그래프
   .left_wrapper {
     width: 50%;
-
-    .chart_box {
-      width: 100%;
-      border-radius: 12px;
-      border: 1px solid var(--color-border);
-      padding: 35px 35px 25px;
-      margin-top: 20px;
-    }
   }
   //   오른쪽 바 그래프
   .right_wrapper {
@@ -168,8 +170,8 @@
     .more_info_box {
       width: 100%;
       padding: 24px;
-      border-top: 1px solid var(--color-gr-1);
-      // border-bottom: 1px solid var(--color-gr-1);
+      border-top: 1px solid var(--color-gr-2);
+      // border-bottom: 1px solid var(--color-gr-2);
       .more_info_content {
         background-color: #fff;
         padding: 32px;
@@ -206,7 +208,7 @@
                   font-weight: 700;
                   border-radius: 999px;
                   color: var(--color-point);
-                  background-color: var(--color-point-sub);
+                  background-color: var(--color-point-sub-1);
                   margin-right: 6px;
 
                   &:last-child {
@@ -246,4 +248,16 @@
 // 훈련 테이블
 .table_list {
   margin-top: 24px;
+}
+
+.dept_chart_container_wrapper {
+  width: 100%;
+
+  .chart_num_wrapper {
+    margin-bottom: 48px;
+  }
+
+  .chart_wrapper {
+    @include global.scrollbarX;
+  }
 }

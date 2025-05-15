@@ -7,14 +7,14 @@ import { dummyData, dummyEData, runTableBtn } from "../data";
 
 function RunDetailRightContent({ styles }) {
   const pathname = useLocation().pathname;
-  const [activeTab, setActive] = useState("training");
+  const [activeTab, setActive] = useState("user");
   const [data, setData] = useState(dummyData);
   const handlerTabClick = (tab) => {
     setActive(tab);
   };
 
   const tableHeader = (activeTab) => {
-    if (activeTab === "training") {
+    if (activeTab === "user") {
       return [
         { text: "이름", key: "name" },
         { text: "부서", key: "department" },
@@ -45,7 +45,7 @@ function RunDetailRightContent({ styles }) {
   const handlerTableItemClick = () => {};
 
   const label = [
-    { id: "training", label: "훈련" },
+    { id: "user", label: "훈련" },
     { id: "education", label: "교육" },
   ];
 
@@ -67,7 +67,7 @@ function RunDetailRightContent({ styles }) {
         <Table
           header={tableHeader(activeTab)}
           data={data}
-          tStyle={`run_${activeTab}`}
+          tStyle={`${activeTab}_result`}
           onClick={handlerTableItemClick}
         />
       </div>

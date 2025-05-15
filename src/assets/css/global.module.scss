@@ -19,19 +19,39 @@
 
 @mixin box_title {
   font-size: 22px;
-  color: var(--color-gr-font-sub-title);
+  color: var(--color-gr-1);
   font-weight: 600;
   padding-bottom: 12px;
   border-bottom: 1px solid #acacac;
   width: 100%;
 }
 
-@mixin scrollbar($max-height: calc((44px * 3) + 16px), $width: 6.5px) {
+@mixin scrollbarY($max-height: calc((44px * 3) + 16px), $width: 6.5px) {
   overflow-y: auto;
   max-height: $max-height;
 
   &::-webkit-scrollbar {
     width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #dfdfdf;
+    border-radius: 22px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #afafaf;
+    border-radius: 22px;
+  }
+}
+
+@mixin scrollbarX($max-width: 100%, $height: 6.5px) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: $max-width;
+  padding-bottom: 24px;
+  &::-webkit-scrollbar {
+    height: $height;
   }
 
   &::-webkit-scrollbar-track {
@@ -54,7 +74,7 @@
 
 @mixin caption_font {
   font-size: 13px;
-  color: var(--color-gr-font);
+  color: var(--color-gr-3);
 }
 
 @mixin tag {

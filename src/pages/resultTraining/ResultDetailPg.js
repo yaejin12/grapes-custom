@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./resultTrainingPg.module.scss";
 import StatNumItem from "../../components/layout/statNumItem/StatNumItem";
 import Tab from "../../components/common/tab/Tab";
@@ -6,11 +6,12 @@ import ChartContainer from "./components/ChartContainer";
 import TrainingInfo from "./components/TrainingInfo";
 import TableToolbar from "./../../components/layout/table/components/TableToolbar";
 import Table from "./../../components/layout/table/Table";
-import { dummyTrainingData } from "./data";
-import { dummyData } from "../runTraining/data";
+import { DepDummyData, dummyData } from "../runTraining/data";
+import DeptChart from "./components/DeptChart";
 
 function ResultDetailPg({}) {
   const [activeTab, setActionTab] = useState("user");
+  const [tableData, setTableData] = useState(dummyData);
   const label = [
     { id: "user", label: "참여자별" },
     { id: "dept", label: "부서별" },
@@ -35,18 +36,28 @@ function ResultDetailPg({}) {
       ];
     }
 
-    if (activeTab === "education") {
+    if (activeTab === "dept") {
       return [
-        { text: "이름", key: "name" },
         { text: "부서", key: "department" },
-        { text: "직책", key: "position" },
-        { text: "수신메일", key: "emailReceivedAt" },
-        { text: "이수결과", key: "result" },
-        { text: "발송현황", key: "status" },
+        { text: "인원수", key: "num" },
+        { text: "메일열람", key: "emailOpenedAt" },
+        { text: "링크클릭", key: "linkClickedAt" },
+        { text: "첨부파일 다운", key: "attachmentDownloadedAt" },
+        { text: "피싱입력", key: "phishingInputAt" },
+        { text: "신고서 제출", key: "reportSubmittedAt" },
+        { text: "교육이수", key: "educationCompletedAt" },
       ];
     }
     return [];
   };
+
+  useEffect(() => {
+    if (activeTab === "dept") {
+      setTableData(DepDummyData);
+    } else {
+      setTableData(dummyData);
+    }
+  }, [activeTab]);
 
   return (
     <div className={styles.result_detail_section}>
@@ -65,7 +76,11 @@ function ResultDetailPg({}) {
           {/* tab 변경되어야함 */}
           {/* 그래프 부분 */}
           <div className={styles.chart_wrapper}>
-            <ChartContainer styles={styles} />
+            {activeTab === "user" ? (
+              <ChartContainer styles={styles} />
+            ) : (
+              <DeptChart styles={styles} />
+            )}
           </div>
           {/* 훈련정보 */}
           <div className={styles.training_info_wrapper}>
@@ -77,7 +92,7 @@ function ResultDetailPg({}) {
             <div className={styles.table_list}>
               <Table
                 header={tableHeader(activeTab)}
-                tStyle={"run_training"}
+                tStyle={`${activeTab}_result`}
                 data={dummyData}
               />
             </div>

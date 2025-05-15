@@ -8,12 +8,12 @@ select {
     calc(100% - 20px);
   background-color: #ffff;
   font-size: 16px;
-  color: var(--color-gr-font);
+  color: var(--color-gr-3);
 }
 
 .common_select {
   padding: 10px 12px;
-  border: 1px solid var(--color-gr-stroke);
+  border: 1px solid var(--color-border);
   background: url("../../../../public/images/select_box_dash.svg") no-repeat
     calc(100% - 12px);
   font-size: 14px;

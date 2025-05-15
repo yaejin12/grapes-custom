@@ -235,3 +235,39 @@ export const runTableBtn = [
     style: "printer",
   },
 ];
+
+
+// 
+
+export const DepDummyData = [
+  {
+    department: "보안팀",
+    num: 5,
+    emailOpenedAt: "O",
+    linkClickedAt: "O",
+    attachmentDownloadedAt: "X",
+    phishingInputAt: "X",
+    reportSubmittedAt: "O",
+    educationCompletedAt: "O",
+  },
+  {
+    department: "개발팀",
+    num: 12,
+    emailOpenedAt: "X",
+    linkClickedAt: "X",
+    attachmentDownloadedAt: "X",
+    phishingInputAt: "O",
+    reportSubmittedAt: "X",
+    educationCompletedAt: "X",
+  },
+  {
+    department: "인사팀",
+    num: 8,
+    emailOpenedAt: "O",
+    linkClickedAt: "O",
+    attachmentDownloadedAt: "O",
+    phishingInputAt: "O",
+    reportSubmittedAt: "O",
+    educationCompletedAt: "O",
+  },
+];

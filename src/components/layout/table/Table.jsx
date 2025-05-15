@@ -14,8 +14,9 @@ function Table({ data, header, onClick, tStyle }) {
     if (pathname.startsWith("/participant-group/"))
       return styles.participant_table;
 
-    if (tStyle === "run_training") return styles.run_training;
-    if (tStyle === "run_education") return styles.run_education;
+    if (tStyle === "user_result") return styles.user_result;
+    if (tStyle === "education_result") return styles.education_result;
+    if (tStyle === "dept_result") return styles.dept_result;
     if (tStyle === "result") return styles.result;
   };
 
