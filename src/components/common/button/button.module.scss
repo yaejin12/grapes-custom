@@ -74,13 +74,16 @@
     padding: 2px 10px;
     font-size: 13px;
 
-    color: var(--color-border);
-    border: 1px solid var(--color-border);
-    border-radius: 6px;
+    color: var(--color-gr-6);
+    border: 1px solid var(--color-gr-6);
+    border-radius: 999px;
+
     &.modify {
       &:hover {
         border: 1px solid var(--color-point);
         color: var(--color-point);
+        background-color: var(--color-point);
+        color: #fff;
         font-weight: 600;
       }
     }
@@ -88,9 +91,66 @@
     &.delete {
       &:hover {
         font-weight: 600;
-        color: var(--color-gr-2);
-        border: 1px solid var(--color-gr-2);
-        background-color: #fff;
+        color: var(--color-gr-3);
+        border: 1px solid var(--color-gr-3);
+      }
+    }
+
+    &.report_download {
+      border-radius: 999px;
+      position: relative;
+      padding-right: 25px;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        right: 7px;
+        background-image: url("../../../../public/images/report_download.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &:hover {
+        font-weight: 600;
+        color: var(--color-gr-3);
+        border: 1px solid var(--color-gr-3);
+
+        &::after {
+          background-image: url("../../../../public/images/report_download_ative.svg");
+        }
+      }
+    }
+
+    &.result_cover {
+      border-radius: 999px;
+      position: relative;
+      padding-right: 25px;
+
+      &::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        right: 7px;
+        background-image: url("../../../../public/images/table_btn_copy.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+
+      &:hover {
+        font-weight: 600;
+        color: var(--color-gr-3);
+        border: 1px solid var(--color-gr-3);
+
+        &::after {
+          background-image: url("../../../../public/images/table_btn_copy_action.svg");
+        }
       }
     }
   }

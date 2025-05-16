@@ -4,7 +4,8 @@ import styles from "./resultTrainingPg.module.scss";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import TableToolbar from "../../components/layout/table/components/TableToolbar";
 import Table from "../../components/layout/table/Table";
-import { dummyTrainingData, tHeader } from "./data";
+import { dummyTrainingData } from "./data";
+import { resultPgTHeader } from "../../config/uiConfig";
 
 function ResultTrainingPg() {
   const pathname = useLocation().pathname;
@@ -26,10 +27,16 @@ function ResultTrainingPg() {
               </div>
               <div className={styles.table_wrapper}>
                 <Table
-                  header={tHeader}
+                  header={resultPgTHeader}
                   tStyle={"result"}
                   data={dummyTrainingData}
                   onClick={handlerTableItemClick}
+                  btn={[
+                    {
+                      label: "복사",
+                      style: "result_cover",
+                    },
+                  ]}
                 />
               </div>
             </>

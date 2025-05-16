@@ -1,0 +1,15 @@
+@use "../../assets/css/global.module.scss" as global;
+
+.section_box {
+  @include global.box;
+  width: 100%;
+  padding: 32px;
+
+  .content {
+    min-height: 738px;
+  }
+
+  .tool_bar_wrapper {
+    margin-bottom: 24px;
+  }
+}

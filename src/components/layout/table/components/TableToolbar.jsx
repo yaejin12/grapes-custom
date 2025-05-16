@@ -23,11 +23,13 @@ export default function TableToolbar({ btn = tableBtn }) {
         <SearchInput />
       </div>
       <div className={styles.toolbar_right_wrapper}>
-        <div className={styles.btn_wrapper}>
-          {btn?.map((btnItem) => (
-            <Button btn={btnItem} />
-          ))}
-        </div>
+        {btn && (
+          <div className={styles.btn_wrapper}>
+            {btn?.map((btnItem) => (
+              <Button btn={btnItem} />
+            ))}
+          </div>
+        )}
         <div className={styles.select_box}>
           <SelectBox placeholder={"10개씩 보기"} />
         </div>

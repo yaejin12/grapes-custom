@@ -12,6 +12,8 @@ import RunTrainingPg from "../pages/runTraining/RunTrainingPg";
 import RunTrainingDetailPg from "../pages/runTraining/RunTrainingDetailPg";
 import ResultTrainingPg from "./../pages/resultTraining/ResultTrainingPg";
 import ResultDetailPg from "../pages/resultTraining/ResultDetailPg";
+import ReportPg from "../pages/report/ReportPg";
+import SettingPg from "../pages/setting/SettingPg";
 
 export const router = createBrowserRouter([
   {
@@ -86,6 +88,18 @@ export const router = createBrowserRouter([
             element: <ResultDetailPg />,
           },
         ],
+      },
+      // 보고서
+      {
+        path: "report",
+        element: <ReportPg />,
+        children: [],
+      },
+      // 환경설정
+      {
+        path: "setting",
+        element: <SettingPg />,
+        children: [],
       },
     ],
   },

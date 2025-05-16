@@ -153,12 +153,14 @@ function Aside({ styles }) {
               actionLnbItem === "rpt" ? styles.btn_direct_action : ""
             }`}
           >
-            <button onClick={() => toggleAccordionItem("rpt")}>
-              <i>
-                <img src="/images/menu_report.svg" alt=""></img>
-              </i>
-              <p>보고서</p>
-            </button>
+            <NavLink to={"/report"}>
+              <button onClick={() => toggleAccordionItem("rpt")}>
+                <i>
+                  <img src="/images/menu_report.svg" alt=""></img>
+                </i>
+                <p>보고서</p>
+              </button>
+            </NavLink>
           </div>
           {/* [e] lnb item */}
           {/* [s] lnb item */}
@@ -167,12 +169,14 @@ function Aside({ styles }) {
               actionLnbItem === "setting" ? styles.btn_direct_action : ""
             }`}
           >
-            <button onClick={() => toggleAccordionItem("setting")}>
-              <i>
-                <img src="/images/menu_setting.svg" alt=""></img>
-              </i>
-              <p>환경설정</p>
-            </button>
+            <NavLink to={"/setting"}>
+              <button onClick={() => toggleAccordionItem("setting")}>
+                <i>
+                  <img src="/images/menu_setting.svg" alt=""></img>
+                </i>
+                <p>환경설정</p>
+              </button>
+            </NavLink>
           </div>
           {/* [e] lnb item */}
         </div>
