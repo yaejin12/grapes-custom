@@ -1,4 +1,44 @@
 // -------------------------------------------------
+// 공통 pg
+export const userResultTHeader = [
+  { text: "이름", key: "name" },
+  { text: "부서", key: "department" },
+  { text: "직책", key: "position" },
+  { text: "수신메일", key: "emailReceivedAt" },
+  { text: "메일열람", key: "emailOpenedAt" },
+  { text: "링크클릭", key: "linkClickedAt" },
+  { text: "첨부파일 다운", key: "attachmentDownloadedAt" },
+  { text: "피싱입력", key: "phishingInputAt" },
+  { text: "신고서 제출", key: "reportSubmittedAt" },
+  { text: "발송현황", key: "status" },
+];
+
+export const deptResultTHeader = [
+  { text: "부서", key: "department" },
+  { text: "인원수", key: "num" },
+  { text: "메일열람", key: "emailOpenedAt" },
+  { text: "링크클릭", key: "linkClickedAt" },
+  { text: "첨부파일 다운", key: "attachmentDownloadedAt" },
+  { text: "피싱입력", key: "phishingInputAt" },
+  { text: "신고서 제출", key: "reportSubmittedAt" },
+  { text: "교육이수", key: "educationCompletedAt" },
+];
+// -------------------------------------------------
+// 훈련실행 pg
+export const runPgEducationTHeader = [
+  { text: "이름", key: "name" },
+  { text: "부서", key: "department" },
+  { text: "직책", key: "position" },
+  { text: "수신메일", key: "emailReceivedAt" },
+  { text: "이수결과", key: "result" },
+  { text: "발송현황", key: "status" },
+];
+
+export const runDetailTabLabel = [
+  { id: "user", label: "훈련" },
+  { id: "education", label: "교육" },
+];
+// // -------------------------------------------------
 // 훈련결과 pg
 export const resultPgTHeader = [
   { text: "훈련유형", key: "type" },
@@ -7,6 +47,11 @@ export const resultPgTHeader = [
   { text: "참가자", key: "participantCount" },
   { text: "교육유형", key: "educationType" },
   { text: "", key: "actions" },
+];
+
+export const resultSettingTabLabel = [
+  { id: "user", label: "참여자별" },
+  { id: "dept", label: "부서별" },
 ];
 
 // -------------------------------------------------
@@ -30,3 +75,11 @@ export const settingPgTab = [
 ];
 
 // -------------------------------------------------
+// 환경설정 pg
+export const settingTabLabel = [
+  { id: "user", label: "직원관리" },
+  { id: "auth", label: "권한관리" },
+  { id: "config", label: "기본설정" },
+  { id: "tLog", label: "훈련로그" },
+  { id: "eLog", label: "오류로그" },
+];

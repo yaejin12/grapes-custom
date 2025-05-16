@@ -17,6 +17,13 @@
     width: 20px;
     height: auto;
   }
+
+  &.tree {
+    height: 44px;
+    background-color: var(--color-gr-box);
+    border: none;
+    width: 100%;
+  }
 }
 
 .common_input {

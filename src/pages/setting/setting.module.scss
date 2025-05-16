@@ -18,3 +18,34 @@
   width: 100%;
   margin-bottom: 32px;
 }
+
+// ---------------------------------------------------------
+// 직원관리 pg
+.user_tab_pg_section {
+  display: flex;
+
+  // 조직도 전체
+  .left_content {
+    width: calc(100% / 5);
+    border-right: 1px solid var(--color-border);
+    padding-right: 20px;
+
+    // 조직도 타이틀
+    .org_tree_title {
+      display: flex;
+      margin-bottom: 20px;
+
+      .tree_icon {
+        width: 20px;
+        margin-right: 8px;
+      }
+
+      .org_title {
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+

@@ -8,49 +8,31 @@ import TableToolbar from "./../../components/layout/table/components/TableToolba
 import Table from "./../../components/layout/table/Table";
 import { DepDummyData, dummyData } from "../runTraining/data";
 import DeptChart from "./components/DeptChart";
+import {
+  deptResultTHeader,
+  resultSettingTabLabel,
+  userResultTHeader,
+} from "../../config/uiConfig";
+import useTab from "../../hooks/useTab";
 
 function ResultDetailPg({}) {
-  const [activeTab, setActionTab] = useState("user");
+  // -------------------------------------------------
+  const { tab: activeTab, handleTabClick } = useTab("user");
   const [tableData, setTableData] = useState(dummyData);
-  const label = [
-    { id: "user", label: "참여자별" },
-    { id: "dept", label: "부서별" },
-  ];
-  const handlerTabClick = (id) => {
-    setActionTab(id);
-  };
 
+  // -------------------------------------------------
+  // tab에 따른 table header
   const tableHeader = (activeTab) => {
     if (activeTab === "user") {
-      return [
-        { text: "이름", key: "name" },
-        { text: "부서", key: "department" },
-        { text: "직책", key: "position" },
-        { text: "수신메일", key: "emailReceivedAt" },
-        { text: "메일열람", key: "emailOpenedAt" },
-        { text: "링크클릭", key: "linkClickedAt" },
-        { text: "첨부파일 다운", key: "attachmentDownloadedAt" },
-        { text: "피싱입력", key: "phishingInputAt" },
-        { text: "신고서 제출", key: "reportSubmittedAt" },
-        { text: "발송현황", key: "status" },
-      ];
+      return userResultTHeader;
     }
 
     if (activeTab === "dept") {
-      return [
-        { text: "부서", key: "department" },
-        { text: "인원수", key: "num" },
-        { text: "메일열람", key: "emailOpenedAt" },
-        { text: "링크클릭", key: "linkClickedAt" },
-        { text: "첨부파일 다운", key: "attachmentDownloadedAt" },
-        { text: "피싱입력", key: "phishingInputAt" },
-        { text: "신고서 제출", key: "reportSubmittedAt" },
-        { text: "교육이수", key: "educationCompletedAt" },
-      ];
+      return deptResultTHeader;
     }
     return [];
   };
-
+  // -------------------------------------------------
   useEffect(() => {
     if (activeTab === "dept") {
       setTableData(DepDummyData);
@@ -71,7 +53,11 @@ function ResultDetailPg({}) {
         <div className={`${styles.section_box}`}>
           {/* tab 부분 */}
           <div className={styles.tab_wrapper}>
-            <Tab tabs={label} onClick={handlerTabClick} isActive={activeTab} />
+            <Tab
+              tabs={resultSettingTabLabel}
+              onClick={handleTabClick}
+              isActive={activeTab}
+            />
           </div>
           {/* tab 변경되어야함 */}
           {/* 그래프 부분 */}

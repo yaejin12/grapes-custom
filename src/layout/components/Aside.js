@@ -169,7 +169,7 @@ function Aside({ styles }) {
               actionLnbItem === "setting" ? styles.btn_direct_action : ""
             }`}
           >
-            <NavLink to={"/setting"}>
+            <NavLink to={"/setting/user"}>
               <button onClick={() => toggleAccordionItem("setting")}>
                 <i>
                   <img src="/images/menu_setting.svg" alt=""></img>
