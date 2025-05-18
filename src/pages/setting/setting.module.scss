@@ -30,22 +30,106 @@
     border-right: 1px solid var(--color-border);
     padding-right: 20px;
 
-    // 조직도 타이틀
-    .org_tree_title {
+    .title_wrapper {
       display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 20px;
+      // 조직도 타이틀
+      .org_tree_title {
+        display: flex;
 
-      .tree_icon {
-        width: 20px;
-        margin-right: 8px;
+        .tree_icon {
+          width: 20px;
+          margin-right: 8px;
+          display: flex;
+          align-items: center;
+        }
+
+        .org_title {
+          font-size: 24px;
+          font-weight: 600;
+        }
       }
+    }
+  }
 
-      .org_title {
-        font-size: 24px;
+  // 오른쪽 테이블
+  .right_content {
+    flex: 1;
+    padding-left: 32px;
+  }
+}
+
+// 훈련로그
+.log_wrapper {
+  width: 100%;
+}
+
+// 기본설정
+.default_setting_wrapper {
+  width: 100%;
+  display: flex;
+  gap: 80px;
+
+  // 오른쪽 왼쪽 공통
+  .right_wrapper,
+  .left_wrapper {
+    flex: 1;
+
+    .title {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 32px;
+      p {
+        font-size: 20px;
         font-weight: 600;
       }
     }
   }
+
+  // 오른쪽
+  .right_wrapper {
+  }
 }
 
+.input_group {
+  display: flex;
+  margin-bottom: 24px;
 
+  .label {
+    width: 91px;
+    margin-right: 25px;
+    padding-top: 15px;
+
+    button {
+      margin-left: 4px;
+    }
+  }
+
+  .input_box {
+    flex: 1;
+  }
+
+  .test_btn_box {
+    display: flex;
+    align-items: center;
+
+    .result_server_text {
+      font-size: 16px;
+      font-weight: 600;
+      margin-left: 16px;
+
+      img {
+        margin-left: 8px;
+      }
+
+      span {
+        margin-left: 8px;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--color-gr-1);
+      }
+    }
+  }
+}

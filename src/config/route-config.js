@@ -15,6 +15,10 @@ import ResultDetailPg from "../pages/resultTraining/ResultDetailPg";
 import ReportPg from "../pages/report/ReportPg";
 import SettingPg from "../pages/setting/SettingPg";
 import UserTabPg from "../pages/setting/components/UserTabPg";
+import AuthTabPg from "../pages/setting/components/AuthTabPg";
+import TrainingLogPg from "../pages/setting/components/TrainingLogPg";
+import ErrorLogPg from "../pages/setting/components/ErrorLogPg";
+import DefaultSetting from "../pages/setting/components/DefaultSetting";
 
 export const router = createBrowserRouter([
   {
@@ -102,10 +106,10 @@ export const router = createBrowserRouter([
         element: <SettingPg />,
         children: [
           { path: "user", element: <UserTabPg /> },
-          { path: "auth", element: <UserTabPg /> },
-          { path: "config", element: <UserTabPg /> },
-          { path: "tLog", element: <UserTabPg /> },
-          { path: "eLog", element: <UserTabPg /> },
+          { path: "auth", element: <AuthTabPg /> },
+          { path: "config", element: <DefaultSetting /> },
+          { path: "tLog", element: <TrainingLogPg /> },
+          { path: "eLog", element: <ErrorLogPg /> },
         ],
       },
     ],

@@ -25,6 +25,7 @@ function Table({ data, header, onClick, tStyle, btn = initialBtn }) {
     if (tStyle === "dept_result") return styles.dept_result;
     if (tStyle === "result") return styles.result;
     if (tStyle === "report") return styles.report;
+    if (tStyle === "setting_user") return styles.setting_user;
   };
 
   const getTypeIcon = (type) => {

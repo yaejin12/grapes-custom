@@ -83,3 +83,23 @@ export const settingTabLabel = [
   { id: "tLog", label: "훈련로그" },
   { id: "eLog", label: "오류로그" },
 ];
+
+// ------------------------------------------------
+// setting pg
+// 직원관리
+export const settingUserTHeader = [
+  { text: "이름", key: "name" },
+  { text: "부서", key: "department" },
+  { text: "직위", key: "position" },
+  { text: "이메일", key: "emailReceivedAt" },
+  { text: "휴대폰번호", key: "result" },
+  { text: "", key: "action" },
+];
+
+// 훈련로그
+export const settingTLogTHeader = [
+  { text: "등록자", key: "name" },
+  { text: "훈련명", key: "department" },
+  { text: "일시", key: "position" },
+  { text: "내용", key: "emailReceivedAt" },
+];

@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "../setting.module.scss";
-import OrgTree from "../../../components/orgTree/OrgTree";
-import Table from "./../../../components/layout/table/Table";
 import MoreBtn from "../../../components/common/button/MoreBtn";
+import OrgTree from "../../../components/orgTree/OrgTree";
+import Table from "../../../components/layout/table/Table";
 import { settingUserTHeader } from "../../../config/uiConfig";
 import { settingUserDummyData } from "../../../config/dummyData";
-
-function UserTabPg() {
+import FilterBox from "../../../components/filterBox/FilterBox";
+function AuthTabPg() {
   return (
     <div className={styles.user_tab_pg_section}>
       {/* [s] left_content */}
@@ -18,12 +18,12 @@ function UserTabPg() {
             </span>
             <span className={styles.org_title}>조직도</span>
           </div>
-          <MoreBtn />
         </div>
         <OrgTree />
       </div>
       {/* [e] left_content */}
       <div className={styles.right_content}>
+        <div></div>
         <Table
           header={settingUserTHeader}
           data={settingUserDummyData}
@@ -34,4 +34,4 @@ function UserTabPg() {
   );
 }
 
-export default UserTabPg;
+export default AuthTabPg;

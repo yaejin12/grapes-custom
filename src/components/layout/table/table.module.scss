@@ -130,7 +130,6 @@
         }
       }
       // type
-
       .type_tag {
         @include global.flex_center;
         background-color: var(--color-point-sub-2);
@@ -327,3 +326,29 @@
     }
   }
 }
+
+// 직원관리
+.setting_user {
+  .cell {
+    &:nth-child(1) {
+      width: 10%;
+    }
+    &:nth-child(2) {
+      width: 18%;
+    }
+    &:nth-child(3) {
+      width: 18%;
+    }
+    &:nth-child(4) {
+      flex: 1;
+    }
+    &:nth-child(5) {
+      flex: 1;
+    }
+    &:nth-child(6) {
+      width: 10%;
+    }
+  }
+}
+
+

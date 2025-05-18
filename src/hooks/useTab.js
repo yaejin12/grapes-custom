@@ -10,7 +10,7 @@ function useTab(initialTab = "") {
     setTab(id);
     if (pathname.startsWith("/setting")) navigate(`/setting/${id}`);
   };
-  return { tab, handleTabClick };
+  return { tab, setTab, handleTabClick };
 }
 
 export default useTab;

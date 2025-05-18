@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
 import styles from "./setting.module.scss";
 import { Outlet, useLocation } from "react-router-dom";
@@ -8,10 +8,17 @@ import useTab from "./../../hooks/useTab";
 function SettingPg() {
   const location = useLocation();
   const pathname = location.pathname;
-  const isSettingPg = pathname === "/setting";
+  const isSettingPg = pathname.startsWith("/setting");
+  const { tab: activeTab, handleTabClick, setTab } = useTab("user"); //tab
 
-  const { tab: activeTab, handleTabClick } = useTab("user"); //tab
-
+  // pathname과 tab 동기화
+  useEffect(() => {
+    if (isSettingPg) {
+      const tabName = pathname.replace("/setting/", "");
+      console.log(tabName);
+      setTab(tabName);
+    }
+  }, []);
   return (
     <PgTitle h3={"환경설정"}>
       <section className={`${styles.section_box}`}>
