@@ -86,3 +86,28 @@
   font-size: 12px;
   font-weight: 700;
 }
+
+@mixin opacityHidden {
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease;
+}
+
+@mixin required_mark {
+  position: relative;
+  &::after {
+    content: "*";
+    display: inline-block;
+    position: absolute;
+    color: var(--color-red);
+    width: 10px;
+    height: 10px;
+    top: -3px;
+    right: -12px;
+    font-weight: 600;
+    font-size: 16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}

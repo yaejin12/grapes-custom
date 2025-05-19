@@ -97,14 +97,59 @@
   display: flex;
   margin-bottom: 24px;
 
-  .label {
-    width: 91px;
-    margin-right: 25px;
+  .input_label {
+    width: 110px;
+    margin-right: 5px;
     padding-top: 15px;
+    font-size: 16px;
+    display: flex;
+  }
 
-    button {
-      margin-left: 4px;
+  .label {
+    width: 110px;
+    margin-right: 5px;
+
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+
+    .alert_wrapper {
+      position: relative;
+
+      button {
+        margin-left: 4px;
+      }
+
+      .alert_content_box {
+        position: absolute;
+        z-index: 999px;
+        background-color: #fff;
+        padding: 16px;
+        border-radius: 8px;
+        width: 208px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+
+        @include global.opacityHidden;
+        p {
+          font-size: 13px;
+          color: var(--color-gr-1);
+          font-weight: 400;
+          line-height: 20px;
+          word-break: keep-all;
+        }
+
+        &.alert_content_action {
+          opacity: 1;
+        }
+      }
     }
+  }
+
+  .radio_box {
+    display: flex;
+    gap: 32px;
+    height: 44px;
+    align-items: center;
   }
 
   .input_box {
@@ -114,6 +159,8 @@
   .test_btn_box {
     display: flex;
     align-items: center;
+
+    padding-top: 2px;
 
     .result_server_text {
       font-size: 16px;
