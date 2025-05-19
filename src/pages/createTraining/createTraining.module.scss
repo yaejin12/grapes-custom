@@ -6,13 +6,14 @@
   padding: 8px 40px 48px;
 }
 
-// 상단 저브 타이틀
+// 상단 타이틀
 .sub_title_wrapper {
   width: 100%;
   display: flex;
   align-items: center;
   padding: 24px 0;
   border-bottom: 1px solid var(--color-border);
+  margin-bottom: 32px;
 
   i {
     width: 24px;
@@ -26,24 +27,31 @@
 
 // ---------------------------------------------------
 .content_wrapper {
-  margin-bottom: 80px;
+  margin-bottom: 100px;
   width: 100%;
 }
 
+//
 .content {
-  margin-top: 32px;
   display: flex;
   width: 100%;
   gap: 56px;
 
-  &.group_content {
+  // 5개 이하
+  &.under {
     width: calc(50% - 28px);
-    // width: 100%; //5개 이상이면
+  }
+  // 5개 이상
+  &.over {
+    width: 100%;
 
     .select_box {
-      gap: 10px;
       flex-wrap: wrap;
       flex-direction: row;
+    }
+
+    .participant {
+      width: calc(50% - 5px);
     }
   }
 
@@ -58,13 +66,22 @@
 .content_item {
   width: 100%;
   display: flex;
+  margin-bottom: 32px;
 }
 
+// 훈련명을 입력 / 훈련 기간
 .input,
 .date_input_wrapper {
   width: calc(100% - 81px);
 }
 
+.radio_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+// 선택 영역
 .select_wrapper {
   width: 100%;
 }
@@ -158,14 +175,18 @@
     display: flex;
     flex-direction: column;
   }
-}
+
+  &.width_100 {
+    width: 100%;
+  }
+} // [e]select 박스 회색 영역
 
 // ===========================
 
-// li
+// li 선택된 각각의 item
 .selected_item {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border-radius: 8px;
   gap: 10px;
   display: flex;
@@ -175,7 +196,6 @@
   border: 1px solid var(--color-border);
 
   .item_content {
-    gap: 20px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -186,10 +206,16 @@
       height: 56px;
       background-color: var(--color-gr-box);
       border-radius: 4px;
+      margin-right: 20px;
+
+      img {
+        width: 56px;
+        height: auto;
+      }
     }
 
     .thumb_info {
-      width: calc(100% - 56px - 20px);
+      flex: 1;
 
       .thumb_title {
         font-weight: 600;
@@ -209,7 +235,6 @@
         text-decoration: underline;
         text-underline-offset: 3px;
         text-decoration-color: var(--color-border);
-        margin-bottom: 7px;
       }
     }
   }

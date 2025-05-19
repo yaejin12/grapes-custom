@@ -1,6 +1,6 @@
 import React from "react";
 
-function GroupSelectItem({ styles }) {
+function GroupSelectItem({ styles, data }) {
   return (
     <li className={`${styles.selected_item} ${styles.participant}`}>
       <div className={styles.item_content}>

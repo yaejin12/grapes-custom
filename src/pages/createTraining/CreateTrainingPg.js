@@ -8,6 +8,9 @@ import ViolationCriteriaSelector from "../../components/violationCriteriaSelecto
 import SelectSection from "./components/SelectSection";
 import CheckBox from "../../components/common/checkBox/CheckBox";
 import SubmitButton from "../../components/layout/submitButton/SubmitButton";
+import { templateData } from "./data";
+import GroupSelectBox from "./components/GroupSelectBox";
+import Radio from "./../../components/common/input/Radio";
 
 function CreateTrainingPg() {
   return (
@@ -30,9 +33,9 @@ function CreateTrainingPg() {
                   <CommonInput placeholder={"훈련명을 입력하세요"} />
                 </div>
               </div>
-              {/* [e] item */}
             </div>
-            {/* 훈련기간 */}
+            {/* [e] 훈련명 */}
+            {/* [s] 훈련기간 */}
             <div className={styles.content_right}>
               {/* [s] item */}
               <div className={styles.content_item}>
@@ -45,15 +48,19 @@ function CreateTrainingPg() {
               </div>
               {/* [e] item */}
             </div>
+            {/* [e] 훈련기간 */}
           </div>
-          {/* 대상자 그룹 */}
-          {/* 4개이상 선택하면 넓이 100% 변경 */}
-          <div className={`${styles.content} ${styles.group_content}`}>
+          {/* [대상자 그룹] 4개이상 선택하면 넓이 100% 변경 */}
+          <div
+            className={`${styles.content} ${
+              templateData?.length <= 4 ? styles.under : styles.over
+            }`}
+          >
             <div className={`${styles.select_wrapper}`}>
-              <SelectSection
+              <GroupSelectBox
                 styles={styles}
                 label={"대상자 그룹"}
-                // caption={"*최대 10개까지 선택 가능"}
+                caption={"*최대 10개까지 선택 가능"}
                 // data={templateData}
               />
             </div>
@@ -65,30 +72,40 @@ function CreateTrainingPg() {
           title={"템플릿 선택"}
           icon={"/images/CreateT_template.svg"}
         >
-          <div className={`${styles.content}`}>
-            <div className={styles.label_group}>
-              <div className={`${styles.label}`}>
-                <span className={styles.required_mark}>위반기준</span>
-              </div>
-              {/* 인풋 */}
-              <ViolationCriteriaSelector />
-            </div>
-          </div>
           <div className={styles.content}>
             <div className={styles.content_left}>
+              <div className={styles.content_item}>
+                <div className={`${styles.label}`}>
+                  <span className={styles.required_mark}>사고신고서</span>
+                </div>
+                {/* 인풋 */}
+                <div className={styles.radio_wrapper}>
+                  <Radio label={"미포함"} name={"accidentReport"} />
+                  <Radio label={"포함"} name={"accidentReport"} />
+                </div>
+              </div>
+
               <SelectSection
                 styles={styles}
                 label={"메일 템플릿"}
                 optionText={"랜덤 발송"}
-                // caption={"*최대 5개까지 선택 가능"}
+                caption={"*최대 5개까지 선택 가능"}
+                data={templateData}
               />
             </div>
             <div className={styles.content_right}>
+              <div className={styles.content_item}>
+                <div className={`${styles.label}`}>
+                  <span className={styles.required_mark}>위반기준</span>
+                </div>
+                {/* 인풋 */}
+                <ViolationCriteriaSelector />
+              </div>
               <SelectSection
                 styles={styles}
                 label={"경고 템플릿"}
-                optionText={"사고신고세 제출"}
-                // caption={"*미선택시 기본 경고 페이지 발송"}
+                caption={"*미선택시 기본 경고 페이지 발송"}
+                data={templateData}
               />
             </div>
           </div>
@@ -99,40 +116,38 @@ function CreateTrainingPg() {
           icon={"/images/CreateT_book.svg"}
         >
           <div className={styles.content}>
-            {/* [s] 훈련명 */}
             <div className={styles.content_left}>
               <div className={styles.content_item}>
                 <div className={`${styles.label}`}>
-                  <span className={styles.required_mark}>교육 실행</span>
+                  <span className={styles.required_mark}>실행 선택</span>
                 </div>
-                <div className={styles.check_box_wrapper}>
-                  <div className={styles.check_box_item}>
-                    <CheckBox label={"미실행"} />
-                    <span>미실행</span>
-                  </div>
-                  <div className={styles.check_box_item}>
-                    <CheckBox label={"실행"} />
-                    <span>실행</span>
-                  </div>
+                {/* 인풋 */}
+                <div className={styles.radio_wrapper}>
+                  <Radio label={"실행"} name={"education"} />
+                  <Radio label={"미실행"} name={"education"} />
                 </div>
               </div>
-              {/* [e] item */}
+
+              <SelectSection
+                styles={styles}
+                label={"교육 템플릿"}
+                caption={"*훈련 위반자 대상 교육 전송"}
+                data={templateData}
+              />
             </div>
-            {/* 훈련기간 */}
             <div className={styles.content_right}>
-              {/* [s] item */}
               <div className={styles.content_item}>
                 <div className={`${styles.label}`}>
-                  <span className={styles.required_mark}>훈련기간</span>
+                  <span className={styles.required_mark}>교육기간</span>
                 </div>
                 <div className={styles.date_input_wrapper}>
                   <DateRangeInput />
                 </div>
               </div>
-              {/* [e] item */}
             </div>
           </div>
         </SubTitle>
+        {/* 제일 하단 버튼 */}
         <div className={styles.submit_btn_wrapper}>
           <SubmitButton />
         </div>
@@ -142,3 +157,8 @@ function CreateTrainingPg() {
 }
 
 export default CreateTrainingPg;
+
+/**
+ *
+ *
+ */
