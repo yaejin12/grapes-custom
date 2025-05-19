@@ -80,6 +80,17 @@
       width: calc(100% - 107px);
       color: var(--color-gr-1);
       @include global.ellipsis;
+
+      .tag {
+        display: inline-block;
+        border-radius: 999px;
+        background-color: var(--color-point-sub-1);
+        color: var(--color-point);
+        padding: 3px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 5px;
+      }
     }
   }
 

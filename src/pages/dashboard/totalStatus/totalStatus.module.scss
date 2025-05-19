@@ -26,6 +26,8 @@
       @include global.box;
       height: 586px;
       padding: 40px 40px 50px 40px;
+      padding: 40px 30px 50px 30px;
+      // padding: 30px 30px 60px 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -60,6 +62,8 @@
       height: 100%;
       @include global.box;
       padding: 40px 40px 50px 40px;
+      padding: 40px 30px 50px 30px;
+      // padding: 30px 30px 50px 30px;
 
       // 위반율 내용 그래프+순위
       .dashboard_v_chart_contents_wrapper {

@@ -19,6 +19,9 @@ import AuthTabPg from "../pages/setting/components/AuthTabPg";
 import TrainingLogPg from "../pages/setting/components/TrainingLogPg";
 import ErrorLogPg from "../pages/setting/components/ErrorLogPg";
 import DefaultSetting from "../pages/setting/components/DefaultSetting";
+import ParticipantGroupCreate from "../pages/participant/components/participantGroupCreate/ParticipantGroupCreate";
+import ParticipantGroupDetail from "../pages/participant/components/ParticipantGroupDetail";
+import ParticipantGroupRandom from "../pages/participant/components/participantGroupRandom/ParticipantGroupRandom";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +39,15 @@ export const router = createBrowserRouter([
         children: [
           {
             path: ":id",
-            element: <ParticipantGroup />,
+            element: <ParticipantGroupDetail />,
+          },
+          {
+            path: "add",
+            element: <ParticipantGroupCreate />,
+          },
+          {
+            path: "random",
+            element: <ParticipantGroupRandom />,
           },
         ],
       },

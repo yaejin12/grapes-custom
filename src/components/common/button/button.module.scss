@@ -71,9 +71,12 @@
 
   // 테이블 수정 삭제 버튼
   &.table {
-    padding: 2px 10px;
+    line-height: 1;
+    padding: 8px 12px;
     font-size: 13px;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: var(--color-gr-6);
     border: 1px solid var(--color-gr-6);
     border-radius: 999px;
@@ -91,7 +94,8 @@
     &.delete {
       &:hover {
         font-weight: 600;
-        color: var(--color-gr-3);
+        background-color: var(--color-gr-3);
+        color: #fff;
         border: 1px solid var(--color-gr-3);
       }
     }
@@ -197,6 +201,7 @@
 
     &.gr_color {
       background-color: rgb(75, 81, 89, 0.3);
+      // color: var(--color-gr-3);
     }
   }
 

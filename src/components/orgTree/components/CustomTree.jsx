@@ -6,11 +6,16 @@ import {
 import React, { useState } from "react";
 import { DndProvider } from "react-dnd";
 import OrgToggleItem from "./OrgToggleItem";
+import { useLocation } from "react-router-dom";
 
 function CustomTree({ styles, data }) {
+  const pathname = useLocation().pathname;
+  const pGroupPg = pathname.startsWith("/participant-group");
   const [openNodeIds, setOpenNodeIds] = useState([]);
   return (
-    <div className={styles.tree_wrapper}>
+    <div
+      className={`${styles.tree_wrapper} ${pGroupPg ? styles.min_hight : ""}`}
+    >
       <DndProvider backend={MultiBackend} options={getBackendOptions()}>
         <Tree
           tree={data || []}

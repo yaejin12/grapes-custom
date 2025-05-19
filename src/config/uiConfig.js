@@ -24,6 +24,37 @@ export const deptResultTHeader = [
   { text: "교육이수", key: "educationCompletedAt" },
 ];
 // -------------------------------------------------
+// 대상자 그룹 pg
+export const pGTHeader = [
+  { text: "No", key: "index" },
+  { text: "그룹명", key: "name" },
+  { text: "인원", key: "count" },
+  { text: "생성일", key: "createdAt" },
+  { text: "", key: "actions" },
+];
+// -------------------------------------------------
+// 대상자 그룹 디테일 pg
+
+export const pGDetailTHeader = [
+  { text: "No", key: "index" },
+  { text: "이름", key: "name" },
+  { text: "부서", key: "department" },
+  { text: "직위", key: "position" },
+  { text: "이메일", key: "email" },
+  { text: "연락처", key: "phone" },
+];
+// -------------------------------------------------
+// 대상자 그룹 신규등록 pg
+
+export const pGAddTHeader = [
+  { text: "선택", key: "checkBox" },
+  { text: "이름", key: "name" },
+  { text: "부서", key: "department" },
+  { text: "직위", key: "position" },
+  { text: "이메일", key: "email" },
+  { text: "연락처", key: "phone" },
+];
+// -------------------------------------------------
 // 훈련실행 pg
 export const runPgEducationTHeader = [
   { text: "이름", key: "name" },

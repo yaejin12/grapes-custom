@@ -34,6 +34,17 @@ function RunTrainingItem({ styles, data }) {
             </li>
             <li>
               <span className={styles.info_label}>
+                <img src="/images/info_v.svg" alt="" />
+                위반기준
+              </span>
+              <span className={styles.info_text}>
+                <span className={styles.tag}>링크클릭</span>
+                <span className={styles.tag}>링크클릭</span>
+                <span className={styles.tag}>링크클릭</span>
+              </span>
+            </li>
+            <li>
+              <span className={styles.info_label}>
                 <img src="/images/run_days.svg" alt="" />
                 훈련기간
               </span>
@@ -49,7 +60,7 @@ function RunTrainingItem({ styles, data }) {
           </ul>
         </NavLink>
         <div className={styles.item_btn_wrapper}>
-          <Button
+          {/* <Button
             btn={{ label: "즉시발송", style: "point_color" }}
             type={"run"}
             disabled={true}
@@ -63,9 +74,9 @@ function RunTrainingItem({ styles, data }) {
             btn={{ label: "다시발송", style: "replay" }}
             type={"run"}
             disabled={true}
-          />
+          /> */}
           {/* 발송 대기상태일 때 */}
-          {/* <Button
+          <Button
             btn={{ label: "즉시발송", style: "point_color" }}
             type={"run"}
           />
@@ -75,7 +86,6 @@ function RunTrainingItem({ styles, data }) {
               img: "/images/participant_modify.svg",
               style: "point_color",
             }}
-            disabled={true}
             type={"template"}
           />
           <Button
@@ -85,7 +95,7 @@ function RunTrainingItem({ styles, data }) {
               style: "delete",
             }}
             type={"template"}
-          /> */}
+          />
         </div>
       </li>
       {/* [e] item */}

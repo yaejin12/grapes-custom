@@ -106,6 +106,7 @@
       height: 100%;
       font-size: 15px;
       font-weight: 400;
+      border-top: 1px solid rgba(191, 218, 255, 0);
       border-bottom: 1px solid var(--color-gr-box);
       min-width: 0;
       width: 100%;
@@ -351,4 +352,26 @@
   }
 }
 
-
+// 대상 그룹 신규 추가
+.p_g_add {
+  .cell {
+    &:nth-child(1) {
+      width: 7%;
+    }
+    &:nth-child(2) {
+      width: 15%;
+    }
+    &:nth-child(3) {
+      width: 18%;
+    }
+    &:nth-child(4) {
+      width: 18%;
+    }
+    &:nth-child(5) {
+      flex: 1;
+    }
+    &:nth-child(6) {
+      flex: 1;
+    }
+  }
+}

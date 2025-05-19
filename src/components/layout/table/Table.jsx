@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./table.module.scss";
 import { useLocation, useParams } from "react-router-dom";
 import Button from "../../common/button/Button";
+import CheckBox from "../../common/checkBox/CheckBox";
 const initialBtn = [
   {
     label: "수정",
@@ -14,11 +15,9 @@ function Table({ data, header, onClick, tStyle, btn = initialBtn }) {
   const pathname = location.pathname;
 
   const customTableStyle = () => {
-    if (pathname === "/participant-group")
-      return styles.participant_group_table;
+    if (tStyle === "pGroupPg") return styles.participant_group_table;
 
-    if (pathname.startsWith("/participant-group/"))
-      return styles.participant_table;
+    if (tStyle === "pGroupDetailPg") return styles.participant_table;
 
     if (tStyle === "user_result") return styles.user_result;
     if (tStyle === "education_result") return styles.education_result;
@@ -26,6 +25,7 @@ function Table({ data, header, onClick, tStyle, btn = initialBtn }) {
     if (tStyle === "result") return styles.result;
     if (tStyle === "report") return styles.report;
     if (tStyle === "setting_user") return styles.setting_user;
+    if (tStyle === "p_g_add") return styles.p_g_add;
   };
 
   const getTypeIcon = (type) => {
@@ -56,6 +56,7 @@ function Table({ data, header, onClick, tStyle, btn = initialBtn }) {
               const isDataCell =
                 col.key !== "index" &&
                 col.key !== "actions" &&
+                col.key !== "checkBox" &&
                 col.key !== "type";
               return (
                 <div className={styles.cell}>
@@ -68,6 +69,12 @@ function Table({ data, header, onClick, tStyle, btn = initialBtn }) {
                         btn?.map((btnItem) => (
                           <Button btn={btnItem} type={"table"} />
                         ))}
+                    </div>
+                  )}
+                  {/* checkBox 일때 */}
+                  {col?.key === "checkBox" && (
+                    <div className={styles.item_btn_wrapper}>
+                      <CheckBox />
                     </div>
                   )}
                   {/* 훈련유형일 때 */}

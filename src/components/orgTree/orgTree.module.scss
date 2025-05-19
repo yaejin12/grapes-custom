@@ -8,6 +8,10 @@
 .tree_wrapper {
   margin-top: 20px;
   @include global.scrollbarY(500px);
+
+  &.min_hight {
+    @include global.scrollbarY(700px);
+  }
 }
 
 // -----------------

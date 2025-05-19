@@ -4,11 +4,278 @@
   @include global.box;
   width: 100%;
   padding: 32px;
+  min-height: 802px;
+
+  &.add_section_box {
+    padding: 0 0 0 32px;
+  }
+}
+
+.no_user_section {
+  min-height: 802px;
+  @include global.flex_center;
 }
 
 .table_wrapper {
   margin-top: 24px;
   width: 100%;
 }
+.required_mark {
+  @include global.required_mark;
+  font-size: 16px;
+  font-weight: 600;
+}
+// ==================================
 
+// 신규 등록 페이지
+.p_g_create_wrapper {
+  width: 100%;
+  display: flex;
 
+  .left_wrapper,
+  .right_wrapper {
+    width: 276px;
+    padding: 32px 0;
+
+    // 타이틀
+    .title_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      // 조직도 타이틀
+      .org_tree_title {
+        display: flex;
+
+        .tree_icon {
+          width: 20px;
+          margin-right: 8px;
+          display: flex;
+          align-items: center;
+        }
+
+        .org_title {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  // 중간 전체
+  .center_wrapper {
+    flex: 1;
+    padding: 32px 0;
+
+    .top_wrapper {
+      width: 100%;
+      padding: 0 28px 26px 28px;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+
+      .group_label {
+        width: 120px;
+        margin-right: 16px;
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .bottom_wrapper {
+      padding: 26px 28px 0 28px;
+
+      .table_tool_wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        .all_select_box {
+          align-items: center;
+          // padding: 12px;
+          // background-color: var(--color-gr-box);
+          // border-radius: 6px;
+          display: flex;
+
+          .all_select_label {
+            margin-left: 10px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+  // 왼쪽 전체
+  .left_wrapper {
+    padding-right: 20px;
+    border-right: 1px solid var(--color-border);
+  }
+  // 오른쪽 전체
+  .right_wrapper {
+    padding-left: 20px;
+    padding-right: 5px;
+    border-left: 1px solid var(--color-border);
+
+    .select_content_wrapper {
+      margin-top: 50px;
+      min-height: 700px;
+      @include global.scrollbarY(700px);
+
+      ul {
+        padding-right: 16px;
+
+        .select_user_item_box {
+          padding: 16px;
+          border: 1px solid var(--color-point);
+          background-color: #fff;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+
+          .select_icon {
+            width: 20px;
+            height: 20px;
+            @include global.flex_center;
+            border-radius: 999px;
+            background-color: var(--color-point);
+            margin-right: 10px;
+            cursor: pointer;
+          }
+
+          .name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-right: 8px;
+          }
+
+          .dept {
+            font-size: 13px;
+            margin-right: 6px;
+            position: relative;
+            &::after {
+              content: "";
+              display: inline-block;
+              position: absolute;
+              width: 1px;
+              height: 12px;
+              background-color: var(--color-border);
+              right: -6px;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+
+          .position {
+            font-size: 13px;
+            margin-left: 6px;
+          }
+        }
+      }
+    }
+
+    .submit_btn_wrapper {
+      display: flex;
+      margin-right: 15px;
+      gap: 8px;
+    }
+  }
+}
+
+// 부서별 랜덤 페이지
+.p_g_random_wrapper {
+  width: 100%;
+  display: flex;
+
+  // 왼쪽 전체
+  .left_wrapper {
+    width: 276px;
+    padding: 32px 0;
+    padding-right: 20px;
+    border-right: 1px solid var(--color-border);
+
+    .title_wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      // 조직도 타이틀
+      .org_tree_title {
+        display: flex;
+
+        .tree_icon {
+          width: 20px;
+          margin-right: 8px;
+          display: flex;
+          align-items: center;
+        }
+
+        .org_title {
+          font-size: 20px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  // 오른쪽 전체
+  .right_wrapper {
+    flex: 1;
+    padding: 48px 56px;
+
+    .title_wrapper {
+      width: 100%;
+      padding: 0 0 24px 0;
+      border-bottom: 1px solid var(--color-border);
+
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+
+    .bottom_wrapper {
+      width: 80%;
+      margin-top: 40px;
+      .form_field {
+        display: flex;
+        margin-bottom: 20px;
+
+        .group_label {
+          width: 120px;
+          margin-right: 16px;
+          display: flex;
+          align-items: center;
+        }
+
+        .select_dept_wrapper {
+          width: 100%;
+
+          ul {
+            .select_dept_item {
+              width: 100%;
+              display: flex;
+
+              .dept_box {
+                padding: 8px 16px;
+                border: 1px solid var(--color-border);
+                border-radius: 8px;
+                height: 44px;
+                width: 50%;
+                display: flex;
+                align-items: center;
+                .dept_icon {
+                  width: 20px;
+                  height: 20px;
+                  background-color: var(--color-gr-box);
+                  border-radius: 4px;
+                  margin-right: 10px;
+                  @include global.flex_center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

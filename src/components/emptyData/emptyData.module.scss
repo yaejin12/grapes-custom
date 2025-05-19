@@ -1,0 +1,24 @@
+@use "../../assets/css/global.module.scss" as global;
+
+.no_user_wrapper {
+  @include global.flex_center;
+  width: 100%;
+
+  .no_user_box {
+    @include global.flex_center;
+    flex-direction: column;
+    .icon {
+      width: 72px;
+      height: 72px;
+      background-color: var(--color-gr-3);
+      border-radius: 999px;
+      @include global.flex_center;
+    }
+
+    .text {
+      margin-top: 24px;
+    }
+    font-size: 17px;
+    font-weight: 600;
+  }
+}
