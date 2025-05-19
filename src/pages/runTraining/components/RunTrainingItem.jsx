@@ -52,6 +52,22 @@ function RunTrainingItem({ styles, data }) {
           <Button
             btn={{ label: "즉시발송", style: "point_color" }}
             type={"run"}
+            disabled={true}
+          />
+          <Button
+            btn={{ label: "일시정지", style: "gr_color" }}
+            type={"run"}
+            disabled={true}
+          />
+          <Button
+            btn={{ label: "다시발송", style: "replay" }}
+            type={"run"}
+            disabled={true}
+          />
+          {/* 발송 대기상태일 때 */}
+          {/* <Button
+            btn={{ label: "즉시발송", style: "point_color" }}
+            type={"run"}
           />
           <Button
             btn={{
@@ -59,8 +75,17 @@ function RunTrainingItem({ styles, data }) {
               img: "/images/participant_modify.svg",
               style: "point_color",
             }}
+            disabled={true}
             type={"template"}
           />
+          <Button
+            btn={{
+              label: "삭제",
+              img: "/images/templates_X.svg",
+              style: "delete",
+            }}
+            type={"template"}
+          /> */}
         </div>
       </li>
       {/* [e] item */}

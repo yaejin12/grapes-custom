@@ -161,12 +161,7 @@
     border-top-right-radius: 999px;
     border-bottom-right-radius: 999px;
     background-color: var(--color-point);
-    background: linear-gradient(
-      to bottom,
-      #5bb2ff,
-      var(--color-point),
-      var(--color-point)
-    );
+    background: linear-gradient(to bottom, #5bb2ff, var(--color-point));
 
     // ---------------
   }

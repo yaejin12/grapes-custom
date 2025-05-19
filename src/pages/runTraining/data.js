@@ -10,28 +10,7 @@ export const runList = [
     trainingPeriod: "2021.02.01 ~ 2021.02.12",
     educationPeriod: "2021.02.13 ~ 2021.02.15",
   },
-  {
-    id: 2,
-    title: "서울시청_1차 모의훈련",
-    status: "완료",
-    progressStep: 4,
-    percent: 100,
-    participants: "서울시청 외 5건",
-    template: "모의 훈련 템플릿 외 2건",
-    trainingPeriod: "2021.01.10 ~ 2021.01.15",
-    educationPeriod: "2021.01.16 ~ 2021.01.20",
-  },
-  {
-    id: 3,
-    title: "부산시청_상반기 훈련",
-    status: "대기중",
-    progressStep: 0,
-    percent: 0,
-    participants: "부산시 외 2건",
-    template: "상반기 안내 메일",
-    trainingPeriod: "2021.03.01 ~ 2021.03.10",
-    educationPeriod: "2021.03.11 ~ 2021.03.13",
-  },
+
   {
     id: 4,
     title: "인천시청_하반기 훈련",
@@ -236,8 +215,7 @@ export const runTableBtn = [
   },
 ];
 
-
-// 
+//
 
 export const DepDummyData = [
   {
