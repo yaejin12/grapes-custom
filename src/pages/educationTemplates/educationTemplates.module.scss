@@ -4,3 +4,32 @@
   width: 100%;
   padding: 40px 50px;
 }
+
+// 파일 업로드 모달
+.form_field_wrapper {
+  padding: 52px 56px;
+  width: 100%;
+}
+
+.content_item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 12px;
+
+  .form_field {
+    width: calc(100% - 92px);
+  }
+}
+.label {
+  font-size: 16px;
+  display: flex;
+  width: 92px;
+  height: 44px;
+  padding-top: 12px;
+  font-weight: 600;
+
+  // 필수
+  .required_mark {
+    @include global.required_mark;
+  }
+}

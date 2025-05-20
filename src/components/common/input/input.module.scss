@@ -1,3 +1,5 @@
+@use "../../../assets/css/global.module.scss" as global;
+
 .search_input_wrapper {
   height: 44px;
   padding: 8px 20px;
@@ -108,6 +110,65 @@
       background-color: #fff;
       border: 3px solid var(--color-point); /* 체크 시 외곽선 */
       box-shadow: 0 0 0 1px var(--color-point); /* 체크 시 그림자 효과 */
+    }
+  }
+}
+
+// file input
+.input_file_wrapper {
+  display: flex;
+  flex: 1;
+  height: 44px;
+  position: relative;
+
+  .common_input {
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: 24.5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url("../../../../public/images/upload.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 9999999999999;
+  }
+
+  .file_box {
+    input[type="file"] {
+      position: absolute;
+      width: 0;
+      height: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+    }
+
+    .file_label {
+      height: 44px;
+      padding: 12px 16px;
+      font-weight: 600;
+      color: var(--color-point);
+      border: 1px solid var(--color-point);
+      @include global.flex_center;
+      font-size: 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      width: 87px;
+      margin-left: 8px;
+    }
+  }
+  &.error {
+    input {
+      &::placeholder {
+        color: var(--color-error);
+      }
     }
   }
 }
