@@ -66,7 +66,10 @@
   margin-bottom: 32px;
 
   .form_field {
-    flex: 1;
+    width: calc(100% - 92px - 24px);
+
+    .selected_box_wrapper {
+    }
   }
 }
 

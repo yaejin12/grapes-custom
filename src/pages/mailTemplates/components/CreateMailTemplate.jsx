@@ -4,6 +4,11 @@ import CommonInput from "../../../components/common/input/CommonInput";
 import SelectBox from "./../../../components/common/selectBox/SelectBox";
 import GrapesEditor from "../../../components/editor/GrapesEditor";
 import SubmitButton from "./../../../components/layout/submitButton/SubmitButton";
+import LineButton from "./../../../components/common/button/LineButton";
+import SelectedItemBox from "../../../components/layout/trainingInfo/components/SelectedItemBox";
+import FileSelectedItemBox from "../../../components/layout/trainingInfo/components/FileSelectedItemBox";
+import TemplateSelectItem from "../../createTraining/components/TemplateSelectItem";
+import { templateData } from "../../createTraining/data";
 function CreateMailTemplate() {
   return (
     <section className={styles.create_section_box}>
@@ -78,7 +83,37 @@ function CreateMailTemplate() {
                 />
               </div>
             </div>
-            {/* [e] item - 발신자명 */}
+            {/* [e] item - 발신자 이메일 */}
+            {/* [s] 훈련 유형이 첨부 파일이면 나타남 */}
+            {/* <div className={styles.content_item}>
+              <div className={`${styles.label}`}>
+                <span className={styles.required_mark}>첨부파일</span>
+              </div>
+              <div className={styles.form_field}>
+                <LineButton btn={{ label: "첨부파일 등록" }} />
+
+                <div className={styles.selected_box_wrapper}>
+                  <FileSelectedItemBox />
+                </div>
+              </div>
+            </div> */}
+            {/* [e] 훈련 유형이 첨부 파일이면 나타남 */}
+            {/* [s] 훈련 유형이 피싱이면 나타남 */}
+            {/* <div className={styles.content_item}>
+              <div className={`${styles.label}`}>
+                <span className={styles.required_mark}>피싱 템플릿</span>
+              </div>
+              <div className={styles.form_field}>
+                <LineButton btn={{ label: "피싱 템플릿 선택" }} />
+
+                <div className={styles.selected_box_wrapper}>
+                  <ul className={`${styles.select_box}`}>
+                    <SelectedItemBox title={"피싱"} />
+                  </ul>
+                </div>
+              </div>
+            </div> */}
+            {/* [e] 훈련 유형이 첨부 파일이면 나타남 */}
           </div>
           {/* [e] 입력 부분 */}
         </div>
