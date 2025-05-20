@@ -5,12 +5,13 @@ import TemplateList from "../../layout/templateList/TemplateList";
 import RunTrainingItem from "./components/RunTrainingItem";
 import { Outlet, useLocation } from "react-router-dom";
 import { runList } from "./data";
+import { RUN_TRAINING } from "../../config/path.config";
 
 function RunTrainingPg() {
   const location = useLocation();
   const pathname = location.pathname;
-  const isRunPg = pathname === "/run-training";
-  const isRunDetailPg = pathname.startsWith("/run-training");
+  const isRunPg = pathname === RUN_TRAINING;
+  const isRunDetailPg = pathname.startsWith(RUN_TRAINING);
 
   return (
     <PgTitle h3={"훈련 실행"}>

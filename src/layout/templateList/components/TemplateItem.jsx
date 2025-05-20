@@ -1,12 +1,16 @@
 import React from "react";
 import Button from "../../../components/common/button/Button";
 import { useLocation } from "react-router-dom";
+import {
+  EDUCATION_TEMPLATES,
+  MAIL_TEMPLATES,
+} from "../../../config/path.config";
 
 function TemplateItem({ styles, data }) {
   const location = useLocation();
   const pathname = location.pathname;
-  const mailTPg = pathname === "/mail-templates";
-  const educationTPg = pathname === "/education-templates";
+  const mailTPg = pathname === MAIL_TEMPLATES;
+  const educationTPg = pathname === EDUCATION_TEMPLATES;
 
   const mailInfoLabel = [
     {

@@ -23,6 +23,7 @@ import ParticipantGroupCreate from "../pages/participant/components/participantG
 import ParticipantGroupDetail from "../pages/participant/components/ParticipantGroupDetail";
 import ParticipantGroupRandom from "../pages/participant/components/participantGroupRandom/ParticipantGroupRandom";
 import CreateMailTemplate from "../pages/mailTemplates/components/CreateMailTemplate";
+import CreatePhishingTemplate from "../pages/phishingTemplates/components/CreatePhishingTemplate";
 
 export const router = createBrowserRouter([
   {
@@ -67,7 +68,13 @@ export const router = createBrowserRouter([
       {
         path: "phishing-templates",
         element: <PhishingTemplatesPg />,
-        children: [],
+        children: [
+          // 상세보기
+          {
+            path: "create",
+            element: <CreatePhishingTemplate />,
+          },
+        ],
       },
       // 경고 템플릿
       {

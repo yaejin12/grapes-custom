@@ -5,3 +5,82 @@
   width: 100%;
   padding: 40px 50px;
 }
+
+.create_section_box {
+  @include global.box;
+  width: 100%;
+  padding: 16px 50px;
+}
+
+// ---------------------------------------------
+// [메일 템플릿 신규 등록]상단 타이틀 (템플릿 정보 설정 / 템플릿 편집)
+.title_wrapper {
+  width: 100%;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 32px;
+  .title_icon {
+    margin-right: 10px;
+  }
+  // title_text
+  .title_text {
+    font-size: 22px;
+    font-weight: 600;
+  }
+}
+// 훈련명 등 레이블
+.label {
+  font-size: 16px;
+  display: flex;
+  width: 92px;
+  height: 44px;
+  padding-top: 12px;
+  margin-right: 24px;
+  font-weight: 600;
+
+  // 필수
+  .required_mark {
+    @include global.required_mark;
+  }
+}
+
+// 정보설정 입력 전체 wrapper
+.content_wrapper {
+  display: flex;
+  width: 100%;
+  gap: 56px;
+
+  .content_left {
+    width: calc(100% / 2);
+  }
+  .content_right {
+    width: calc(100% / 2);
+  }
+}
+
+.content_item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 32px;
+
+  .form_field {
+    width: calc(100% - 92px - 24px);
+
+    .selected_box_wrapper {
+    }
+  }
+}
+
+.grapes_wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submit_wrapper {
+  width: 100%;
+  @include global.flex_center;
+  padding: 50px 0;
+}

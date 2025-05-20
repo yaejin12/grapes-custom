@@ -1,5 +1,16 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import {
+  CREATE_TRAINING,
+  EDUCATION_TEMPLATES,
+  MAIL_TEMPLATES,
+  PARTICIPANT_GROUP,
+  PHISHING_TEMPLATES,
+  REPORT,
+  RESULT_TRAINING,
+  RUN_TRAINING,
+  WARNING_TEMPLATES,
+} from "../../config/path.config";
 
 function Aside({ styles }) {
   const [actionLnbItem, setActiveLnbItem] = useState("status");
@@ -67,31 +78,31 @@ function Aside({ styles }) {
             </button>
             <ul className={styles.lnb_sub_wrapper}>
               <NavLink
-                to={"/participant-group"}
+                to={PARTICIPANT_GROUP}
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <li>대상자 그룹</li>
               </NavLink>
               <NavLink
-                to={"/mail-templates"}
+                to={MAIL_TEMPLATES}
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <li>메일 템플릿</li>
               </NavLink>
               <NavLink
-                to={"/phishing-templates"}
+                to={PHISHING_TEMPLATES}
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <li>피싱 템플릿</li>
               </NavLink>
               <NavLink
-                to={"/warning-templates"}
+                to={WARNING_TEMPLATES}
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <li>경고 템플릿</li>
               </NavLink>
               <NavLink
-                to={"/education-templates"}
+                to={EDUCATION_TEMPLATES}
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 <li>교육</li>
@@ -105,7 +116,7 @@ function Aside({ styles }) {
               actionLnbItem === "reg" ? styles.btn_direct_action : ""
             }`}
           >
-            <NavLink to={"/create-training"}>
+            <NavLink to={CREATE_TRAINING}>
               <button onClick={() => toggleAccordionItem("reg")}>
                 <i>
                   <img src="/images/menu_add.svg" alt=""></img>
@@ -121,7 +132,7 @@ function Aside({ styles }) {
               actionLnbItem === "run" ? styles.btn_direct_action : ""
             }`}
           >
-            <NavLink to={"/run-training"}>
+            <NavLink to={RUN_TRAINING}>
               <button onClick={() => toggleAccordionItem("run")}>
                 <i>
                   <img src="/images/menu_start.svg" alt=""></img>
@@ -137,7 +148,7 @@ function Aside({ styles }) {
               actionLnbItem === "res" ? styles.btn_direct_action : ""
             }`}
           >
-            <NavLink to={"/result-training"}>
+            <NavLink to={RESULT_TRAINING}>
               <button onClick={() => toggleAccordionItem("res")}>
                 <i>
                   <img src="/images/menu_result.svg" alt=""></img>
@@ -153,7 +164,7 @@ function Aside({ styles }) {
               actionLnbItem === "rpt" ? styles.btn_direct_action : ""
             }`}
           >
-            <NavLink to={"/report"}>
+            <NavLink to={REPORT}>
               <button onClick={() => toggleAccordionItem("rpt")}>
                 <i>
                   <img src="/images/menu_report.svg" alt=""></img>

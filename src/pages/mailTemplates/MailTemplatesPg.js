@@ -6,20 +6,21 @@ import Button from "../../components/common/button/Button";
 import TemplateList from "../../layout/templateList/TemplateList";
 import FilterBox from "../../components/filterBox/FilterBox";
 import { templateList } from "./data";
+import { MAIL_TEMPLATES } from "../../config/path.config";
 
 function MailTemplatesPg() {
   const location = useLocation();
   const navigate = useNavigate();
   const pathname = location.pathname;
-  const mTemplatesPg = pathname === "/mail-templates";
+  const mTemplatesPg = pathname === MAIL_TEMPLATES;
 
   // 상단 신규등록
   const handlerCreateMailTemplateBtnClick = () => {
-    navigate("/mail-templates/create");
+    navigate(`${MAIL_TEMPLATES}/create`);
   };
 
   const handlerFileUploadMailTemplateBtnClick = () => {
-    navigate("/mail-templates/file_upload");
+    navigate(`${MAIL_TEMPLATES}/file_upload`);
   };
 
   // 상단 버튼

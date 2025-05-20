@@ -7,10 +7,11 @@ import React, { useState } from "react";
 import { DndProvider } from "react-dnd";
 import OrgToggleItem from "./OrgToggleItem";
 import { useLocation } from "react-router-dom";
+import { PARTICIPANT_GROUP } from "../../../config/path.config";
 
 function CustomTree({ styles, data, handlerDeptAddClick }) {
   const pathname = useLocation().pathname;
-  const pGroupPg = pathname.startsWith("/participant-group");
+  const pGroupPg = pathname.startsWith(PARTICIPANT_GROUP);
   const [openNodeIds, setOpenNodeIds] = useState([]);
   return (
     <div

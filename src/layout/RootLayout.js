@@ -7,6 +7,7 @@ import Aside from "./components/Aside";
 import styles from "./rootLayout.module.scss";
 import { Outlet, useLocation } from "react-router-dom";
 import PgTitle from "../components/layout/pgTitle/PgTitle";
+import { PARTICIPANT_GROUP } from "../config/path.config";
 
 function RootLayout() {
   const location = useLocation();
@@ -20,7 +21,7 @@ function RootLayout() {
     case "/status":
       pgTitle = "종합현황";
       break;
-    case "/participant-group":
+    case PARTICIPANT_GROUP:
       pgTitle = "대상자 그룹";
       break;
     default:

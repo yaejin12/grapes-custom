@@ -6,14 +6,15 @@ import TableToolbar from "../../components/layout/table/components/TableToolbar"
 import Table from "../../components/layout/table/Table";
 import { dummyTrainingData } from "./data";
 import { resultPgTHeader } from "../../config/uiConfig";
+import { RESULT_TRAINING } from "../../config/path.config";
 
 function ResultTrainingPg() {
   const pathname = useLocation().pathname;
   const navigate = useNavigate();
-  const isResultPg = pathname === "/result-training";
+  const isResultPg = pathname === RESULT_TRAINING;
 
   const handlerTableItemClick = (id) => {
-    navigate(`/result-training/${id}`);
+    navigate(`${RESULT_TRAINING}/${id}`);
   };
 
   return (

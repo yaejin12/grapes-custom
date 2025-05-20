@@ -6,11 +6,12 @@ import Table from "../../components/layout/table/Table";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
 import { reportPgTHeader } from "../../config/uiConfig";
 import { reportPgDummyData } from "../../config/dummyData";
+import { REPORT } from "../../config/path.config";
 
 function ReportPg() {
   const location = useLocation();
   const pathname = location.pathname;
-  const isReportPg = pathname === "/report";
+  const isReportPg = pathname === REPORT;
   return (
     <PgTitle h3={"훈련결과"}>
       {isReportPg && (

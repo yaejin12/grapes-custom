@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Button from "../../../components/common/button/Button";
 import { NavLink } from "react-router-dom";
 import StatusBar from "./StatusBar";
+import { RUN_TRAINING } from "../../../config/path.config";
 
 function RunTrainingItem({ styles, data }) {
   return (
     <>
       {/* [s] item */}
       <li className={styles.templates_item}>
-        <NavLink to={`/run-training/${data?.id}`}>
+        <NavLink to={`${RUN_TRAINING}/${data?.id}`}>
           <div className={styles.item_title_wrapper}>
             <span className={styles.item_title}>{data?.title}</span>
           </div>

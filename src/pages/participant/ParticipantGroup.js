@@ -6,16 +6,17 @@ import PgTitle from "../../components/layout/pgTitle/PgTitle";
 import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import NoData from "../../components/emptyData/NoData";
 import { pGTHeader } from "../../config/uiConfig";
+import { PARTICIPANT_GROUP } from "../../config/path.config";
 
 function ParticipantGroup() {
   const location = useLocation();
   const pathname = location.pathname;
   const navigate = useNavigate();
   const { id } = useParams();
-  const pGroupPg = pathname === "/participant-group"; //대상자 그룹 페이지
-  const pGroupAddPg = pathname === "/participant-group/add"; //대상자 그룹 페이지
-  const pGroupRandomPg = pathname === "/participant-group/random"; //대상자 그룹 페이지
-  const pGroupPgDetail = location.pathname === `/participant-group/${id}`; //대상자 디테일 페이지
+  const pGroupPg = pathname === PARTICIPANT_GROUP; //대상자 그룹 페이지
+  const pGroupAddPg = pathname === `${PARTICIPANT_GROUP}/add`; //대상자 그룹 페이지
+  const pGroupRandomPg = pathname === `${PARTICIPANT_GROUP}/random`; //대상자 그룹 페이지
+  const pGroupPgDetail = location.pathname === `${PARTICIPANT_GROUP}/${id}`; //대상자 디테일 페이지
 
   const data = [
     {
@@ -75,7 +76,7 @@ function ParticipantGroup() {
 
   // 테이블 클릭 시 디테일 페이지 이동
   const handlerTableItemClick = (id) => {
-    if (pGroupPg) navigate(`/participant-group/${id}`);
+    if (pGroupPg) navigate(`${PARTICIPANT_GROUP}/${id}`);
   };
 
   return (

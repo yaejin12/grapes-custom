@@ -10,10 +10,11 @@ import {
 } from "recharts";
 import ChartCustomTooltip from "./components/ChartCustomTooltip";
 import { useLocation } from "react-router-dom";
+import { RESULT_TRAINING } from "../../../config/path.config";
 
 function CustomBarChart({}) {
   const pathname = useLocation().pathname;
-  const isResultDetailPg = pathname.startsWith("/result-training");
+  const isResultDetailPg = pathname.startsWith(RESULT_TRAINING);
   const data = [
     {
       name: "메일열람",
