@@ -24,6 +24,7 @@ import ParticipantGroupDetail from "../pages/participant/components/ParticipantG
 import ParticipantGroupRandom from "../pages/participant/components/participantGroupRandom/ParticipantGroupRandom";
 import CreateMailTemplate from "../pages/mailTemplates/components/CreateMailTemplate";
 import CreatePhishingTemplate from "../pages/phishingTemplates/components/CreatePhishingTemplate";
+import CreateWarningTemplate from "../pages/warningTemplates/components/CreateWarningTemplate";
 
 export const router = createBrowserRouter([
   {
@@ -58,6 +59,7 @@ export const router = createBrowserRouter([
         path: "mail-templates",
         element: <MailTemplatesPg />,
         children: [
+          // 신규등록
           {
             path: "create",
             element: <CreateMailTemplate />,
@@ -69,7 +71,7 @@ export const router = createBrowserRouter([
         path: "phishing-templates",
         element: <PhishingTemplatesPg />,
         children: [
-          // 상세보기
+          // 신규등록
           {
             path: "create",
             element: <CreatePhishingTemplate />,
@@ -80,7 +82,13 @@ export const router = createBrowserRouter([
       {
         path: "warning-templates",
         element: <WarningTemplatesPg />,
-        children: [],
+        children: [
+          // 신규등록
+          {
+            path: "create",
+            element: <CreateWarningTemplate />,
+          },
+        ],
       },
       // 교육 템플릿
       {
