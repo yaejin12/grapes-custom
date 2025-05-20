@@ -282,6 +282,7 @@
   }
 }
 
+// 라인 버튼
 .line_btn {
   padding: 12px 20px;
   font-size: 15px;
@@ -293,4 +294,13 @@
   &.isImg {
     padding-right: 12px;
   }
+}
+
+// count_control_btn
+.count_control_btn {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-gr-2);
+  border-radius: 999px;
+  @include global.flex_center;
 }

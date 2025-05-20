@@ -10,7 +10,7 @@
   @include global.scrollbarY(500px);
 
   &.min_hight {
-    @include global.scrollbarY(700px);
+    @include global.scrollbarY(730px);
   }
 }
 
@@ -29,11 +29,20 @@
     background-color: var(--color-gr-3);
     border-radius: 4px;
     margin-right: 8px;
+
     img {
       width: 11px;
     }
   }
 
+  button {
+    border: 1px solid var(--color-border);
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    @include global.flex_center;
+    margin-left: 6px;
+  }
   // 부서명
   .org_toggle_item_text {
     font-size: 15px;

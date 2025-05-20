@@ -77,7 +77,7 @@
         width: 120px;
         margin-right: 16px;
         display: flex;
-        align-items: center;
+        padding-top: 12px;
       }
     }
 
@@ -186,7 +186,7 @@
   width: 100%;
   display: flex;
 
-  // 왼쪽 전체
+  // [랜덤]왼쪽 전체
   .left_wrapper {
     width: 276px;
     padding: 32px 0;
@@ -198,6 +198,7 @@
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
+
       // 조직도 타이틀
       .org_tree_title {
         display: flex;
@@ -217,10 +218,11 @@
     }
   }
 
-  // 오른쪽 전체
+  // [랜덤]오른쪽 전체
   .right_wrapper {
     flex: 1;
     padding: 48px 56px;
+    padding: 91px 56px;
 
     .title_wrapper {
       width: 100%;
@@ -232,10 +234,11 @@
         font-weight: 600;
       }
     }
-
+    // [랜덤] 대상자 그룹명 + 부서선택 전체
     .bottom_wrapper {
       width: 80%;
       margin-top: 40px;
+
       .form_field {
         display: flex;
         margin-bottom: 20px;
@@ -244,25 +247,34 @@
           width: 120px;
           margin-right: 16px;
           display: flex;
-          align-items: center;
+          padding-top: 12px;
         }
 
         .select_dept_wrapper {
           width: 100%;
 
           ul {
+            min-height: calc(44px * 9) + (16px * 8);
+            @include global.scrollbarY(calc(44px * 9) + (16px * 8));
+
+            padding-right: 8px;
             .select_dept_item {
               width: 100%;
               display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-bottom: 16px;
 
+              // 부서 박스 전체
               .dept_box {
                 padding: 8px 16px;
                 border: 1px solid var(--color-border);
                 border-radius: 8px;
                 height: 44px;
-                width: 50%;
+                width: 65%;
                 display: flex;
                 align-items: center;
+
                 .dept_icon {
                   width: 20px;
                   height: 20px;
@@ -271,10 +283,53 @@
                   margin-right: 10px;
                   @include global.flex_center;
                 }
+                .dept_text {
+                  font-size: 14px;
+                  @include global.flex_center(start);
+                  width: 85%;
+
+                  .ellipsis {
+                    display: inline-block;
+                    @include global.ellipsis;
+                  }
+                }
+              }
+
+              // 명 컨트롤 + 삭제 버튼
+              .dept_num_count_control_wrapper {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+
+                // 명 수 컨트롤 하는 박스 전부
+                .num_count_control_box {
+                  display: flex;
+                  align-items: center;
+                  gap: 10px;
+
+                  // input
+                  .input_wrapper {
+                    width: 120px;
+                  }
+
+                  // 명
+                  .persons_text {
+                    font-size: 14px;
+                  }
+                }
               }
             }
           }
         }
+      }
+
+      // [랜덤] 취소 등로 버튼
+      .submit_btn_wrapper {
+        display: flex;
+        margin-right: 15px;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 78px;
       }
     }
   }

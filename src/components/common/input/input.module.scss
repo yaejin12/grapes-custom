@@ -54,6 +54,12 @@
     border-radius: 999px;
     padding: 8px 20px;
   }
+
+  &.count_control {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
 }
 
 .error {

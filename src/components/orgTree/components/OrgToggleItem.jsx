@@ -1,6 +1,6 @@
 import React from "react";
 
-function OrgToggleItem({ isOpen, onToggle, styles, node, depth }) {
+function OrgToggleItem({ onToggle, styles, node, depth, handlerDeptAddClick }) {
   const handlerClick = (e) => {
     e.stopPropagation(); // 클릭 버블 방지
     onToggle();
@@ -18,6 +18,11 @@ function OrgToggleItem({ isOpen, onToggle, styles, node, depth }) {
         <img src="/images/tree_top_item.svg" alt="" />
       </span>
       <span className={styles.org_toggle_item_text}>{node.text}</span>
+      {handlerDeptAddClick && (
+        <button onClick={(e) => handlerDeptAddClick(e, node)}>
+          <img src="/images/tree_plus.svg" alt="부서 추가" />
+        </button>
+      )}
     </div>
   );
 }
