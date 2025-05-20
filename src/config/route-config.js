@@ -22,6 +22,7 @@ import DefaultSetting from "../pages/setting/components/DefaultSetting";
 import ParticipantGroupCreate from "../pages/participant/components/participantGroupCreate/ParticipantGroupCreate";
 import ParticipantGroupDetail from "../pages/participant/components/ParticipantGroupDetail";
 import ParticipantGroupRandom from "../pages/participant/components/participantGroupRandom/ParticipantGroupRandom";
+import CreateMailTemplate from "../pages/mailTemplates/components/CreateMailTemplate";
 
 export const router = createBrowserRouter([
   {
@@ -55,7 +56,12 @@ export const router = createBrowserRouter([
       {
         path: "mail-templates",
         element: <MailTemplatesPg />,
-        children: [],
+        children: [
+          {
+            path: "create",
+            element: <CreateMailTemplate />,
+          },
+        ],
       },
       // 피싱 템플릿
       {

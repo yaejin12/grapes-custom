@@ -157,6 +157,7 @@ function GrapesEditor() {
             ...imageBlock?.attributes,
             label: "이미지",
             category: sharedCategory,
+            media: '<img src="/images/editor_img.svg" style="" />',
           },
         },
         { id: "button", config: customButtonAddBlockManager },
@@ -235,7 +236,7 @@ function GrapesEditor() {
       const canvasBody = editor.Canvas.getBody();
       canvasBody.setAttribute(
         "style",
-        "margin: 30px auto; width: 100%; box-sizing: border-box; background-color: rgb(161, 161, 161);"
+        "margin: 30px auto; width: 100%; box-sizing: border-box; background-color: #22262C;"
       );
       // ========================
       // [s]trait 패널 커스터마이징
@@ -279,12 +280,17 @@ function GrapesEditor() {
           ).getPropertyValue("--gjs-primary-color");
 
           insertBtn.style.marginTop = "8px";
-          insertBtn.style.padding = "4px 8px";
+          insertBtn.style.padding = "7px 8px";
           insertBtn.style.cursor = "pointer";
-          insertBtn.style.fontSize = "12px";
-          insertBtn.style.background = primaryColor.trim();
-          insertBtn.style.border = "1px solid #ccc";
+          insertBtn.style.fontSize = "13px";
+          insertBtn.style.background = "#22262C";
+          insertBtn.style.boxShadow = "0 1px 0 0 rgba(0,0,0,.15)";
+          // insertBtn.style.background = primaryColor.trim();
+          // insertBtn.style.border = "1px solid #ccc";
           insertBtn.style.width = "100%";
+          insertBtn.style.color = "#ccc";
+          insertBtn.style.fontWeight = "600";
+          insertBtn.style.borderRadius = "4px";
 
           insertBtn.onclick = () => {
             component.set("href", `NOT_YET_${uuidV4()}`); // ✅ 이게 중요

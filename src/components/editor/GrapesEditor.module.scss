@@ -1,25 +1,53 @@
 :root {
-  --gjs-left-width: 17%;
+  --gjs-left-width: 16%;
+  --gjs-primary-color: #373b41;
+  --gjs-secondary-dark-color: #373b41;
+  --gjs-quaternary-color: #2f80ec;
+  --gjs-font-size: 13px;
+  --gjs-main-font: "Pretendard", "sans-serif";
 }
 
 .editor_section {
   width: 1300px;
-  height: 600px;
-  font-size: 11px;
+  width: 100%;
+  height: 820px;
+  font-size: 13px;
+  font-weight: 600;
 
   input {
-    font-size: 11px;
+    font-size: 13px;
+    height: 28px;
+    color: #ddd;
+  }
+  label {
+    color: #ddd;
+    font-size: 13px;
+  }
+  select {
+    background-image: none;
+    font-size: 13px;
+    height: 28px;
   }
 
   & :global(.gjs-editor) {
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-family: "Pretendard", "sans-serif";
+    font-style: normal;
+    font-weight: 600 !important;
+    letter-spacing: -0.3px;
     font-size: 13px;
   }
   //   에디터 전체
   & :global(.gjs-editor-cont) {
     height: 100% !important;
+    font-weight: 500;
   }
 
+  // 스타일 소제목
+  & :global(.gjs-sm-icon) {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
   //   상단 아이콘
   & :global(.gjs-pn-buttons) {
     justify-content: end;
@@ -31,32 +59,35 @@
     align-items: center;
     justify-content: center;
     margin: 3px 2% 3px;
-    padding: 5px;
-    min-height: 75px;
+    padding: 20px 5px;
+    // min-height: 75px;
     width: 46%;
-    height: 80px;
+    // height: 88px;
+    border-radius: 8px;
+    background-color: #22262c;
   }
 
   //   블록 텍스트
+  & :global(.gjs-sm-sector-title),
   & :global(.gjs-title) {
     font-weight: 500;
+    // font-size: 15px;
+    padding: 16px 20px;
   }
   //   블록 텍스트
   & :global(.gjs-block-label) {
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
-
-    font-size: 11px;
+    font-size: 13px;
     color: #ffffff;
   }
 
   // 아이콘
   & :global(.gjs-block__media) {
     width: 30px;
-    height: auto;
+    height: 35px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 7px;
+    margin-bottom: 0;
   }
 
   //   블록 텍스트
@@ -68,7 +99,7 @@
   // 모서리 스타일
   & :global(.gjs-sm-field) {
     background-color: transparent;
-    border: none;
+    // border: none;
   }
 
   & :global(.gjs-trt-trait) {
@@ -76,7 +107,7 @@
   }
 
   & :global(.gjs-label) {
-    font-size: 12px;
+    font-size: 13px;
   }
   // setting title부분
   & :global(.gjs-label-wrp) {
@@ -87,12 +118,12 @@
   & :global(.gjs-mdl-title),
   & :global(.gjs-am-assets-cont),
   & :global(.gjs-am-file-uploader) {
-    font-family: "Spoqa Han Sans Neo", "sans-serif";
+    font-family: "Pretendard", "sans-serif";
+    font-weight: 500;
   }
 
   & :global(.gjs-mdl-title) {
     font-size: 1.1rem;
-    font-weight: 500;
   }
   // 이미지 추가 버튼
   & :global(.gjs-btn-prim) {
@@ -104,6 +135,27 @@
     width: 75%;
   }
   // [e]이미지 모달
+
+  // 스타일 변경
+  & :global(.gjs-pn-btn.gjs-pn-active) {
+    background-color: #373b41;
+  }
+  & :global(.gjs-one-bg) {
+    // border-radius: 8px;
+  }
+  & :global(.gjs-pn-views-container) {
+    box-shadow: none;
+  }
+
+  &:global(.gjs-pn-views) {
+    border-bottom: none;
+  }
+
+  &:global(.gjs-layer-item-left) {
+    padding: 10px;
+  }
+
+  //   에디터 전체
 }
 
 // body {

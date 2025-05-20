@@ -242,6 +242,7 @@ export const sharedCategory = {
 export const customColumnAddBlockManager = {
   id: "custom-column",
   label: "1개 열",
+  media: '<img src="/images/editor_c1.svg" style="" />',
   category: sharedCategory,
   content: () => ({
     tagName: "table",
@@ -279,6 +280,7 @@ export const customColumnAddBlockManager = {
 export const customColumn2AddBlockManager = {
   id: "custom-column2",
   label: "2개 열",
+  media: '<img src="/images/editor_c2.svg" style="" />',
   category: sharedCategory,
   content: () => ({
     tagName: "table",
@@ -334,6 +336,7 @@ export const customTextAddType = {
 export const customTextAddBlockManager = {
   label: "텍스트",
   category: sharedCategory,
+  media: '<img src="/images/editor_text.svg" style="" />',
   content: {
     tagName: "span",
     type: "text",
@@ -374,6 +377,7 @@ export const customLinkAddType = {
 export const customLinkAddBlockManager = {
   label: "링크",
   category: sharedCategory,
+  media: '<img src="/images/editor_link.svg" style="" />',
   content: {
     type: "link",
     content: "클릭 후 링크 삽입",
@@ -427,6 +431,7 @@ export const customButtonAddType = {
 export const customButtonAddBlockManager = {
   label: "버튼",
   category: sharedCategory,
+  media: '<img src="/images/editor_btn.svg" style="" />',
   content: () => ({
     type: "button",
     attributes: {
@@ -442,6 +447,7 @@ export const customButtonAddBlockManager = {
 export const customInputAddBlockManager = {
   label: "인풋",
   category: sharedCategory,
+  media: '<img src="/images/editor_input.svg" style="" />',
   content: {
     tagName: "input",
     attributes: {
@@ -463,12 +469,12 @@ export const customInputAddBlockManager = {
 // [s]대상자명 삽입 블록 커스텀
 export const customUserNameAddBlockManager = {
   label: "대상자 명",
-  media: '<img src="/images/user-name.svg" style=" height: 20px;" />',
+  media: '<img src="/images/editor_user.svg" style="" />',
   category: sharedCategory,
   content: {
     tagName: "span",
     components: "{user_name}",
-    attributes: { style: "font-family: 'Spoqa Han Sans Neo', sans-serif;" },
+    attributes: { style: "font-family: 'Pretendard', sans-serif;" },
   },
 };
 // [e]대상자명 삽입 블록 커스텀

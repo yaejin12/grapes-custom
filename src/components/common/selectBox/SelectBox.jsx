@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./selectBox.module.scss";
 
-function SelectBox({ onChange, selectValue = "", placeholder, ...props }) {
+function SelectBox({
+  styleType,
+  onChange,
+  selectValue = "",
+  placeholder,
+  ...props
+}) {
   const optionData = [
     { value: "apple", label: "사과" },
     { value: "banana", label: "바나나" },
@@ -10,7 +16,7 @@ function SelectBox({ onChange, selectValue = "", placeholder, ...props }) {
 
   return (
     <select
-      className={styles.common_select}
+      className={`${styles.common_select} ${styles[styleType] || ""}`}
       onChange={onChange}
       value={selectValue}
       {...props}

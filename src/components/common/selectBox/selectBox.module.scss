@@ -17,4 +17,9 @@ select {
   background: url("../../../../public/images/select_box_dash.svg") no-repeat
     calc(100% - 12px);
   font-size: 14px;
+
+  // 신규등록 템플릿 일때
+  &.template {
+    height: 44px;
+  }
 }
