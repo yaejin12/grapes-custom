@@ -5,17 +5,25 @@ import TemplateList from "../../layout/templateList/TemplateList";
 import { phishingData } from "../phishingTemplates/data";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { WARNING_TEMPLATES } from "../../config/path.config";
+import WarningTplFileUploadModal from "./components/WarningTplFileUploadModal";
+import useShowModal from "../../hooks/useShowModal";
 
 function WarningTemplatesPg() {
   const pathname = useLocation().pathname;
   const navigate = useNavigate();
   const isWarningTempPg = pathname === WARNING_TEMPLATES;
+  const { showModal } = useShowModal();
 
   // 상단 신규등록 버튼 클릭 시
   const handlerTemplateAddBtnClick = () => {
     navigate(`${WARNING_TEMPLATES}/create`);
   };
-  const handlerTemplateFileUploadBtnClick = () => {};
+
+  // 파일 업로드 버튼 클릭 시
+  const handlerTemplateFileUploadBtnClick = () => {
+    showModal(true);
+  };
+
   const pgBtn = () => {
     return [
       {
@@ -34,14 +42,17 @@ function WarningTemplatesPg() {
   };
 
   return (
-    <PgTitle h3={"경고 템플릿"} btn={isWarningTempPg && pgBtn()}>
-      {isWarningTempPg && (
-        <section className={styles.section_box}>
-          <TemplateList data={phishingData} />
-        </section>
-      )}
-      <Outlet />
-    </PgTitle>
+    <>
+      <PgTitle h3={"경고 템플릿"} btn={isWarningTempPg && pgBtn()}>
+        {isWarningTempPg && (
+          <section className={styles.section_box}>
+            <TemplateList data={phishingData} />
+          </section>
+        )}
+        <Outlet />
+      </PgTitle>
+      <WarningTplFileUploadModal />
+    </>
   );
 }
 

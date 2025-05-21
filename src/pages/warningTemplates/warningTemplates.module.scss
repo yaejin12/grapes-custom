@@ -107,3 +107,33 @@
   @include global.flex_center;
   padding: 50px 0;
 }
+
+// ==============================================================
+// 파일 업로드 모달
+.form_field_wrapper {
+  padding: 56px 56px;
+  width: 100%;
+  @include global.scrollbarY(700px);
+}
+
+.content_item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 12px;
+
+  .form_field {
+    width: calc(100% - 92px - 16px);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.label {
+  @include global.label;
+
+  // 필수
+  .required_mark {
+    @include global.required_mark;
+  }
+}
