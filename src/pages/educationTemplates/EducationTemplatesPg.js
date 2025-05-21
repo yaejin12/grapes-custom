@@ -7,13 +7,28 @@ import { educationData } from "./data";
 import FileUploadModal from "./components/FileUploadModal";
 import useShowModal from "../../hooks/useShowModal";
 import TemplateList from "../../components/layout/templateList/TemplateList";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
+import { EDUCATION_TEMPLATES } from "../../config/path.config";
+import { useDispatch } from "react-redux";
+import { showModalActions } from "../../store/Modal-slice";
+import DetailEduTpl from "./components/DetailEduVideoModal";
+import DetailEduVideoModal from "./components/DetailEduVideoModal";
 
 function EducationTemplatesPg({}) {
   const { showModal } = useShowModal();
-
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const isEduTplPg = pathname === EDUCATION_TEMPLATES;
+  const dispatch = useDispatch();
   // 상단 파일 업로드 클릭 시
   const handlerFileUploadMailTemplateBtnClick = () => {
     showModal(true);
+  };
+
+  // 템플릿 item 클릭 시
+  const handlerDetailClick = (id) => {
+    // navigate(`${EDUCATION_TEMPLATES}/${id}`);
+    dispatch(showModalActions.ShowVideoModalAction(true));
   };
 
   const filterData = [
@@ -34,12 +49,19 @@ function EducationTemplatesPg({}) {
           },
         ]}
       >
-        <section className={styles.section_box}>
-          <FilterBox data={filterData} />
-          <TemplateList data={educationData} />
-        </section>
+        {isEduTplPg && (
+          <section className={styles.section_box}>
+            <FilterBox data={filterData} />
+            <TemplateList
+              data={educationData}
+              handlerDetailClick={handlerDetailClick}
+            />
+          </section>
+        )}
+        <Outlet />
       </PgTitle>
-      {<FileUploadModal styles={styles} />}
+      <FileUploadModal styles={styles} />
+      <DetailEduVideoModal />
     </>
   );
 }

@@ -6,7 +6,7 @@ import {
   MAIL_TEMPLATES,
 } from "../../../../config/path.config";
 
-function TemplateItem({ styles, data }) {
+function TemplateItem({ styles, data, handlerDetailClick }) {
   const location = useLocation();
   const pathname = location.pathname;
   const mailTPg = pathname === MAIL_TEMPLATES;
@@ -53,7 +53,10 @@ function TemplateItem({ styles, data }) {
   return (
     <>
       {/* [s] item */}
-      <li className={styles.templates_item}>
+      <li
+        className={styles.templates_item}
+        onClick={() => handlerDetailClick && handlerDetailClick(data?.id)}
+      >
         <div className={styles.item_title_wrapper}>
           {(mailTPg || educationTPg) && (
             <span className={styles.tag}>{data?.type}</span>
