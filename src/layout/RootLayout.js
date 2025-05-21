@@ -43,8 +43,3 @@ function RootLayout() {
 }
 
 export default RootLayout;
-// {
-//   /* <GrapesEditor />
-// <CustomPieChart />
-// <CustomBarChart /> */
-// }

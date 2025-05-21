@@ -25,6 +25,7 @@ import ParticipantGroupRandom from "../pages/participant/components/participantG
 import CreateMailTemplate from "../pages/mailTemplates/components/CreateMailTemplate";
 import CreatePhishingTemplate from "../pages/phishingTemplates/components/CreatePhishingTemplate";
 import CreateWarningTemplate from "../pages/warningTemplates/components/CreateWarningTemplate";
+import DefaultWarningTpl from "../components/defaultWarningTemplate/DefaultWarningTpl";
 
 export const router = createBrowserRouter([
   {
@@ -132,6 +133,7 @@ export const router = createBrowserRouter([
         element: <ReportPg />,
         children: [],
       },
+
       // 환경설정
       {
         path: "setting",

@@ -1,0 +1,116 @@
+@use "../../assets/css/global.module.scss" as global;
+
+.default_warning_tpl_section {
+  width: 816px;
+  margin: 0 auto;
+  border: 1px solid var(--color-border);
+
+  //   타이틀 부분
+  .default_warning_tpl_heder {
+    width: 100%;
+    background-color: var(--color-point);
+    height: 82px;
+    @include global.flex_center;
+
+    h5 {
+      font-size: 26px;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+
+  .warning_tpl_wrapper {
+    width: 100%;
+    padding: 77px 102px 56px;
+    background-color: #e4f0ff;
+
+    //
+    .warning_tpl_change_box {
+      width: 100%;
+      min-height: 178px;
+      background-color: #fff;
+      position: relative;
+
+      // 아이콘 부분
+      .mail_icon_box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 99;
+        background-color: #fff;
+        left: 50%;
+        top: -40px;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 80px;
+        border-radius: 9999px;
+        border: 2px solid var(--color-point);
+        padding-bottom: 7px;
+      }
+
+      .warning_tpl_img {
+        width: 100%;
+        height: auto;
+      }
+
+      .default_warning_text {
+        text-align: center;
+        font-size: 16px;
+        line-height: 150%;
+        padding-top: 74px;
+
+        span {
+          color: var(--color-red);
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.incident_report_wrapper {
+  background-color: #fff;
+  padding: 48px 56px;
+
+  .incident_title {
+    width: 100%;
+    background-color: var(--color-point);
+    height: 56px;
+    @include global.flex_center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .form_field_wrapper {
+    margin-top: 32px;
+
+    .content_item {
+      width: 100%;
+      display: flex;
+      margin-bottom: 16px;
+
+      .form_field {
+        width: calc(100% - 95px - 24px);
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .label {
+    @include global.label(95px, 24px);
+
+    // 필수
+    .required_mark {
+      @include global.required_mark;
+    }
+  }
+}
+
+.submit_btn_wrapper {
+  @include global.flex_center;
+  padding-top: 48px;
+}
