@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./phishingTemplates.module.scss";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
-import TemplateList from "../../layout/templateList/TemplateList";
 import { phishingData } from "./data";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { PHISHING_TEMPLATES } from "../../config/path.config";
 import useShowModal from "../../hooks/useShowModal";
 import PhishTplFileUploadModal from "./components/PhishTplFileUploadModal";
+import TemplateList from "../../components/layout/templateList/TemplateList";
 
 function PhishingTemplatesPg({}) {
   const pathname = useLocation().pathname;

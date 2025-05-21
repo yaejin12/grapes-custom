@@ -1,11 +1,12 @@
 import React from "react";
 import styles from "./educationTemplates.module.scss";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
-import TemplateList from "../../layout/templateList/TemplateList";
+
 import FilterBox from "../../components/filterBox/FilterBox";
 import { educationData } from "./data";
-import FileUploadModal from "./componets/FileUploadModal";
+import FileUploadModal from "./components/FileUploadModal";
 import useShowModal from "../../hooks/useShowModal";
+import TemplateList from "../../components/layout/templateList/TemplateList";
 
 function EducationTemplatesPg({}) {
   const { showModal } = useShowModal();

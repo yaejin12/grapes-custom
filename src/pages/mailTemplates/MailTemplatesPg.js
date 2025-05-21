@@ -2,12 +2,13 @@ import React from "react";
 import styles from "./mailTemplates.module.scss";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import TemplateList from "../../layout/templateList/TemplateList";
+
 import FilterBox from "../../components/filterBox/FilterBox";
 import { templateList } from "./data";
 import { MAIL_TEMPLATES } from "../../config/path.config";
 import useShowModal from "../../hooks/useShowModal";
 import MailTemplatesFileUpload from "./components/fileUpload/MailTemplatesFileUpload";
+import TemplateList from "../../components/layout/templateList/TemplateList";
 
 function MailTemplatesPg() {
   const location = useLocation();

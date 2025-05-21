@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./runTraining.module.scss";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
-import TemplateList from "../../layout/templateList/TemplateList";
 import RunTrainingItem from "./components/RunTrainingItem";
 import { Outlet, useLocation } from "react-router-dom";
 import { runList } from "./data";

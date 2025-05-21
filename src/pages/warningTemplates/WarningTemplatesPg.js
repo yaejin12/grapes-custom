@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./warningTemplates.module.scss";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
-import TemplateList from "../../layout/templateList/TemplateList";
+import TemplateList from "../../components/layout/templateList/TemplateList";
 import { phishingData } from "../phishingTemplates/data";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { WARNING_TEMPLATES } from "../../config/path.config";

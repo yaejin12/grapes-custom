@@ -1,10 +1,10 @@
 import React from "react";
-import Button from "../../../components/common/button/Button";
+import Button from "../../../common/button/Button";
 import { useLocation } from "react-router-dom";
 import {
   EDUCATION_TEMPLATES,
   MAIL_TEMPLATES,
-} from "../../../config/path.config";
+} from "../../../../config/path.config";
 
 function TemplateItem({ styles, data }) {
   const location = useLocation();
