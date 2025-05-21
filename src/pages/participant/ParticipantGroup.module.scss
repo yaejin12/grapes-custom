@@ -25,8 +25,8 @@
   font-size: 16px;
   font-weight: 600;
 }
-// ==================================
 
+// =================================================
 // 신규 등록 페이지
 .p_g_create_wrapper {
   width: 100%;
@@ -181,6 +181,7 @@
   }
 }
 
+// ==============================================================
 // 부서별 랜덤 페이지
 .p_g_random_wrapper {
   width: 100%;
@@ -234,6 +235,7 @@
         font-weight: 600;
       }
     }
+
     // [랜덤] 대상자 그룹명 + 부서선택 전체
     .bottom_wrapper {
       width: 80%;
@@ -332,5 +334,31 @@
         margin-top: 78px;
       }
     }
+  }
+}
+
+// ==============================================================
+// 엑셀 파일 업로드 모달 페이지
+.form_field_wrapper {
+  padding: 52px 56px;
+  width: 100%;
+}
+
+.content_item {
+  width: 100%;
+  display: flex;
+  margin-bottom: 12px;
+
+  .form_field {
+    width: calc(100% - 92px - 16px);
+  }
+}
+
+.label {
+  @include global.label;
+
+  // 필수
+  .required_mark {
+    @include global.required_mark;
   }
 }

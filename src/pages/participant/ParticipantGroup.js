@@ -7,12 +7,16 @@ import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import NoData from "../../components/emptyData/NoData";
 import { pGTHeader } from "../../config/uiConfig";
 import { PARTICIPANT_GROUP } from "../../config/path.config";
+import { useDispatch } from "react-redux";
+import { showModalActions } from "../../store/Modal-slice";
+import FileUploadModal from "./components/participantGroupFileUpload/FileUploadModal";
 
 function ParticipantGroup() {
   const location = useLocation();
   const pathname = location.pathname;
-  const navigate = useNavigate();
   const { id } = useParams();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const pGroupPg = pathname === PARTICIPANT_GROUP; //대상자 그룹 페이지
   const pGroupAddPg = pathname === `${PARTICIPANT_GROUP}/add`; //대상자 그룹 페이지
   const pGroupRandomPg = pathname === `${PARTICIPANT_GROUP}/random`; //대상자 그룹 페이지
@@ -37,6 +41,11 @@ function ParticipantGroup() {
     navigate("random");
   };
 
+  // 파일 업로드 클릭 시
+  const handlerFileUploadBtnClick = () => {
+    dispatch(showModalActions.ShowModalAction(true));
+  };
+
   // 버튼
   const pgBtn = () => {
     if (pGroupPg) {
@@ -57,7 +66,7 @@ function ParticipantGroup() {
           label: "엑셀파일 업로드",
           img: "/images/file_upload.svg",
           style: "gr_color",
-          handler: "",
+          handler: handlerFileUploadBtnClick,
         },
       ];
     } else if (pGroupPgDetail) {
@@ -80,33 +89,36 @@ function ParticipantGroup() {
   };
 
   return (
-    <PgTitle h3={pGroupPgDetail ? "대상자" : "대상자 그룹"} btn={pgBtn()}>
-      <section
-        className={`${styles.section_box} ${
-          pGroupAddPg || pGroupRandomPg ? styles.add_section_box : ""
-        }`}
-      >
-        {pGroupPg &&
-          (data?.length > 0 ? (
-            <>
-              <TableToolbar />
-              <div className={styles.table_wrapper}>
-                <Table
-                  header={pGTHeader}
-                  data={data}
-                  onClick={handlerTableItemClick}
-                  tStyle={"pGroupPg"}
-                />
+    <>
+      <PgTitle h3={pGroupPgDetail ? "대상자" : "대상자 그룹"} btn={pgBtn()}>
+        <section
+          className={`${styles.section_box} ${
+            pGroupAddPg || pGroupRandomPg ? styles.add_section_box : ""
+          }`}
+        >
+          {pGroupPg &&
+            (data?.length > 0 ? (
+              <>
+                <TableToolbar />
+                <div className={styles.table_wrapper}>
+                  <Table
+                    header={pGTHeader}
+                    data={data}
+                    onClick={handlerTableItemClick}
+                    tStyle={"pGroupPg"}
+                  />
+                </div>
+              </>
+            ) : (
+              <div className={styles.no_user_section}>
+                <NoData text={"등록된 대상자 그룹이 없습니다"} />
               </div>
-            </>
-          ) : (
-            <div className={styles.no_user_section}>
-              <NoData text={"등록된 대상자 그룹이 없습니다"} />
-            </div>
-          ))}
-        <Outlet />
-      </section>
-    </PgTitle>
+            ))}
+          <Outlet />
+        </section>
+      </PgTitle>
+      <FileUploadModal />
+    </>
   );
 }
 

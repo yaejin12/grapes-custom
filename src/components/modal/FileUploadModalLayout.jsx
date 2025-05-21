@@ -3,7 +3,7 @@ import styles from "./modal.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import SubmitButton from "./../layout/submitButton/SubmitButton";
 import { showModalActions } from "./../../store/Modal-slice";
-function FileUploadModalLayout({ children }) {
+function FileUploadModalLayout({ children, title }) {
   const showModal = useSelector((state) => state.showModal.showModal);
   const dispatch = useDispatch();
   // 모달 취소 클릭
@@ -29,7 +29,7 @@ function FileUploadModalLayout({ children }) {
       {/* 팝업 영역 */}
       <div className={styles.popup_box}>
         <div className={styles.title_header}>
-          <p className={styles.title_text}>PDF 파일 업로드</p>
+          <p className={styles.title_text}>{title}</p>
         </div>
         <div className={styles.content_wrapper}>{children}</div>
         <div className={styles.submit_wrapper}>

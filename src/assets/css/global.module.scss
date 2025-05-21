@@ -32,6 +32,7 @@
 
   &::-webkit-scrollbar {
     width: $width;
+    display: block;
   }
 
   &::-webkit-scrollbar-track {
@@ -110,4 +111,14 @@
     background-position: center;
     background-size: contain;
   }
+}
+
+@mixin label($width: 92px, $margin-right: 16px) {
+  font-size: 16px;
+  display: flex;
+  width: $width;
+  height: 44px;
+  padding-top: 12px;
+  font-weight: 600;
+  margin-right: $margin-right;
 }

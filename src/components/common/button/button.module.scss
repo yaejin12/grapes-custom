@@ -304,3 +304,19 @@
   border-radius: 999px;
   @include global.flex_center;
 }
+
+.sample_btn {
+  color: var(--color-point);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--color-point);
+  text-underline-offset: 3px;
+  @include global.flex_center;
+  margin-top: 12px;
+
+  img {
+    margin-left: 6px;
+    padding-top: 2px;
+  }
+}

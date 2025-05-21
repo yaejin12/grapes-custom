@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FileUploadModalLayout from "../../../components/modal/FileUploadModalLayout";
 import CommonInput from "./../../../components/common/input/CommonInput";
 import FileInput from "../../../components/common/input/FileInput";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import { EDUCATION_TEMPLATES } from "../../../config/path.config";
 
 function FileUploadModal({ styles }) {
+  const pathname = useLocation().pathname;
+  const isEduPg = pathname === EDUCATION_TEMPLATES;
   const showModal = useSelector((state) => state.showModal.showModal);
   return (
     <>
-      {showModal && (
-        <FileUploadModalLayout>
+      {isEduPg && showModal && (
+        <FileUploadModalLayout title={"파일 업로드"}>
           <div className={styles.form_field_wrapper}>
             {/* [s] 교육명 */}
             <div className={styles.content_item}>
