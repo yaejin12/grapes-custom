@@ -205,6 +205,20 @@
     }
   }
 
+  &.sm_btn {
+    height: 32px;
+    width: 64px;
+    font-size: 13px;
+    border: none;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-point);
+
+    &.gr_color {
+      background-color: rgb(75, 81, 89, 0.3);
+    }
+  }
+
   //
   &.disabled {
     position: relative;
@@ -319,4 +333,12 @@
     margin-left: 6px;
     padding-top: 2px;
   }
+}
+
+.select_box_btn {
+  width: 20px;
+  height: 20px;
+  background-color: #979797;
+  border-radius: 999px;
+  @include global.flex_center;
 }

@@ -2,15 +2,17 @@ import React from "react";
 import styles from "./mailTemplates.module.scss";
 import PgTitle from "../../components/layout/pgTitle/PgTitle";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import Button from "../../components/common/button/Button";
 import TemplateList from "../../layout/templateList/TemplateList";
 import FilterBox from "../../components/filterBox/FilterBox";
 import { templateList } from "./data";
 import { MAIL_TEMPLATES } from "../../config/path.config";
+import useShowModal from "../../hooks/useShowModal";
+import MailTemplatesFileUpload from "./components/fileUpload/MailTemplatesFileUpload";
 
 function MailTemplatesPg() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { showModal } = useShowModal();
   const pathname = location.pathname;
   const mTemplatesPg = pathname === MAIL_TEMPLATES;
 
@@ -20,7 +22,7 @@ function MailTemplatesPg() {
   };
 
   const handlerFileUploadMailTemplateBtnClick = () => {
-    navigate(`${MAIL_TEMPLATES}/file_upload`);
+    showModal(true);
   };
 
   // 상단 버튼
@@ -58,6 +60,7 @@ function MailTemplatesPg() {
         )}
         <Outlet />
       </PgTitle>
+      <MailTemplatesFileUpload />
     </>
   );
 }

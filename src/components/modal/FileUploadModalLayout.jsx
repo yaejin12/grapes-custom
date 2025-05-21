@@ -3,27 +3,28 @@ import styles from "./modal.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import SubmitButton from "./../layout/submitButton/SubmitButton";
 import { showModalActions } from "./../../store/Modal-slice";
+import useShowModal from "../../hooks/useShowModal";
 function FileUploadModalLayout({ children, title }) {
-  const showModal = useSelector((state) => state.showModal.showModal);
-  const dispatch = useDispatch();
+  const isShowModal = useSelector((state) => state.showModal.showModal);
+  const { showModal } = useShowModal();
   // 모달 취소 클릭
   const handlerCancelBtnClick = () => {
-    dispatch(showModalActions.ShowModalAction(false));
+    showModal(false);
   };
   //모달이 열릴 때 body 스크롤 막기
   useEffect(() => {
-    if (showModal) {
+    if (isShowModal) {
       document.body.classList.add("no_scroll");
     } else {
       document.body.classList.remove("no_scroll");
     }
     return () => document.body.classList.remove("no_scroll"); // 컴포넌트가 언마운트되면 스크롤 복원
-  }, [showModal]);
+  }, [isShowModal]);
 
   return (
     <div
       className={`${styles.modal_layout}  ${
-        showModal ? styles.modal_action : ""
+        isShowModal ? styles.modal_action : ""
       }`}
     >
       {/* 팝업 영역 */}

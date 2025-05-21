@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./checkBox.module.scss";
 
-function CheckBox({ id, checked, onChange, data, label }, ref) {
+function CheckBox({ id, checked, onChange, data }, ref) {
   return (
     <>
       <input

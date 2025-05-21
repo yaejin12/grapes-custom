@@ -32,6 +32,10 @@ function Button({ btn, handlerClick, type, disabled, ...props }) {
       typeStyle = styles.submit;
       break;
 
+    case "sm_btn":
+      typeStyle = styles.sm_btn;
+      break;
+
     default:
       typeStyle = "";
       break;

@@ -7,16 +7,15 @@ import { Outlet, useLocation, useNavigate, useParams } from "react-router-dom";
 import NoData from "../../components/emptyData/NoData";
 import { pGTHeader } from "../../config/uiConfig";
 import { PARTICIPANT_GROUP } from "../../config/path.config";
-import { useDispatch } from "react-redux";
-import { showModalActions } from "../../store/Modal-slice";
 import FileUploadModal from "./components/participantGroupFileUpload/FileUploadModal";
+import useShowModal from "../../hooks/useShowModal";
 
 function ParticipantGroup() {
   const location = useLocation();
   const pathname = location.pathname;
   const { id } = useParams();
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  const { showModal } = useShowModal();
   const pGroupPg = pathname === PARTICIPANT_GROUP; //대상자 그룹 페이지
   const pGroupAddPg = pathname === `${PARTICIPANT_GROUP}/add`; //대상자 그룹 페이지
   const pGroupRandomPg = pathname === `${PARTICIPANT_GROUP}/random`; //대상자 그룹 페이지
@@ -43,7 +42,7 @@ function ParticipantGroup() {
 
   // 파일 업로드 클릭 시
   const handlerFileUploadBtnClick = () => {
-    dispatch(showModalActions.ShowModalAction(true));
+    showModal(true);
   };
 
   // 버튼
