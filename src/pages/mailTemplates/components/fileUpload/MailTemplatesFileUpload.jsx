@@ -9,7 +9,7 @@ import FileInput from "../../../../components/common/input/FileInput";
 import SelectBox from "./../../../../components/common/selectBox/SelectBox";
 import CheckBox from "./../../../../components/common/checkBox/CheckBox";
 import Button from "../../../../components/common/button/Button";
-import SelectBoxButton from "../../../../components/common/button/SelectBoxButton";
+import SelectItemButton from "../../../../components/common/button/SelectItemButton";
 
 function MailTemplatesFileUpload() {
   const isShowModal = useSelector((state) => state.showModal.showModal);
@@ -131,7 +131,7 @@ function MailTemplatesFileUpload() {
                   <ul className={styles.create_file_list}>
                     <li className={styles.create_file_item}>
                       <p>2025-05-20 서울시청 개발팀 훈련 01.xls</p>
-                      <SelectBoxButton />
+                      <SelectItemButton />
                     </li>
                   </ul>
                 </div>
@@ -161,7 +161,7 @@ function MailTemplatesFileUpload() {
                   <ul className={styles.create_file_list}>
                     <li className={styles.create_file_item}>
                       <p>2025-05-20 서울시청 개발팀 훈련 01.xls</p>
-                      <SelectBoxButton btnType={"delete"} />
+                      <SelectItemButton btnType={"delete"} />
                     </li>
                   </ul>
                 </div>

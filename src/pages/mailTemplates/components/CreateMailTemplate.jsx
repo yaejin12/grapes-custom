@@ -9,6 +9,7 @@ import SelectedItemBox from "../../../components/layout/trainingInfo/components/
 import FileSelectedItemBox from "../../../components/layout/trainingInfo/components/FileSelectedItemBox";
 import TemplateSelectItem from "../../createTraining/components/TemplateSelectItem";
 import { templateData } from "../../createTraining/data";
+import SelectedItem from "../../../components/selectedItems/SelectedItem";
 function CreateMailTemplate() {
   return (
     <section className={styles.create_section_box}>
@@ -85,7 +86,7 @@ function CreateMailTemplate() {
             </div>
             {/* [e] item - 발신자 이메일 */}
             {/* [s] 훈련 유형이 첨부 파일이면 나타남 */}
-            {/* <div className={styles.content_item}>
+            <div className={styles.content_item}>
               <div className={`${styles.label}`}>
                 <span className={styles.required_mark}>첨부파일</span>
               </div>
@@ -96,7 +97,7 @@ function CreateMailTemplate() {
                   <FileSelectedItemBox />
                 </div>
               </div>
-            </div> */}
+            </div>
             {/* [e] 훈련 유형이 첨부 파일이면 나타남 */}
             {/* [s] 훈련 유형이 피싱이면 나타남 */}
             {/* <div className={styles.content_item}>

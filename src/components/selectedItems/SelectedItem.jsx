@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./selectedItems.module.scss";
-import SelectBoxButton from "../common/button/SelectBoxButton";
+import SelectItemButton from "../common/button/SelectItemButton";
 
-function SelectedGroupItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
+function SelectedItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
   const iconStyle = {
     group: {
       label: "대상자",
@@ -15,6 +15,10 @@ function SelectedGroupItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
     alert: {
       label: "경고 템플릿",
       src: "/images/info_alert.svg",
+    },
+    file: {
+      label: "첨부파일",
+      src: "/images/select_file.svg",
     },
   };
   return (
@@ -40,11 +44,11 @@ function SelectedGroupItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
             )}
           </div>
         </div>
-        <SelectBoxButton btnType={actionBtn} isChecked={isChecked} />
+        <SelectItemButton btnType={actionBtn} isChecked={isChecked} />
       </li>
       {/* [e] item */}
     </>
   );
 }
 
-export default SelectedGroupItem;
+export default SelectedItem;

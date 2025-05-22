@@ -10,6 +10,9 @@
   @include global.box;
   width: 100%;
   padding: 16px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 // ---------------------------------------------
 // [메일 템플릿 신규 등록]상단 타이틀 (템플릿 정보 설정 / 템플릿 편집)

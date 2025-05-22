@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./selectModal.module.scss";
 import ModalLayout from "../ModalLayout";
 import { useSelector } from "react-redux";
-import SelectedGroupItem from "../../selectedItems/SelectedGroupItem";
+import SelectedItem from "../../selectedItems/SelectedItem";
 
 function GroupSelectModal({ isCurrentPath = false }) {
   const isShowGroupListModal = useSelector(
@@ -18,66 +18,10 @@ function GroupSelectModal({ isCurrentPath = false }) {
             <div className={styles.group_list_wrapper}>
               <ul className={styles.group_list}>
                 {/* <li className={styles.group_item}></li> */}
-                <SelectedGroupItem
+                <SelectedItem
                   styleType={"line"}
                   actionBtn={"checkBox"}
                   isChecked={true}
-                  icon={"group"}
-                  hashTag={true}
-                />
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
-                  icon={"group"}
-                  hashTag={true}
-                />{" "}
-                <SelectedGroupItem
-                  styleType={"line"}
-                  actionBtn={"checkBox"}
-                  isChecked={false}
                   icon={"group"}
                   hashTag={true}
                 />

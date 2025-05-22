@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./button.module.scss";
 
-function SelectBoxButton({ btnType, onClick, isChecked, ...props }) {
+// select box 에 선택 된 Item
+function SelectItemButton({ btnType, onClick, isChecked, ...props }) {
   const actionBtnType = {
     delete: {
       label: "삭제",
@@ -39,4 +40,4 @@ function SelectBoxButton({ btnType, onClick, isChecked, ...props }) {
   );
 }
 
-export default SelectBoxButton;
+export default SelectItemButton;
