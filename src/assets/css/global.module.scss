@@ -67,10 +67,10 @@
 }
 
 @mixin ellipsis {
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   letter-spacing: -0.3px;
-  overflow: hidden;
 }
 
 @mixin caption_font {

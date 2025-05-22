@@ -9,7 +9,11 @@ function useShowModal() {
     dispatch(showModalActions.ShowModalAction(value));
   };
 
-  return { showModal };
+  const showGroupListModal = (value) => {
+    dispatch(showModalActions.ShowGroupListModalAction(value));
+  };
+
+  return { showModal, showGroupListModal };
 }
 
 export default useShowModal;

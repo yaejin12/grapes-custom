@@ -1,5 +1,5 @@
 import React from "react";
-import FileUploadModalLayout from "../../../../components/modal/FileUploadModalLayout";
+import ModalLayout from "../../../../components/modal/ModalLayout";
 import styles from "../../ParticipantGroup.module.scss";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -15,7 +15,7 @@ function FileUploadModal() {
   return (
     <>
       {isGroupPg && showModal && (
-        <FileUploadModalLayout title={"엑셀파일 업로드"}>
+        <ModalLayout title={"엑셀파일 업로드"}>
           <div className={styles.form_field_wrapper}>
             {/* [s] 참가자 그룹명 */}
             <div className={styles.content_item}>
@@ -39,7 +39,7 @@ function FileUploadModal() {
             </div>
             {/* [e] 업로드 파일 */}
           </div>
-        </FileUploadModalLayout>
+        </ModalLayout>
       )}
     </>
   );

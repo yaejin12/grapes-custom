@@ -1,21 +1,23 @@
-input[type="checkbox"] {
-  display: none;
+.checkboxInput {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
-input[type="checkbox"] + label {
+.checkboxInput + span {
   display: inline-block;
   width: 20px;
   height: 20px;
   border: 1px solid #acacac;
-  cursor: pointer;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  position: relative;
 }
 
-input[type="checkbox"]:checked + label {
+.checkboxInput:checked + span {
   background-color: var(--color-point);
   border: 1px solid var(--color-point);
   background-image: url("../../../../public/images/check_on.svg");
@@ -23,4 +25,17 @@ input[type="checkbox"]:checked + label {
   background-position: center;
 }
 
+.checkboxInput:disabled + span {
+  background-color: var(--color-gr-box);
+  cursor: not-allowed;
+}
 
+.checkboxInput:disabled:checked + span {
+  background-color: var(--color-gr-box);
+}
+
+label {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}

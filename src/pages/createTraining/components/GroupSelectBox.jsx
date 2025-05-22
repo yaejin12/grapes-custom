@@ -2,14 +2,7 @@ import React from "react";
 import Button from "../../../components/common/button/Button";
 import GroupSelectItem from "./GroupSelectItem";
 
-function GroupSelectBox({
-  styles,
-  label,
-  caption,
-  data = [],
-  optionText,
-  onClickBtn,
-}) {
+function GroupSelectBox({ styles, label, caption, data = [], onClickBtn }) {
   return (
     <>
       {/* 상단 선택 버튼 section */}
@@ -25,7 +18,8 @@ function GroupSelectBox({
               label: `${label} 선택하기`,
               img: "/images/btn_select.svg",
             }}
-            onClick={onClickBtn}
+            handlerClick={onClickBtn}
+            data-id={label}
           />
         </div>
         {/* *최대 00개까지 선택 가능 */}

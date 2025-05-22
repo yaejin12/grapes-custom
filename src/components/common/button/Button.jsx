@@ -46,7 +46,7 @@ function Button({ btn, handlerClick, type, disabled, ...props }) {
       className={`${styles.btn} ${typeStyle} ${styles[btn?.style] || ""} ${
         disabled ? styles.disabled : ""
       } `}
-      onClick={handlerClick}
+      onClick={(e) => handlerClick?.(e)}
       disabled={disabled}
       {...props}
     >

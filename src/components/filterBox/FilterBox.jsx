@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./filterBox.module.scss";
 
-function FilterBox({ data, selected = ["all"], onClick }) {
+function FilterBox({ data, selected = ["all"], style, onClick }) {
   return (
-    <ul className={styles.filter_wrapper}>
+    <ul className={`${styles.filter_wrapper} ${styles?.[style] || ""}`}>
       {data?.map((item) => {
         const isActive = selected.includes(item.key);
         return (

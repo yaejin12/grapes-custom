@@ -335,10 +335,20 @@
   }
 }
 
+// 부서, 템플릿, 대상자그룹 item btn
 .select_box_btn {
   width: 20px;
   height: 20px;
   background-color: #979797;
   border-radius: 999px;
   @include global.flex_center;
+
+  &.inactive {
+    background-color: var(--color-gr-box);
+
+    &.action {
+      background-color: var(--color-point);
+      // border: 1px solid var(--color-point);
+    }
+  }
 }

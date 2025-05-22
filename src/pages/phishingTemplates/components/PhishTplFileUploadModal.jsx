@@ -3,7 +3,7 @@ import styles from "../phishingTemplates.module.scss";
 import { useLocation } from "react-router-dom";
 import { PHISHING_TEMPLATES } from "../../../config/path.config";
 import { useSelector } from "react-redux";
-import FileUploadModalLayout from "./../../../components/modal/FileUploadModalLayout";
+import ModalLayout from "./../../../components/modal/ModalLayout";
 import CommonInput from "./../../../components/common/input/CommonInput";
 import FileInput from "./../../../components/common/input/FileInput";
 
@@ -14,7 +14,7 @@ function PhishTplFileUploadModal() {
   return (
     <>
       {isPhishingTplPg && isShowModal && (
-        <FileUploadModalLayout title={"피싱 템플릿 파일 업로드"}>
+        <ModalLayout title={"피싱 템플릿 파일 업로드"}>
           <div className={styles.form_field_wrapper}>
             {/* [s] 메일이름 */}
             <div className={styles.content_item}>
@@ -37,7 +37,7 @@ function PhishTplFileUploadModal() {
             </div>
             {/* [e] 업로드 파일 */}
           </div>
-        </FileUploadModalLayout>
+        </ModalLayout>
       )}
     </>
   );

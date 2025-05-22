@@ -8,7 +8,7 @@ function OrgTree({ data, handlerDeptAddClick }) {
   return (
     <>
       <div className={styles.search_org}>
-        <SearchInput type={"tree"} placeholder={"직원을 검색해 주세요"} />
+        <SearchInput inputStyle={"tree"} placeholder={"직원을 검색해 주세요"} />
       </div>
       <div className={styles.org_section}>
         <CustomTree

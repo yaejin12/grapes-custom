@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import styles from "./modal.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import SubmitButton from "./../layout/submitButton/SubmitButton";
-import { showModalActions } from "./../../store/Modal-slice";
+import SubmitButton from "../layout/submitButton/SubmitButton";
 import useShowModal from "../../hooks/useShowModal";
-function FileUploadModalLayout({ children, title }) {
+function ModalLayout({ children, title }) {
   const isShowModal = useSelector((state) => state.showModal.showModal);
-  const { showModal } = useShowModal();
+  const isShowGroupModal = useSelector(
+    (state) => state.showModal.showGroupListModal
+  );
+  const { showModal, showGroupListModal } = useShowModal();
   // 모달 취소 클릭
   const handlerCancelBtnClick = () => {
+    if (isShowGroupModal) return showGroupListModal(false);
     showModal(false);
   };
   //모달이 열릴 때 body 스크롤 막기
@@ -19,12 +22,12 @@ function FileUploadModalLayout({ children, title }) {
       document.body.classList.remove("no_scroll");
     }
     return () => document.body.classList.remove("no_scroll"); // 컴포넌트가 언마운트되면 스크롤 복원
-  }, [isShowModal]);
+  }, [isShowModal, isShowGroupModal]);
 
   return (
     <div
       className={`${styles.modal_layout}  ${
-        isShowModal ? styles.modal_action : ""
+        isShowGroupModal || isShowModal ? styles.modal_action : ""
       }`}
     >
       {/* 팝업 영역 */}
@@ -41,4 +44,4 @@ function FileUploadModalLayout({ children, title }) {
   );
 }
 
-export default FileUploadModalLayout;
+export default ModalLayout;

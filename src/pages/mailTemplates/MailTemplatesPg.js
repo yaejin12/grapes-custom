@@ -9,6 +9,7 @@ import { MAIL_TEMPLATES } from "../../config/path.config";
 import useShowModal from "../../hooks/useShowModal";
 import MailTemplatesFileUpload from "./components/fileUpload/MailTemplatesFileUpload";
 import TemplateList from "../../components/layout/templateList/TemplateList";
+import { mailFilterData } from "../../config/uiConfig";
 
 function MailTemplatesPg() {
   const location = useLocation();
@@ -44,18 +45,12 @@ function MailTemplatesPg() {
     ];
   };
 
-  const filterData = [
-    { key: "all", label: "전체보기" },
-    { key: "click", label: "링크클릭" },
-    { key: "ransomware", label: "랜섬웨어" },
-    { key: "phishing", label: "피싱" },
-  ];
   return (
     <>
       <PgTitle h3={"메일 템플릿"} btn={mTemplatesPg && pgBtn()}>
         {mTemplatesPg && (
           <section className={styles.section_box}>
-            <FilterBox data={filterData} />
+            <FilterBox data={mailFilterData} />
             <TemplateList data={templateList} />
           </section>
         )}

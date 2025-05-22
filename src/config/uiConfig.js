@@ -23,6 +23,13 @@ export const deptResultTHeader = [
   { text: "신고서 제출", key: "reportSubmittedAt" },
   { text: "교육이수", key: "educationCompletedAt" },
 ];
+
+export const mailFilterData = [
+  { key: "all", label: "전체보기" },
+  { key: "click", label: "링크클릭" },
+  { key: "ransomware", label: "랜섬웨어" },
+  { key: "phishing", label: "피싱" },
+];
 // -------------------------------------------------
 // 대상자 그룹 pg
 export const pGTHeader = [

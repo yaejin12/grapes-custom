@@ -20,7 +20,7 @@ function VideoViewModal({ children, title }) {
       }`}
     >
       {/* 팝업 영역 */}
-      <div className={styles.popup_video_box}>
+      <div className={styles.popup_ebu_box}>
         <div className={styles.title_header}>
           <p className={styles.title_text}>{title}훈련정보입니다</p>
           <button onClick={handlerCancelBtnClick}>

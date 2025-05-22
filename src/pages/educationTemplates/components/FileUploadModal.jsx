@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import FileUploadModalLayout from "../../../components/modal/FileUploadModalLayout";
+import ModalLayout from "../../../components/modal/ModalLayout";
 import CommonInput from "./../../../components/common/input/CommonInput";
 import FileInput from "../../../components/common/input/FileInput";
 import { useSelector } from "react-redux";
@@ -13,7 +13,7 @@ function FileUploadModal({ styles }) {
   return (
     <>
       {isEduPg && showModal && (
-        <FileUploadModalLayout title={"파일 업로드"}>
+        <ModalLayout title={"파일 업로드"}>
           <div className={styles.form_field_wrapper}>
             {/* [s] 교육명 */}
             <div className={styles.content_item}>
@@ -48,7 +48,7 @@ function FileUploadModal({ styles }) {
             </div>
             {/* [e] 간단설명 */}
           </div>
-        </FileUploadModalLayout>
+        </ModalLayout>
       )}
     </>
   );

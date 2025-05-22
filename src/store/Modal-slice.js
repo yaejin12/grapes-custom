@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   showModal: false,
   showEduDetailModal: false,
+  showGroupListModal: false,
 };
 
 const showModal = createSlice({
@@ -15,6 +16,10 @@ const showModal = createSlice({
 
     ShowEduDetailModalAction(state, action) {
       state.showEduDetailModal = action.payload;
+    },
+
+    ShowGroupListModalAction(state, action) {
+      state.showGroupListModal = action.payload;
     },
   },
 });

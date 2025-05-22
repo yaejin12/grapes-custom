@@ -3,7 +3,7 @@ import styles from "../../mailTemplates.module.scss";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { MAIL_TEMPLATES } from "../../../../config/path.config";
-import FileUploadModalLayout from "../../../../components/modal/FileUploadModalLayout";
+import ModalLayout from "../../../../components/modal/ModalLayout";
 import CommonInput from "../../../../components/common/input/CommonInput";
 import FileInput from "../../../../components/common/input/FileInput";
 import SelectBox from "./../../../../components/common/selectBox/SelectBox";
@@ -24,7 +24,7 @@ function MailTemplatesFileUpload() {
   return (
     <>
       {isMailTemPg && isShowModal && (
-        <FileUploadModalLayout title={"메일 템플릿 파일 업로드"}>
+        <ModalLayout title={"메일 템플릿 파일 업로드"}>
           <div className={styles.form_field_wrapper}>
             {/* [s] 훈련유형 */}
             <div className={styles.content_item}>
@@ -161,7 +161,7 @@ function MailTemplatesFileUpload() {
                   <ul className={styles.create_file_list}>
                     <li className={styles.create_file_item}>
                       <p>2025-05-20 서울시청 개발팀 훈련 01.xls</p>
-                      <SelectBoxButton />
+                      <SelectBoxButton btnType={"delete"} />
                     </li>
                   </ul>
                 </div>
@@ -179,7 +179,7 @@ function MailTemplatesFileUpload() {
             </div>
             {/* [e] 업로드 파일 */}
           </div>
-        </FileUploadModalLayout>
+        </ModalLayout>
       )}
     </>
   );

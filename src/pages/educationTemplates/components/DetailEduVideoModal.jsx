@@ -18,8 +18,8 @@ function DetailEduVideoModal({}) {
       {isEducationPg && showEduDetailModal && (
         <EduViewModal>
           <div className={styles.detail_edu_section}>
-            <PdfViewer url={"/pdf/GS.pdf"} />
-            {/* <VideoPlayer url={"/video/a.mp4"} /> */}
+            {/* <PdfViewer url={"/pdf/GS.pdf"} /> */}
+            <VideoPlayer url={"/video/a.mp4"} />
           </div>
           <div className={styles.info_wrapper}>
             <p className={styles.info_text}>
