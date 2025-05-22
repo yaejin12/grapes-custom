@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   showModal: false,
-  showVideoModal: false,
+  showEduDetailModal: false,
 };
 
 const showModal = createSlice({
@@ -13,8 +13,8 @@ const showModal = createSlice({
       state.showModal = action.payload;
     },
 
-    ShowVideoModalAction(state, action) {
-      state.showVideoModal = action.payload;
+    ShowEduDetailModalAction(state, action) {
+      state.showEduDetailModal = action.payload;
     },
   },
 });

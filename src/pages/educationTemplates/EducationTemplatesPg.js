@@ -28,7 +28,7 @@ function EducationTemplatesPg({}) {
   // 템플릿 item 클릭 시
   const handlerDetailClick = (id) => {
     // navigate(`${EDUCATION_TEMPLATES}/${id}`);
-    dispatch(showModalActions.ShowVideoModalAction(true));
+    dispatch(showModalActions.ShowEduDetailModalAction(true));
   };
 
   const filterData = [

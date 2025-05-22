@@ -1,0 +1,66 @@
+.pdf_viewer_wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.react_pdf_wrapper {
+  //   overflow-y: auto;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 50px;
+  align-items: center;
+  //   flex-shrink: 0;
+}
+
+.pg_prev_btn {
+  position: absolute;
+  left: 0;
+  z-index: 9999;
+  padding: 0 0 0 50px;
+}
+.pg_next_btn {
+  position: absolute;
+  right: 0;
+  z-index: 9999;
+  padding: 0 50px 0 20px;
+}
+
+// 로딩 중
+.loading_wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .loading_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 24px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+
+    animation: spin 2s linear infinite;
+  }
+
+  .loading_text {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -55,7 +55,8 @@
   transform: translate(-50%, -50%);
   background-color: var(--color-side);
   border-radius: 16px;
-  width: 1000px;
+  // width: 1000px;
+  min-width: 1220px;
   padding-bottom: 50px;
 
   .title_header {
