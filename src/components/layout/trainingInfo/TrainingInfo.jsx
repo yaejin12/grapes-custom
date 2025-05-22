@@ -51,6 +51,7 @@ function TrainingInfo({}) {
             <Label label={"대상자"} />
           </div>
           <SelectedItemBox title={"대상자"} />
+          
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}

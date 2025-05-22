@@ -2,7 +2,21 @@ import React from "react";
 import styles from "./selectedItems.module.scss";
 import SelectBoxButton from "../common/button/SelectBoxButton";
 
-function SelectedGroupItem({ styleType, actionBtn, hashTag, isChecked }) {
+function SelectedGroupItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
+  const iconStyle = {
+    group: {
+      label: "대상자",
+      src: "/images/Building.svg",
+    },
+    tpl: {
+      label: "메일 템플릿",
+      src: "/images/select_mail_icon.svg",
+    },
+    alert: {
+      label: "경고 템플릿",
+      src: "/images/info_alert.svg",
+    },
+  };
   return (
     <>
       {/* [s] item */}
@@ -13,15 +27,17 @@ function SelectedGroupItem({ styleType, actionBtn, hashTag, isChecked }) {
       >
         <div className={styles.label_wrapper}>
           <div className={styles.icon}>
-            <img src="/images/Building.svg" alt="" />
+            <img src={iconStyle?.[icon]?.src} alt={iconStyle?.[icon]?.label} />
           </div>
           {/* 명 */}
           <div className={styles.label_group}>
             <div className={styles.label}>광주시청</div>
-            <div className={styles.tag}>
-              <img src="/images/user_num.svg" />
-              30
-            </div>
+            {hashTag && (
+              <div className={styles.tag}>
+                <img src="/images/user_num.svg" />
+                30
+              </div>
+            )}
           </div>
         </div>
         <SelectBoxButton btnType={actionBtn} isChecked={isChecked} />

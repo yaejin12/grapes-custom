@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../../components/common/button/Button";
 import GroupSelectItem from "./GroupSelectItem";
+import SelectedGroupItem from "../../../components/selectedItems/SelectedGroupItem";
 
 function GroupSelectBox({ styles, label, caption, data = [], onClickBtn }) {
   return (
@@ -32,7 +33,7 @@ function GroupSelectBox({ styles, label, caption, data = [], onClickBtn }) {
             <>
               <ul className={`${styles.select_box}`}>
                 {data?.map((data) => (
-                  <GroupSelectItem styles={styles} data={data} />
+                  <SelectedGroupItem actionBtn={"delete"} icon={"group"} />
                 ))}
               </ul>
             </>

@@ -18,17 +18,68 @@ function GroupSelectModal({ isCurrentPath = false }) {
             <div className={styles.group_list_wrapper}>
               <ul className={styles.group_list}>
                 {/* <li className={styles.group_item}></li> */}
-                <SelectedGroupItem styleType={"line"} actionBtn={"delete"} />
-
                 <SelectedGroupItem
                   styleType={"line"}
                   actionBtn={"checkBox"}
                   isChecked={true}
+                  icon={"group"}
+                  hashTag={true}
                 />
                 <SelectedGroupItem
                   styleType={"line"}
                   actionBtn={"checkBox"}
                   isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
+                />{" "}
+                <SelectedGroupItem
+                  styleType={"line"}
+                  actionBtn={"checkBox"}
+                  isChecked={false}
+                  icon={"group"}
+                  hashTag={true}
                 />
               </ul>
             </div>

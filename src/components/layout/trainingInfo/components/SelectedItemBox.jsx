@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../trainingInfo.module.scss";
+import SelectedGroupItem from "../../../selectedItems/SelectedGroupItem";
 
 function SelectedItemBox({ title, data }) {
   let icon;
@@ -30,7 +31,7 @@ function SelectedItemBox({ title, data }) {
     <div className={`${styles.selected_item_box}`}>
       <ul className={`${styles.selected_list}`}>
         {/* [s] item */}
-        <li className={styles.selected_item}>
+        {/* <li className={styles.selected_item}>
           <div className={styles.item_content}>
             <div className={styles.item_icon}>
               <img src={icon?.item_icon} alt="" />
@@ -42,7 +43,10 @@ function SelectedItemBox({ title, data }) {
           >
             <img src={icon?.right_icon} alt="" />
           </button>
-        </li>
+        </li> */}
+        <SelectedGroupItem actionBtn={"check"} icon={"group"} />
+        <SelectedGroupItem actionBtn={"view"} icon={"group"} />
+        <SelectedGroupItem actionBtn={"view"} icon={"tpl"} />
         {/* [e] item */}
       </ul>
     </div>

@@ -12,6 +12,16 @@ function SelectBoxButton({ btnType, onClick, isChecked, ...props }) {
       img: "/images/item_check.svg",
       styleType: "inactive",
     },
+    check: {
+      label: "확인",
+      img: "/images/select_icon.svg",
+      styleType: "none",
+    },
+    view: {
+      label: "미리보기",
+      img: "/images/table_search.svg",
+      styleType: "none",
+    },
   };
   return (
     <button
@@ -23,7 +33,7 @@ function SelectBoxButton({ btnType, onClick, isChecked, ...props }) {
     >
       <img
         src={actionBtnType?.[btnType]?.img}
-        alt={actionBtnType[btnType]?.label}
+        alt={actionBtnType?.[btnType]?.label}
       />
     </button>
   );

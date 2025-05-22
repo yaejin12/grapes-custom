@@ -82,7 +82,7 @@ function CreateTrainingPg() {
                   label={"대상자 그룹"}
                   caption={"*최대 10개까지 선택 가능"}
                   onClickBtn={handlerSelectBtnClick}
-                  // data={templateData}
+                  data={templateData}
                 />
               </div>
             </div>
