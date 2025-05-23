@@ -1,0 +1,41 @@
+@use "../../../assets/css/global.module.scss" as global;
+
+.label_wrapper {
+  display: flex;
+  align-items: center;
+
+  .label_group {
+    display: flex;
+  }
+
+  i {
+    margin-right: 8px;
+    width: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .label {
+    display: inline-block;
+
+    font-weight: 600;
+    min-width: 60px;
+    margin-right: 20px;
+  }
+
+  .label_tag {
+    @include global.flex_center;
+    padding: 5px 8px;
+    background-color: var(--color-point);
+    color: #fff;
+    font-size: 12px;
+    line-height: 1;
+    border-radius: 4px;
+  }
+
+  //   tag가 있으면
+  &.hash_tag_label_wrapper {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

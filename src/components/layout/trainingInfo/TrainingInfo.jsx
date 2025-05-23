@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./trainingInfo.module.scss";
-
-import Label from "./components/Label";
 import SelectedItemBox from "./components/SelectedItemBox";
+import InfoLabel from "../../ui/label/InfoLabel";
+import Tag from "../../ui/tag/Tag";
 
 function TrainingInfo({}) {
   const trainingInfoText = [
@@ -19,7 +19,6 @@ function TrainingInfo({}) {
       key: "name",
     },
   ];
-
   const data = {
     name: "광주시청 이메일 솔루션 훈련",
     tDate: "2020-05-05 ~ 2020-05-05",
@@ -31,16 +30,16 @@ function TrainingInfo({}) {
         {/* [s] item */}
         {trainingInfoText?.map((item) => (
           <li className={styles.info_item}>
-            <Label label={item?.label} />
+            <InfoLabel label={item?.label} />
             <div className={styles.value}>{data[item?.key]}</div>
           </li>
         ))}
         {/* [s] item */}
         <li className={styles.info_item}>
-          <Label label={"위반기준"} />
+          <InfoLabel label={"위반기준"} />
           <div className={styles.value}>
             {data?.v?.map((v) => (
-              <span className={styles.tag}>{v}</span>
+              <Tag text={v} styleType={"info"} />
             ))}
           </div>
         </li>
@@ -48,35 +47,30 @@ function TrainingInfo({}) {
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <div className={styles.info_item_title_wrapper}>
-            <Label label={"대상자"} />
+            <InfoLabel label={"대상자"} />
           </div>
           <SelectedItemBox title={"대상자"} />
-          
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <div className={styles.info_item_title_wrapper}>
-            <Label label={"메일 템플릿"} />
+            <InfoLabel label={"메일 템플릿"} />
           </div>
           <SelectedItemBox title={"메일 템플릿"} />
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
-          <div className={styles.info_item_title_wrapper}>
-            <Label label={"경고 템플릿"} />
-            {<div className={styles.label_tag}>사고신고서</div>}
-          </div>
+          <InfoLabel label={"경고 템플릿"} tag={"사고신고서"} />
+
           <SelectedItemBox title={"경고 템플릿"} />
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
-          <div className={styles.info_item_title_wrapper}>
-            <Label label={"교육"} />
-            {<div className={styles.label_tag}>교안</div>}
-          </div>
+          <InfoLabel label={"교육"} tag={"교안"} />
+
           <SelectedItemBox title={"교육"} />
         </li>
         {/* [e]  select_box item */}

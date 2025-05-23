@@ -1,0 +1,19 @@
+.tag {
+  display: inline-block;
+  //   font-size: 12px;
+  line-height: 1;
+  padding: 7px 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  color: var(--color-point);
+  background-color: var(--color-point-sub-1);
+  margin-right: 6px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &.info {
+    font-size: 12px;
+  }
+}

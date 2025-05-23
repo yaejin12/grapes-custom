@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Label from "../../../components/layout/trainingInfo/components/Label";
 import SelectedItemBox from "../../../components/layout/trainingInfo/components/SelectedItemBox";
+import InfoLabel from "../../../components/ui/label/InfoLabel";
 
 function TrainingInfo({ styles }) {
   const [isMoreBtnClick, setIsMoreBtnClick] = useState(false);
@@ -64,14 +64,14 @@ function TrainingInfo({ styles }) {
                 <ul>
                   {trainingInfoText?.map((item) => (
                     <li className={styles.info_item}>
-                      <Label label={item?.label} />
+                      <InfoLabel label={item?.label} />
                       <div className={styles.value}>
                         {data[item?.key] ?? "-"}
                       </div>
                     </li>
                   ))}
                   <li className={styles.info_item}>
-                    <Label label={"위반기준"} />
+                    <InfoLabel label={"위반기준"} />
                     <div className={styles.value}>
                       {data?.v?.map((v) => (
                         <span className={styles.tag}>{v}</span>
@@ -82,19 +82,19 @@ function TrainingInfo({ styles }) {
               </div>
               <div className={styles.more_info_bottom}>
                 <div className={styles.left_layout}>
-                  <Label label={"대상자"} />
+                  <InfoLabel label={"대상자"} />
                   <SelectedItemBox title={"교육"} />
                   <div className={styles.layout_bottom}>
-                    <Label label={"신고서 템플릿"} />
+                    <InfoLabel label={"신고서 템플릿"} />
                     <SelectedItemBox title={"템플릿"} />
                   </div>
                 </div>
 
                 <div className={styles.right_layout}>
-                  <Label label={"메일 템플릿"} />
+                  <InfoLabel label={"메일 템플릿"} />
                   <SelectedItemBox title={"교육"} />
                   <div className={styles.layout_bottom}>
-                    <Label label={"교육"} />
+                    <InfoLabel label={"교육"} />
                     <SelectedItemBox title={"템플릿"} />
                   </div>
                 </div>
