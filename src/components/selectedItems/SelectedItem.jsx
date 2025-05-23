@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./selectedItems.module.scss";
 import SelectItemButton from "../common/button/SelectItemButton";
+import Tag from "../ui/tag/Tag";
 
 function SelectedItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
   const iconStyle = {
@@ -37,11 +38,13 @@ function SelectedItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
           <div className={styles.label_group}>
             <div className={styles.label}>광주시청</div>
             {hashTag && (
-              <div className={styles.tag}>
-                <img src="/images/user_num.svg" />
-                30
-              </div>
+              // <div className={styles.tag}>
+              //   <img src="/images/user_num.svg" />
+              //   30
+              // </div>
+              <Tag text={"30"} styleType={"user_num"} />
             )}
+            <Tag text={"30"} styleType={"user_num"} />
           </div>
         </div>
         <SelectItemButton btnType={actionBtn} isChecked={isChecked} />
