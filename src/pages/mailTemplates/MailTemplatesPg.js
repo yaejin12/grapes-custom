@@ -10,6 +10,7 @@ import useShowModal from "../../hooks/useShowModal";
 import MailTemplatesFileUpload from "./components/fileUpload/MailTemplatesFileUpload";
 import TemplateList from "../../components/layout/templateList/TemplateList";
 import { mailFilterData } from "../../config/uiConfig";
+import Pagination from "../../components/common/pagination/Pagination";
 
 function MailTemplatesPg() {
   const location = useLocation();
@@ -52,6 +53,7 @@ function MailTemplatesPg() {
           <section className={styles.section_box}>
             <FilterBox data={mailFilterData} />
             <TemplateList data={templateList} />
+            <Pagination />
           </section>
         )}
         <Outlet />

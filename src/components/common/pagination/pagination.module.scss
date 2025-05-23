@@ -1,0 +1,48 @@
+.pg_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.pg_item {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.last_pg,
+.first_pg,
+.item,
+.prev,
+.next,
+.break {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--color-gr-3);
+}
+
+.last_pg:hover,
+.first_pg:hover,
+.item:hover,
+.prev:hover,
+.next:hover {
+  background-color: #f0f0f0;
+  color: var(--color-gr-3);
+}
+
+.active {
+  background-color: var(--color-point);
+  color: #fff;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
