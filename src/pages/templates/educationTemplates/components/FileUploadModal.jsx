@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import ModalLayout from "../../../components/modal/ModalLayout";
-import CommonInput from "./../../../components/common/input/CommonInput";
-import FileInput from "../../../components/common/input/FileInput";
+import ModalLayout from "../../../../components/modal/ModalLayout";
+import CommonInput from "../../../../components/common/input/CommonInput";
+import FileInput from "../../../../components/common/input/FileInput";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { EDUCATION_TEMPLATES } from "../../../config/path.config";
+import { EDUCATION_TEMPLATES } from "../../../../config/path.config";
 
 function FileUploadModal({ styles }) {
   const pathname = useLocation().pathname;

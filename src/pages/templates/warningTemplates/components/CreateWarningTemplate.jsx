@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../phishingTemplates.module.scss";
-import CommonInput from "./../../../components/common/input/CommonInput";
-import GrapesEditor from "./../../../components/editor/GrapesEditor";
-import SubmitButton from "./../../../components/layout/submitButton/SubmitButton";
-function CreatePhishingTemplate() {
+import styles from "../warningTemplates.module.scss";
+import CommonInput from "../../../../components/common/input/CommonInput";
+import GrapesEditor from "../../../../components/editor/GrapesEditor";
+import SubmitButton from "../../../../components/layout/submitButton/SubmitButton";
+function CreateWarningTemplate() {
   return (
     <section className={styles.create_section_box}>
       <div className={styles.template_info_setting_wrapper}>
@@ -25,7 +25,7 @@ function CreatePhishingTemplate() {
                 <span className={styles.required_mark}>템플릿이름</span>
               </div>
               <div className={styles.form_field}>
-                <CommonInput placeholder={"피싱 템플릿 이름을 입력해주세요"} />
+                <CommonInput placeholder={"경고 템플릿 이름을 입력해주세요"} />
               </div>
             </div>
             {/* [e] item - 메일이름 */}
@@ -59,4 +59,4 @@ function CreatePhishingTemplate() {
   );
 }
 
-export default CreatePhishingTemplate;
+export default CreateWarningTemplate;

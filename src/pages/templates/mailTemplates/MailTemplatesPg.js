@@ -1,16 +1,16 @@
 import React from "react";
 import styles from "./mailTemplates.module.scss";
-import PgTitle from "../../components/layout/pgTitle/PgTitle";
+import PgTitle from "../../../components/layout/pgTitle/PgTitle";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 
-import FilterBox from "../../components/filterBox/FilterBox";
+import FilterBox from "../../../components/filterBox/FilterBox";
 import { templateList } from "./data";
-import { MAIL_TEMPLATES } from "../../config/path.config";
-import useShowModal from "../../hooks/useShowModal";
+import { MAIL_TEMPLATES } from "../../../config/path.config";
+import useShowModal from "../../../hooks/useShowModal";
 import MailTemplatesFileUpload from "./components/fileUpload/MailTemplatesFileUpload";
-import TemplateList from "../../components/layout/templateList/TemplateList";
-import { mailFilterData } from "../../config/uiConfig";
-import Pagination from "../../components/common/pagination/Pagination";
+import TemplateList from "../../../components/layout/templateList/TemplateList";
+import { mailFilterData } from "../../../config/uiConfig";
+import Pagination from "../../../components/common/pagination/Pagination";
 
 function MailTemplatesPg() {
   const location = useLocation();

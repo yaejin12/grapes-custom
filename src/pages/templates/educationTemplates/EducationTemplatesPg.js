@@ -1,17 +1,16 @@
 import React from "react";
 import styles from "./educationTemplates.module.scss";
-import PgTitle from "../../components/layout/pgTitle/PgTitle";
+import PgTitle from "../../../components/layout/pgTitle/PgTitle";
 
-import FilterBox from "../../components/filterBox/FilterBox";
+import FilterBox from "../../../components/filterBox/FilterBox";
 import { educationData } from "./data";
 import FileUploadModal from "./components/FileUploadModal";
-import useShowModal from "../../hooks/useShowModal";
-import TemplateList from "../../components/layout/templateList/TemplateList";
+import useShowModal from "../../../hooks/useShowModal";
+import TemplateList from "../../../components/layout/templateList/TemplateList";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { EDUCATION_TEMPLATES } from "../../config/path.config";
+import { EDUCATION_TEMPLATES } from "../../../config/path.config";
 import { useDispatch } from "react-redux";
-import { showModalActions } from "../../store/Modal-slice";
-import DetailEduTpl from "./components/DetailEduVideoModal";
+import { showModalActions } from "../../../store/Modal-slice";
 import DetailEduVideoModal from "./components/DetailEduVideoModal";
 
 function EducationTemplatesPg({}) {

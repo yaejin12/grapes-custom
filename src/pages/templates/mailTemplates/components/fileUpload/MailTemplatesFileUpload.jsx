@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styles from "../../mailTemplates.module.scss";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { MAIL_TEMPLATES } from "../../../../config/path.config";
-import ModalLayout from "../../../../components/modal/ModalLayout";
-import CommonInput from "../../../../components/common/input/CommonInput";
-import FileInput from "../../../../components/common/input/FileInput";
-import SelectBox from "./../../../../components/common/selectBox/SelectBox";
-import CheckBox from "./../../../../components/common/checkBox/CheckBox";
-import Button from "../../../../components/common/button/Button";
-import SelectItemButton from "../../../../components/common/button/SelectItemButton";
+import { MAIL_TEMPLATES } from "../../../../../config/path.config";
+import ModalLayout from "../../../../../components/modal/ModalLayout";
+import CommonInput from "../../../../../components/common/input/CommonInput";
+import FileInput from "../../../../../components/common/input/FileInput";
+import SelectBox from "../../../../../components/common/selectBox/SelectBox";
+import CheckBox from "../../../../../components/common/checkBox/CheckBox";
+import Button from "../../../../../components/common/button/Button";
+import SelectItemButton from "../../../../../components/common/button/SelectItemButton";
 
 function MailTemplatesFileUpload() {
   const isShowModal = useSelector((state) => state.showModal.showModal);

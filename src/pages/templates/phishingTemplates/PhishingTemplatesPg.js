@@ -1,29 +1,28 @@
 import React from "react";
-import styles from "./warningTemplates.module.scss";
-import PgTitle from "../../components/layout/pgTitle/PgTitle";
-import TemplateList from "../../components/layout/templateList/TemplateList";
-import { phishingData } from "../phishingTemplates/data";
+import styles from "./phishingTemplates.module.scss";
+import PgTitle from "../../../components/layout/pgTitle/PgTitle";
+import { phishingData } from "./data";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import { WARNING_TEMPLATES } from "../../config/path.config";
-import WarningTplFileUploadModal from "./components/WarningTplFileUploadModal";
-import useShowModal from "../../hooks/useShowModal";
+import { PHISHING_TEMPLATES } from "../../../config/path.config";
+import useShowModal from "../../../hooks/useShowModal";
+import PhishTplFileUploadModal from "./components/PhishTplFileUploadModal";
+import TemplateList from "../../../components/layout/templateList/TemplateList";
 
-function WarningTemplatesPg() {
+function PhishingTemplatesPg({}) {
   const pathname = useLocation().pathname;
+  const isPhishingTempPg = pathname === PHISHING_TEMPLATES;
   const navigate = useNavigate();
-  const isWarningTempPg = pathname === WARNING_TEMPLATES;
   const { showModal } = useShowModal();
 
   // 상단 신규등록 버튼 클릭 시
   const handlerTemplateAddBtnClick = () => {
-    navigate(`${WARNING_TEMPLATES}/create`);
+    navigate(`${PHISHING_TEMPLATES}/create`);
   };
-
-  // 파일 업로드 버튼 클릭 시
   const handlerTemplateFileUploadBtnClick = () => {
     showModal(true);
   };
 
+  // 피팅 템플릿 버튼 전달
   const pgBtn = () => {
     return [
       {
@@ -43,17 +42,17 @@ function WarningTemplatesPg() {
 
   return (
     <>
-      <PgTitle h3={"경고 템플릿"} btn={isWarningTempPg && pgBtn()}>
-        {isWarningTempPg && (
+      <PgTitle h3={"피싱 템플릿"} btn={isPhishingTempPg && pgBtn()}>
+        {isPhishingTempPg && (
           <section className={styles.section_box}>
             <TemplateList data={phishingData} />
           </section>
         )}
         <Outlet />
       </PgTitle>
-      <WarningTplFileUploadModal />
+      <PhishTplFileUploadModal />
     </>
   );
 }
 
-export default WarningTemplatesPg;
+export default PhishingTemplatesPg;

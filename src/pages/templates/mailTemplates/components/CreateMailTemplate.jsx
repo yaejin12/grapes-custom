@@ -1,15 +1,15 @@
 import React from "react";
 import styles from "../mailTemplates.module.scss";
-import CommonInput from "../../../components/common/input/CommonInput";
-import SelectBox from "./../../../components/common/selectBox/SelectBox";
-import GrapesEditor from "../../../components/editor/GrapesEditor";
-import SubmitButton from "./../../../components/layout/submitButton/SubmitButton";
-import LineButton from "./../../../components/common/button/LineButton";
-import SelectedItemBox from "../../../components/layout/trainingInfo/components/SelectedItemBox";
-import FileSelectedItemBox from "../../../components/layout/trainingInfo/components/FileSelectedItemBox";
-import TemplateSelectItem from "../../createTraining/components/TemplateSelectItem";
-import { templateData } from "../../createTraining/data";
-import SelectedItem from "../../../components/selectedItems/SelectedItem";
+import CommonInput from "../../../../components/common/input/CommonInput";
+import SelectBox from "../../../../components/common/selectBox/SelectBox";
+import GrapesEditor from "../../../../components/editor/GrapesEditor";
+import SubmitButton from "../../../../components/layout/submitButton/SubmitButton";
+import LineButton from "../../../../components/common/button/LineButton";
+import SelectedItemBox from "../../../../components/layout/trainingInfo/components/SelectedItemBox";
+import FileSelectedItemBox from "../../../../components/layout/trainingInfo/components/FileSelectedItemBox";
+import TemplateSelectItem from "../../../createTraining/components/TemplateSelectItem";
+import { templateData } from "../../../createTraining/data";
+import SelectedItem from "../../../../components/selectedItems/SelectedItem";
 function CreateMailTemplate() {
   return (
     <section className={styles.create_section_box}>

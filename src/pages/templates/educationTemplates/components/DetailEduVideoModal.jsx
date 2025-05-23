@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../educationTemplates.module.scss";
-import VideoPlayer from "../../../components/videoPlayer/VideoPlayer";
-import EduViewModal from "../../../components/modal/EduViewModal";
+import VideoPlayer from "../../../../components/videoPlayer/VideoPlayer";
+import EduViewModal from "../../../../components/modal/EduViewModal";
 import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { EDUCATION_TEMPLATES } from "../../../config/path.config";
-import PdfViewer from "./../../../components/pdfViewer/PdfViewer";
+import { EDUCATION_TEMPLATES } from "../../../../config/path.config";
+import PdfViewer from "../../../../components/pdfViewer/PdfViewer";
 
 function DetailEduVideoModal({}) {
   const { pathname } = useLocation();

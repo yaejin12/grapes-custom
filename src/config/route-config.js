@@ -3,10 +3,6 @@ import RootLayout from "../layout/RootLayout";
 import TotalStatusPg from "../pages/dashboard/totalStatus/TotalStatusPg";
 import LiveStatusPg from "../pages/dashboard/liveStatus/LiveStatusPg";
 import ParticipantGroup from "../pages/participant/ParticipantGroup";
-import MailTemplatesPg from "../pages/mailTemplates/MailTemplatesPg";
-import PhishingTemplatesPg from "../pages/phishingTemplates/PhishingTemplatesPg";
-import WarningTemplatesPg from "../pages/warningTemplates/WarningTemplatesPg";
-import EducationTemplatesPg from "../pages/educationTemplates/EducationTemplatesPg";
 import CreateTrainingPg from "../pages/createTraining/CreateTrainingPg";
 import RunTrainingPg from "../pages/runTraining/RunTrainingPg";
 import RunTrainingDetailPg from "../pages/runTraining/RunTrainingDetailPg";
@@ -22,9 +18,14 @@ import DefaultSetting from "../pages/setting/components/DefaultSetting";
 import ParticipantGroupCreate from "../pages/participant/components/participantGroupCreate/ParticipantGroupCreate";
 import ParticipantGroupDetail from "../pages/participant/components/ParticipantGroupDetail";
 import ParticipantGroupRandom from "../pages/participant/components/participantGroupRandom/ParticipantGroupRandom";
-import CreateMailTemplate from "../pages/mailTemplates/components/CreateMailTemplate";
-import CreatePhishingTemplate from "../pages/phishingTemplates/components/CreatePhishingTemplate";
-import CreateWarningTemplate from "../pages/warningTemplates/components/CreateWarningTemplate";
+
+import EducationTemplatesPg from "../pages/templates/educationTemplates/EducationTemplatesPg";
+import MailTemplatesPg from "../pages/templates/mailTemplates/MailTemplatesPg";
+import PhishingTemplatesPg from "../pages/templates/phishingTemplates/PhishingTemplatesPg";
+import WarningTemplatesPg from "../pages/templates/warningTemplates/WarningTemplatesPg";
+import CreateMailTemplate from "../pages/templates/mailTemplates/components/CreateMailTemplate";
+import CreatePhishingTemplate from "../pages/templates/phishingTemplates/components/CreatePhishingTemplate";
+import CreateWarningTemplate from "../pages/templates/warningTemplates/components/CreateWarningTemplate";
 
 export const router = createBrowserRouter([
   {
