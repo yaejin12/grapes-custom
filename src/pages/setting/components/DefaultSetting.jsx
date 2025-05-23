@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../setting.module.scss";
 import CommonInput from "../../../components/common/input/CommonInput";
 import LineButton from "../../../components/common/button/LineButton";
-import Radio from "../../../components/common/input/Radio";
+import RadioBox from "../../../components/common/radioBox/RadioBox";
 function DefaultSetting() {
   const [isActionTestAlert, setIsActionAlert] = useState(false);
   // 서버 테스트 설명
@@ -99,8 +99,8 @@ function DefaultSetting() {
           <div className={styles.input_group}>
             <div className={styles.label}>첫 화면</div>
             <div className={styles.radio_box}>
-              <Radio label={"실시간 현황"} name={"first_view"} />
-              <Radio label={"종합 현황"} name={"first_view"} />
+              <RadioBox label={"실시간 현황"} name={"first_view"} />
+              <RadioBox label={"종합 현황"} name={"first_view"} />
             </div>
           </div>
           {/* [e] item */}

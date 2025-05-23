@@ -4,20 +4,15 @@ import styles from "./selectBox.module.scss";
 function SelectBox({
   styleType,
   onChange,
-  selectValue = "",
+  optionData,
+  selectValue,
   placeholder,
   ...props
 }) {
-  const optionData = [
-    { value: "apple", label: "사과" },
-    { value: "banana", label: "바나나" },
-    { value: "grape", label: "포도" },
-  ];
-
   return (
     <select
       className={`${styles.common_select} ${styles[styleType] || ""}`}
-      onChange={onChange}
+      onChange={(e) => onChange?.(e)}
       value={selectValue}
       {...props}
     >

@@ -9,16 +9,16 @@ import SelectSection from "./components/SelectSection";
 import SubmitButton from "../../components/layout/submitButton/SubmitButton";
 import { templateData } from "./data";
 import GroupSelectBox from "./components/GroupSelectBox";
-import Radio from "./../../components/common/input/Radio";
 import TplSelectModal from "../../components/modal/selectModal/TplSelectModal";
 import useShowModal from "../../hooks/useShowModal";
 import { useLocation } from "react-router-dom";
 import { CREATE_TRAINING } from "../../config/path.config";
 import GroupSelectModal from "../../components/modal/selectModal/GroupSelectModal";
+import RadioBox from "../../components/common/radioBox/RadioBox";
 
 function CreateTrainingPg() {
   // 상태관리
-  const { showModal, showGroupListModal } = useShowModal();
+  const { showModal, showGroupListModal, showTplListModal } = useShowModal();
   const { pathname } = useLocation();
   const isCreateTPg = pathname === CREATE_TRAINING;
   const [modalType, setModalType] = useState("");
@@ -29,7 +29,7 @@ function CreateTrainingPg() {
     setModalType(btnClickLabel);
     if (btnClickLabel === "대상자 그룹") return showGroupListModal(true);
 
-    showModal(true);
+    showTplListModal(true);
   };
   // ---------------
   return (
@@ -101,8 +101,8 @@ function CreateTrainingPg() {
                   </div>
                   {/* 인풋 */}
                   <div className={styles.radio_wrapper}>
-                    <Radio label={"미포함"} name={"accidentReport"} />
-                    <Radio label={"포함"} name={"accidentReport"} />
+                    <RadioBox label={"미포함"} name={"accidentReport"} />
+                    <RadioBox label={"포함"} name={"accidentReport"} />
                   </div>
                 </div>
                 <SelectSection
@@ -145,8 +145,8 @@ function CreateTrainingPg() {
                   </div>
                   {/* 인풋 */}
                   <div className={styles.radio_wrapper}>
-                    <Radio label={"실행"} name={"education"} />
-                    <Radio label={"미실행"} name={"education"} />
+                    <RadioBox label={"실행"} name={"education"} />
+                    <RadioBox label={"미실행"} name={"education"} />
                   </div>
                 </div>
                 <SelectSection

@@ -8,6 +8,7 @@ function CommonInput({
   type = "text",
   onChange,
   style,
+  ...props
 }) {
   return (
     <>
@@ -19,6 +20,7 @@ function CommonInput({
         type={type}
         value={value}
         onChange={(e) => onChange?.(e)}
+        {...props}
       />
       {error && <p className={styles.error}>메일 템플릿 이름을 입력해주세요</p>}
     </>

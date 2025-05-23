@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./button.module.scss";
 
-function LineButton({ handlerClick, disabled, btn, ...props }) {
+function LineButton({ onClick, disabled, btn, ...props }) {
   return (
     <button
       className={`${styles.line_btn} ${btn?.img ? styles.isImg : ""} ${
         disabled ? styles.disabled : ""
       } `}
-      onClick={handlerClick}
+      onClick={onClick}
       disabled={disabled}
       {...props}
     >

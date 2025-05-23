@@ -12,7 +12,7 @@
   padding: 16px 50px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 50px;
 }
 // ---------------------------------------------
 // [메일 템플릿 신규 등록]상단 타이틀 (템플릿 정보 설정 / 템플릿 편집)
@@ -30,22 +30,6 @@
   .title_text {
     font-size: 22px;
     font-weight: 600;
-  }
-}
-
-// 훈련명 등 레이블
-.label {
-  font-size: 16px;
-  display: flex;
-  width: 92px;
-  height: 44px;
-  padding-top: 12px;
-  margin-right: 24px;
-  font-weight: 600;
-
-  // 필수
-  .required_mark {
-    @include global.required_mark;
   }
 }
 
@@ -275,4 +259,19 @@
       }
     }
   }
+}
+
+// ------------------------------------------
+// 첨부파일 등록 모달
+.checkbox_wrapper {
+  margin-top: 12px;
+  p {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+}
+
+.radiobox_wrapper {
+  display: flex;
+  align-items: center;
 }

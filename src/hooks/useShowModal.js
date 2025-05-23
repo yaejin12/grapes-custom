@@ -12,8 +12,11 @@ function useShowModal() {
   const showGroupListModal = (value) => {
     dispatch(showModalActions.ShowGroupListModalAction(value));
   };
+  const showTplListModal = (value) => {
+    dispatch(showModalActions.ShowTplListModalAction(value));
+  };
 
-  return { showModal, showGroupListModal };
+  return { showModal, showGroupListModal, showTplListModal };
 }
 
 export default useShowModal;

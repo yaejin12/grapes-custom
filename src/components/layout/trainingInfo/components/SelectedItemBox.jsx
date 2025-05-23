@@ -9,6 +9,7 @@ function SelectedItemBox({ title, data }) {
         <SelectedItem actionBtn={"check"} icon={"group"} />
         <SelectedItem actionBtn={"view"} icon={"group"} />
         <SelectedItem actionBtn={"view"} icon={"tpl"} />
+
         {/* [e] item */}
       </ul>
     </div>

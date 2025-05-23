@@ -1,0 +1,51 @@
+@use "../../../assets/css/global.module.scss" as global;
+
+// radio 일때
+.radio {
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gr-1);
+
+  input {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    border: 1px solid var(--color-border);
+    border-radius: 50%; /* 원형 */
+    outline: none;
+    cursor: pointer;
+    margin-right: 8px;
+
+    &:checked {
+      background-color: #fff;
+      border: 3px solid var(--color-point); /* 체크 시 외곽선 */
+      box-shadow: 0 0 0 1px var(--color-point); /* 체크 시 그림자 효과 */
+    }
+  }
+}
+
+// custom
+.file_extension_wrapper {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+
+  button {
+    @include global.flex_center;
+    padding: 6px 16px;
+    height: 32px;
+    min-width: 57px;
+    font-size: 14px;
+    line-height: 1;
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    color: var(--color-gr-3);
+
+    &.action {
+      color: var(--color-point);
+      border: 1px solid var(--color-point);
+      font-weight: 600;
+    }
+  }
+}

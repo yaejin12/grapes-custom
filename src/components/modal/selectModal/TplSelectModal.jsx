@@ -8,7 +8,7 @@ import { mailFilterData } from "../../../config/uiConfig";
 import CheckBox from "../../common/checkBox/CheckBox";
 
 function TplSelectModal({ isCurrentPath = false, modalType }) {
-  const isShowModal = useSelector((state) => state.showModal.showModal);
+  const isShowModal = useSelector((state) => state.showModal.showTplListModal);
   const [selectedFilter, setSelectedFilter] = useState(["all"]);
   const [formData, setFormData] = useState({});
 

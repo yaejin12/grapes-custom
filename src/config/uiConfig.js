@@ -62,6 +62,40 @@ export const pGAddTHeader = [
   { text: "연락처", key: "phone" },
 ];
 // -------------------------------------------------
+// 메일템플릿 신규등록
+// 훈련 유형 셀렉 박스
+export const TypeOptionData = [
+  { value: 1, label: "링크클릭" },
+  { value: 2, label: "랜섬웨어" },
+  { value: 3, label: "피싱" },
+];
+export const leftInputFields = [
+  {
+    key: "templateName",
+    label: "메일이름",
+    placeholder: "메일 템플릿 이름을 입력해주세요",
+  },
+  {
+    key: "subject",
+    label: "메일제목",
+    placeholder: "실제 발송할 메일 제목을 입력해주세요",
+  },
+];
+
+export const rightInputFields = [
+  {
+    key: "senderName",
+    label: "발신자명",
+    placeholder: "실제 발송할 발신자명을 입력해주세요",
+  },
+  {
+    key: "senderEmail",
+    label: "발신자 이메일",
+    placeholder: "실제 발송할 발송자 이메일을 입력해주세요",
+  },
+];
+
+// -------------------------------------------------
 // 훈련실행 pg
 export const runPgEducationTHeader = [
   { text: "이름", key: "name" },
@@ -141,3 +175,5 @@ export const settingTLogTHeader = [
   { text: "일시", key: "position" },
   { text: "내용", key: "emailReceivedAt" },
 ];
+
+// 메일 템플릿 등록

@@ -4,6 +4,7 @@ const initialState = {
   showModal: false,
   showEduDetailModal: false,
   showGroupListModal: false,
+  showTplListModal: false,
 };
 
 const showModal = createSlice({
@@ -20,6 +21,10 @@ const showModal = createSlice({
 
     ShowGroupListModalAction(state, action) {
       state.showGroupListModal = action.payload;
+    },
+
+    ShowTplListModalAction(state, action) {
+      state.showTplListModal = action.payload;
     },
   },
 });

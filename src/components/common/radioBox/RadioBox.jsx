@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./input.module.scss";
+import styles from "./radioBox.module.scss";
 
-function Radio({ id, onChange, checked, label, name, data }) {
+function RadioBox({ id, onChange, checked, label, name, data }) {
   return (
     <label className={styles.radio} htmlFor={id}>
       <input
@@ -18,4 +18,4 @@ function Radio({ id, onChange, checked, label, name, data }) {
   );
 }
 
-export default Radio;
+export default RadioBox;

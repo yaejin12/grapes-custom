@@ -13,7 +13,7 @@ function CheckBox({ id, checked, onChange, data, children }, ref) {
           // onChange={(e) => {
           //   onChange?.(e, id, data);
           // }}
-          onChange={(e) => onChange(e.target.checked)}
+          onChange={(e) => onChange?.(e.target.checked)}
           ref={ref}
         />
         <span></span>

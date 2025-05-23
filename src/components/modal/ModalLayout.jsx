@@ -8,10 +8,14 @@ function ModalLayout({ children, title }) {
   const isShowGroupModal = useSelector(
     (state) => state.showModal.showGroupListModal
   );
-  const { showModal, showGroupListModal } = useShowModal();
+  const isShowTplModal = useSelector(
+    (state) => state.showModal.showTplListModal
+  );
+  const { showModal, showGroupListModal, showTplListModal } = useShowModal();
   // 모달 취소 클릭
   const handlerCancelBtnClick = () => {
     if (isShowGroupModal) return showGroupListModal(false);
+    if (isShowTplModal) return showTplListModal(false);
     showModal(false);
   };
   //모달이 열릴 때 body 스크롤 막기
@@ -27,7 +31,9 @@ function ModalLayout({ children, title }) {
   return (
     <div
       className={`${styles.modal_layout}  ${
-        isShowGroupModal || isShowModal ? styles.modal_action : ""
+        isShowGroupModal || isShowModal || isShowTplModal
+          ? styles.modal_action
+          : ""
       }`}
     >
       {/* 팝업 영역 */}
@@ -37,7 +43,10 @@ function ModalLayout({ children, title }) {
         </div>
         <div className={styles.content_wrapper}>{children}</div>
         <div className={styles.submit_wrapper}>
-          <SubmitButton handlerCancelBtnClick={handlerCancelBtnClick} />
+          <SubmitButton
+            handlerCancelBtnClick={handlerCancelBtnClick}
+            submitLabel={"등록"}
+          />
         </div>
       </div>
     </div>
