@@ -1,4 +1,5 @@
 import React from "react";
+import Tag from "../../../components/ui/tag/Tag";
 
 function TemplateSelectItem({ styles, data }) {
   return (
@@ -12,7 +13,10 @@ function TemplateSelectItem({ styles, data }) {
         <div className={styles.thumb_info}>
           <p className={styles.thumb_title}>
             {data?.title}
-            {data.type && <span className={styles.tag}>{data?.type}</span>}
+            {data.type && (
+              //  <span className={styles.tag}>{data?.type}</span>
+              <Tag styleType={"select"} text={data?.type} />
+            )}
           </p>
           <button className={styles.prev_btn}>미리보기</button>
         </div>

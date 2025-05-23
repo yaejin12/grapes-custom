@@ -61,7 +61,7 @@ function TemplateItem({ styles, data, handlerDetailClick }) {
         <div className={styles.item_title_wrapper}>
           {(mailTPg || educationTPg) && (
             // <span className={styles.tag}>{data?.type}</span>
-            <Tag styleType={"tpl"} text={data?.type} />
+            <Tag styleType={"tpl_list"} text={data?.type} />
           )}
           <span className={styles.item_title}>{data?.name}</span>
         </div>

@@ -5,22 +5,23 @@
   padding: 3px 9px;
   font-weight: 700;
   border-radius: 999px;
-  margin-right: 6px;
   color: var(--color-point);
-  background-color: var(--color-point-sub-1);
-
-  &:last-child {
-    margin-right: 0;
-  }
+  background-color: var(--color-point-sub-2);
 
   &.info {
+    background-color: var(--color-point-sub-1);
     height: 26px;
     display: inline-block;
     line-height: 1;
     padding: 7px 12px;
+    margin-right: 6px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
-  &.tpl {
+  &.tpl_list {
     font-size: 13px;
     padding: 3px 10px;
     color: #fff;
@@ -28,9 +29,8 @@
     background-color: var(--color-gr-2);
   }
 
-  &.user_num {
+  &.select {
     justify-content: center;
-    background-color: var(--color-point-sub-2);
     margin-left: 8px;
     margin-right: 0;
     // padding: 1px 12px;
