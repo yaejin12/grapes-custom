@@ -3,6 +3,7 @@ import Button from "../../../components/common/button/Button";
 import { NavLink } from "react-router-dom";
 import StatusBar from "./StatusBar";
 import { RUN_TRAINING } from "../../../config/path.config";
+import Tag from "../../../components/ui/tag/Tag";
 
 function RunTrainingItem({ styles, data }) {
   return (
@@ -33,17 +34,7 @@ function RunTrainingItem({ styles, data }) {
               </span>
               <span className={styles.info_text}>{data?.template}</span>
             </li>
-            <li>
-              <span className={styles.info_label}>
-                <img src="/images/info_v.svg" alt="" />
-                위반기준
-              </span>
-              <span className={styles.info_text}>
-                <span className={styles.tag}>링크클릭</span>
-                <span className={styles.tag}>링크클릭</span>
-                <span className={styles.tag}>링크클릭</span>
-              </span>
-            </li>
+
             <li>
               <span className={styles.info_label}>
                 <img src="/images/run_days.svg" alt="" />
@@ -57,6 +48,17 @@ function RunTrainingItem({ styles, data }) {
                 교육기간
               </span>
               <span className={styles.info_text}>{data?.educationPeriod}</span>
+            </li>
+            <li>
+              <span className={styles.info_label}>
+                <img src="/images/info_v.svg" alt="" />
+                위반기준
+              </span>
+              <span className={styles.info_text}>
+                <Tag styleType={"info"} text={"링크클릭"} />
+                <Tag styleType={"info"} text={"링크클릭"} />
+                <Tag styleType={"info"} text={"링크클릭"} />
+              </span>
             </li>
           </ul>
         </NavLink>
