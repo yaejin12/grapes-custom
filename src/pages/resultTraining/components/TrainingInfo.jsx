@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import SelectedItemBox from "../../../components/layout/trainingInfo/components/SelectedItemBox";
 import InfoLabel from "../../../components/ui/label/InfoLabel";
+import SelectedList from "../../../components/ui/selectedList/SelectedList";
 
 function TrainingInfo({ styles }) {
   const [isMoreBtnClick, setIsMoreBtnClick] = useState(false);
@@ -82,21 +82,21 @@ function TrainingInfo({ styles }) {
               </div>
               <div className={styles.more_info_bottom}>
                 <div className={styles.left_layout}>
-                  <InfoLabel label={"대상자"} />
-                  <SelectedItemBox title={"교육"} />
-                  <div className={styles.layout_bottom}>
-                    <InfoLabel label={"신고서 템플릿"} />
-                    <SelectedItemBox title={"템플릿"} />
+                  <div className={styles.layout_top}>
+                    <InfoLabel label={"대상자"} />
+                    <SelectedList actionBtn={"check"} icon={"group"} />
                   </div>
+                  <InfoLabel label={"경고 템플릿"} />
+                  <SelectedList actionBtn={"view"} icon={"alert"} />
                 </div>
 
                 <div className={styles.right_layout}>
-                  <InfoLabel label={"메일 템플릿"} />
-                  <SelectedItemBox title={"교육"} />
-                  <div className={styles.layout_bottom}>
-                    <InfoLabel label={"교육"} />
-                    <SelectedItemBox title={"템플릿"} />
+                  <div className={styles.layout_top}>
+                    <InfoLabel label={"메일 템플릿"} />
+                    <SelectedList actionBtn={"view"} icon={"tpl"} />
                   </div>
+                  <InfoLabel label={"교육"} />
+                  <SelectedList actionBtn={"view"} icon={"edu"} />
                 </div>
               </div>
             </div>

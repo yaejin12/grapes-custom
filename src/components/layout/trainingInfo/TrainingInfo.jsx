@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./trainingInfo.module.scss";
-import SelectedItemBox from "./components/SelectedItemBox";
 import InfoLabel from "../../ui/label/InfoLabel";
 import Tag from "../../ui/tag/Tag";
+import SelectedList from "../../ui/selectedList/SelectedList";
 
 function TrainingInfo({}) {
   const trainingInfoText = [
@@ -49,7 +49,7 @@ function TrainingInfo({}) {
           <div className={styles.info_item_title_wrapper}>
             <InfoLabel label={"대상자"} />
           </div>
-          <SelectedItemBox title={"대상자"} />
+          <SelectedList actionBtn={"check"} icon={"group"} />
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}
@@ -57,21 +57,19 @@ function TrainingInfo({}) {
           <div className={styles.info_item_title_wrapper}>
             <InfoLabel label={"메일 템플릿"} />
           </div>
-          <SelectedItemBox title={"메일 템플릿"} />
+          <SelectedList actionBtn={"view"} icon={"tpl"} />
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <InfoLabel label={"경고 템플릿"} tag={"사고신고서"} />
-
-          <SelectedItemBox title={"경고 템플릿"} />
+          <SelectedList actionBtn={"view"} icon={"tpl"} />
         </li>
         {/* [e]  select_box item */}
         {/* [s]  select_box item */}
         <li className={`${styles.info_item} ${styles.select_box}`}>
           <InfoLabel label={"교육"} tag={"교안"} />
-
-          <SelectedItemBox title={"교육"} />
+          <SelectedList actionBtn={"view"} icon={"edu"} />
         </li>
         {/* [e]  select_box item */}
       </ul>

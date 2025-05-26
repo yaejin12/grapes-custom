@@ -1,9 +1,9 @@
 import React from "react";
 import Button from "../../../components/common/button/Button";
-import GroupSelectItem from "./GroupSelectItem";
-import SelectedItem from "../../../components/selectedItems/SelectedItem";
+import SelectedItem from "../../../components/ui/selectedList/SelectedItem";
+import SelectedList from "../../../components/ui/selectedList/SelectedList";
 
-function GroupSelectBox({ styles, label, caption, data = [], onClickBtn }) {
+function SelectBox({ styles, label, caption, data = [], onClickBtn }) {
   return (
     <>
       {/* 상단 선택 버튼 section */}
@@ -27,25 +27,24 @@ function GroupSelectBox({ styles, label, caption, data = [], onClickBtn }) {
         {caption && <p className={styles.caption}>{caption}</p>}
       </div>
       {/* 하단 선택 된 셀렉 박스 section */}
-      {data.length > 0 && (
-        <div className={`${styles.select_box_wrapper}`}>
-          {data.length > 0 ? (
-            <>
-              <ul className={`${styles.select_box}`}>
-                {data?.map((data) => (
-                  <SelectedItem actionBtn={"delete"} icon={"group"} />
-                ))}
-              </ul>
-            </>
-          ) : (
-            <>
-              <p className={styles.empty}>선택 된 템플릿이 없습니다</p>
-            </>
-          )}
-        </div>
+      {data.length > 0 && label === "대상자 그룹" && (
+        <SelectedList icon={"group"} actionBtn={"delete"} />
+      )}
+
+      {data.length > 0 && label?.includes("템플릿") && (
+        <SelectedList
+          icon={"tpl"}
+          actionBtn={"delete"}
+          option={label?.includes("메일") ? true : false}
+          subBtn={"view"}
+        />
+      )}
+
+      {data.length > 0 && label?.includes("교육") && (
+        <SelectedList icon={"edu"} actionBtn={"delete"} subBtn={"view"} />
       )}
     </>
   );
 }
 
-export default GroupSelectBox;
+export default SelectBox;

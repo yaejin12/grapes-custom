@@ -117,9 +117,7 @@ function CreateMailTemplate() {
                       }}
                       onClick={handlerAttachmentAddBtnClick}
                     />
-                    <div className={styles.selected_box_wrapper}>
-                      {/* <SelectedItemBox title={"피싱"} /> */}
-                    </div>
+                    <div className={styles.selected_box_wrapper}></div>
                   </div>
                 </div>
               )}
@@ -136,9 +134,7 @@ function CreateMailTemplate() {
                       onClick={handlerPhishingSelectBtnClick}
                     />
                     <div className={styles.selected_box_wrapper}>
-                      <ul className={`${styles.select_box}`}>
-                        {/* <SelectedItemBox title={"피싱"} /> */}
-                      </ul>
+                      <ul className={`${styles.select_box}`}></ul>
                     </div>
                   </div>
                 </div>

@@ -5,10 +5,9 @@ import CommonInput from "../../components/common/input/CommonInput";
 import SubTitle from "./components/SubTitle";
 import DateRangeInput from "../../components/common/input/DateRangeInput";
 import ViolationCriteriaSelector from "../../components/violationCriteriaSelector/ViolationCriteriaSelector";
-import SelectSection from "./components/SelectSection";
 import SubmitButton from "../../components/layout/submitButton/SubmitButton";
 import { templateData } from "./data";
-import GroupSelectBox from "./components/GroupSelectBox";
+import SelectBox from "./components/SelectBox";
 import TplSelectModal from "../../components/modal/selectModal/TplSelectModal";
 import useShowModal from "../../hooks/useShowModal";
 import { useLocation } from "react-router-dom";
@@ -53,8 +52,14 @@ function CreateTrainingPg() {
                     <CommonInput placeholder={"훈련명을 입력하세요"} />
                   </div>
                 </div>
+                <SelectBox
+                  styles={styles}
+                  label={"대상자 그룹"}
+                  caption={"*최대 10개까지 선택 가능"}
+                  onClickBtn={handlerSelectBtnClick}
+                  data={templateData}
+                />
               </div>
-              {/* [e] 훈련명 */}
               {/* [s] 훈련기간 */}
               <div className={styles.content_right}>
                 {/* [s] item */}
@@ -69,22 +74,6 @@ function CreateTrainingPg() {
                 {/* [e] item */}
               </div>
               {/* [e] 훈련기간 */}
-            </div>
-            {/* [대상자 그룹] 4개이상 선택하면 넓이 100% 변경 */}
-            <div
-              className={`${styles.content} ${
-                templateData?.length <= 4 ? styles.under : styles.over
-              }`}
-            >
-              <div className={`${styles.select_wrapper}`}>
-                <GroupSelectBox
-                  styles={styles}
-                  label={"대상자 그룹"}
-                  caption={"*최대 10개까지 선택 가능"}
-                  onClickBtn={handlerSelectBtnClick}
-                  data={templateData}
-                />
-              </div>
             </div>
           </SubTitle>
           {/* 템플릿 선택 */}
@@ -105,7 +94,7 @@ function CreateTrainingPg() {
                     <RadioBox label={"포함"} name={"accidentReport"} />
                   </div>
                 </div>
-                <SelectSection
+                <SelectBox
                   styles={styles}
                   label={"메일 템플릿"}
                   optionText={"랜덤 발송"}
@@ -122,7 +111,7 @@ function CreateTrainingPg() {
                   {/* 인풋 */}
                   <ViolationCriteriaSelector />
                 </div>
-                <SelectSection
+                <SelectBox
                   styles={styles}
                   label={"경고 템플릿"}
                   caption={"*미선택시 기본 경고 페이지 발송"}
@@ -149,12 +138,13 @@ function CreateTrainingPg() {
                     <RadioBox label={"미실행"} name={"education"} />
                   </div>
                 </div>
-                <SelectSection
+                <SelectBox
                   styles={styles}
-                  label={"교육 템플릿"}
+                  label={"교육"}
                   caption={"*훈련 위반자 대상 교육 전송"}
                   data={templateData}
                   onClickBtn={handlerSelectBtnClick}
+                  
                 />
               </div>
               <div className={styles.content_right}>

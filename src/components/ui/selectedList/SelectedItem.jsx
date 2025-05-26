@@ -1,9 +1,16 @@
 import React from "react";
-import styles from "./selectedItems.module.scss";
-import SelectItemButton from "../common/button/SelectItemButton";
-import Tag from "../ui/tag/Tag";
+import styles from "./selectedList.module.scss";
+import SelectItemButton from "../../common/button/SelectItemButton";
+import Tag from "../tag/Tag";
 
-function SelectedItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
+function SelectedItem({
+  styleType,
+  actionBtn,
+  hashTag,
+  isChecked,
+  icon,
+  subBtn,
+}) {
   const iconStyle = {
     group: {
       label: "대상자",
@@ -20,6 +27,10 @@ function SelectedItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
     file: {
       label: "첨부파일",
       src: "/images/select_file.svg",
+    },
+    edu: {
+      label: "교육",
+      src: "/images/info_edu.svg",
     },
   };
   return (
@@ -40,7 +51,10 @@ function SelectedItem({ styleType, actionBtn, hashTag, isChecked, icon }) {
             {hashTag && <Tag text={"30"} styleType={"select"} icon={"user"} />}
           </div>
         </div>
-        <SelectItemButton btnType={actionBtn} isChecked={isChecked} />
+        <div className={styles.btn}>
+          {subBtn && <SelectItemButton btnType={subBtn} />}
+          <SelectItemButton btnType={actionBtn} />
+        </div>
       </li>
       {/* [e] item */}
     </>

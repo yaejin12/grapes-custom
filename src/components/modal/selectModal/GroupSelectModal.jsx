@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./selectModal.module.scss";
 import ModalLayout from "../ModalLayout";
 import { useSelector } from "react-redux";
-import SelectedItem from "../../selectedItems/SelectedItem";
+import SelectedItem from "../../ui/selectedList/SelectedItem";
 
 function GroupSelectModal({ isCurrentPath = false }) {
   const isShowGroupListModal = useSelector(
